@@ -1,0 +1,2733 @@
+{
+  "took" : 11,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : {
+      "value" : 26,
+      "relation" : "eq"
+    },
+    "max_score" : 1.0,
+    "hits" : [
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "b31LaI8BTkOtzmRfkPsv",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:32.660Z",
+          "observer" : {
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ],
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ]
+          },
+          "monitor" : {
+            "check_group" : "14a0487d-0fac-11ef-af1c-fa163e045c1f",
+            "ip" : "10.107.13.64",
+            "timespan" : {
+              "gte" : "2024-05-11T15:35:32.661Z",
+              "lt" : "2024-05-11T15:35:48.661Z"
+            },
+            "id" : "[Elasticsearch Node] v_dev-cluster-46861f49b16d2609",
+            "name" : "[Elasticsearch Node] v_dev-cluster",
+            "type" : "http",
+            "status" : "down",
+            "duration" : {
+              "us" : 1183
+            }
+          },
+          "url" : {
+            "domain" : "10.107.13.64",
+            "port" : 9200,
+            "full" : "http://10.107.13.64:9200",
+            "scheme" : "http"
+          },
+          "error" : {
+            "type" : "io",
+            "message" : """Get "http://10.107.13.64:9200": dial tcp 10.107.13.64:9200: connect: connection refused"""
+          },
+          "summary" : {
+            "up" : 0,
+            "down" : 1
+          },
+          "event" : {
+            "dataset" : "http"
+          },
+          "agent" : {
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24",
+            "name" : "es01a.dev.verticaltest.nd",
+            "type" : "heartbeat",
+            "version" : "7.17.21",
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b"
+          },
+          "ecs" : {
+            "version" : "1.12.0"
+          }
+        }
+      },
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "cH1LaI8BTkOtzmRfkPsv",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:32.661Z",
+          "summary" : {
+            "up" : 1,
+            "down" : 0
+          },
+          "event" : {
+            "dataset" : "tcp"
+          },
+          "agent" : {
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24",
+            "name" : "es01a.dev.verticaltest.nd",
+            "type" : "heartbeat",
+            "version" : "7.17.21",
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b"
+          },
+          "ecs" : {
+            "version" : "1.12.0"
+          },
+          "observer" : {
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ],
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ]
+          },
+          "tcp" : {
+            "rtt" : {
+              "validate" : {
+                "us" : 489
+              },
+              "connect" : {
+                "us" : 823
+              }
+            }
+          },
+          "monitor" : {
+            "type" : "tcp",
+            "id" : "redis-farm-dev-8878b4ea8b40dcec",
+            "name" : "[Redis] redis-farm-dev-6379",
+            "status" : "up",
+            "duration" : {
+              "us" : 1455
+            },
+            "check_group" : "14a047c7-0fac-11ef-af1c-fa163e045c1f",
+            "ip" : "10.107.11.59",
+            "timespan" : {
+              "gte" : "2024-05-11T15:35:32.662Z",
+              "lt" : "2024-05-11T15:35:42.662Z"
+            }
+          },
+          "url" : {
+            "full" : "tcp://10.107.11.59:6379",
+            "scheme" : "tcp",
+            "domain" : "10.107.11.59",
+            "port" : 6379
+          }
+        }
+      },
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "cX1LaI8BTkOtzmRfkPsv",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:32.661Z",
+          "event" : {
+            "dataset" : "tcp"
+          },
+          "ecs" : {
+            "version" : "1.12.0"
+          },
+          "agent" : {
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b",
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24",
+            "name" : "es01a.dev.verticaltest.nd",
+            "type" : "heartbeat",
+            "version" : "7.17.21"
+          },
+          "observer" : {
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ],
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ]
+          },
+          "tcp" : {
+            "rtt" : {
+              "connect" : {
+                "us" : 916
+              },
+              "validate" : {
+                "us" : 673
+              }
+            }
+          },
+          "monitor" : {
+            "ip" : "10.107.11.56",
+            "timespan" : {
+              "gte" : "2024-05-11T15:35:32.662Z",
+              "lt" : "2024-05-11T15:35:42.662Z"
+            },
+            "id" : "redis-farm-dev-f2d69f3656479a71",
+            "name" : "[Redis] redis-farm-dev-6379",
+            "type" : "tcp",
+            "status" : "up",
+            "duration" : {
+              "us" : 1758
+            },
+            "check_group" : "14a07c8b-0fac-11ef-af1c-fa163e045c1f"
+          },
+          "url" : {
+            "domain" : "10.107.11.56",
+            "port" : 6379,
+            "full" : "tcp://10.107.11.56:6379",
+            "scheme" : "tcp"
+          },
+          "summary" : {
+            "down" : 0,
+            "up" : 1
+          }
+        }
+      },
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "cn1LaI8BTkOtzmRfkPsv",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:32.662Z",
+          "summary" : {
+            "up" : 1,
+            "down" : 0
+          },
+          "tcp" : {
+            "rtt" : {
+              "connect" : {
+                "us" : 382
+              },
+              "validate" : {
+                "us" : 1012
+              }
+            }
+          },
+          "event" : {
+            "dataset" : "tcp"
+          },
+          "ecs" : {
+            "version" : "1.12.0"
+          },
+          "agent" : {
+            "version" : "7.17.21",
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b",
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24",
+            "name" : "es01a.dev.verticaltest.nd",
+            "type" : "heartbeat"
+          },
+          "observer" : {
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ],
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ]
+          },
+          "monitor" : {
+            "check_group" : "14a08668-0fac-11ef-af1c-fa163e045c1f",
+            "ip" : "10.107.11.75",
+            "timespan" : {
+              "gte" : "2024-05-11T15:35:32.663Z",
+              "lt" : "2024-05-11T15:35:42.663Z"
+            },
+            "id" : "redis-farm-dev-71622da28a8fbfa2",
+            "name" : "[Redis] redis-farm-dev-6379",
+            "type" : "tcp",
+            "status" : "up",
+            "duration" : {
+              "us" : 1503
+            }
+          },
+          "url" : {
+            "full" : "tcp://10.107.11.75:6379",
+            "scheme" : "tcp",
+            "domain" : "10.107.11.75",
+            "port" : 6379
+          }
+        }
+      },
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "c31LaI8BTkOtzmRfkPsv",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:32.661Z",
+          "monitor" : {
+            "ip" : "10.107.13.55",
+            "timespan" : {
+              "gte" : "2024-05-11T15:35:32.664Z",
+              "lt" : "2024-05-11T15:35:48.664Z"
+            },
+            "id" : "[Elasticsearch Node] v_dev-cluster-dbafe1395b0dda5",
+            "name" : "[Elasticsearch Node] v_dev-cluster",
+            "type" : "http",
+            "status" : "up",
+            "duration" : {
+              "us" : 2859
+            },
+            "check_group" : "14a09783-0fac-11ef-af1c-fa163e045c1f"
+          },
+          "summary" : {
+            "down" : 0,
+            "up" : 1
+          },
+          "event" : {
+            "dataset" : "http"
+          },
+          "ecs" : {
+            "version" : "1.12.0"
+          },
+          "agent" : {
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b",
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24",
+            "name" : "es01a.dev.verticaltest.nd",
+            "type" : "heartbeat",
+            "version" : "7.17.21"
+          },
+          "observer" : {
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ],
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ]
+          },
+          "tcp" : {
+            "rtt" : {
+              "connect" : {
+                "us" : 540
+              }
+            }
+          },
+          "http" : {
+            "response" : {
+              "body" : {
+                "hash" : "e133c5a1d303895a4f4ac4e538f40fae6ed7abb93d76d4c5c98604b6c3717cfb",
+                "bytes" : 540
+              },
+              "mime_type" : "application/json",
+              "headers" : {
+                "Content-Type" : "application/json; charset=UTF-8",
+                "Content-Length" : "540",
+                "X-Elastic-Product" : "Elasticsearch"
+              },
+              "status_code" : 200
+            },
+            "rtt" : {
+              "response_header" : {
+                "us" : 1368
+              },
+              "write_request" : {
+                "us" : 33
+              },
+              "validate" : {
+                "us" : 2077
+              },
+              "content" : {
+                "us" : 708
+              },
+              "total" : {
+                "us" : 2768
+              }
+            }
+          },
+          "url" : {
+            "scheme" : "http",
+            "domain" : "10.107.13.55",
+            "port" : 9200,
+            "full" : "http://10.107.13.55:9200"
+          }
+        }
+      },
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "dH1LaI8BTkOtzmRfkPsv",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:32.659Z",
+          "summary" : {
+            "up" : 1,
+            "down" : 0
+          },
+          "tcp" : {
+            "rtt" : {
+              "connect" : {
+                "us" : 1128
+              }
+            }
+          },
+          "http" : {
+            "response" : {
+              "status_code" : 200,
+              "body" : {
+                "bytes" : 541,
+                "hash" : "48bd946ca8c93450c0fdc1cdf8955bfc4d002c6cf07d32bf3b9377539c90f859"
+              },
+              "mime_type" : "application/json",
+              "headers" : {
+                "Content-Length" : "541",
+                "X-Elastic-Product" : "Elasticsearch",
+                "Content-Type" : "application/json; charset=UTF-8"
+              }
+            },
+            "rtt" : {
+              "write_request" : {
+                "us" : 226
+              },
+              "response_header" : {
+                "us" : 1830
+              },
+              "validate" : {
+                "us" : 2807
+              },
+              "content" : {
+                "us" : 976
+              },
+              "total" : {
+                "us" : 4108
+              }
+            }
+          },
+          "monitor" : {
+            "ip" : "10.107.11.66",
+            "timespan" : {
+              "gte" : "2024-05-11T15:35:32.664Z",
+              "lt" : "2024-05-11T15:35:48.664Z"
+            },
+            "id" : "[Elasticsearch Node] dev-cluster-ac1cf9c55a09d8c5",
+            "name" : "[Elasticsearch Node] dev-cluster",
+            "type" : "http",
+            "status" : "up",
+            "duration" : {
+              "us" : 4460
+            },
+            "check_group" : "14a0a979-0fac-11ef-af1c-fa163e045c1f"
+          },
+          "observer" : {
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ],
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ]
+          },
+          "url" : {
+            "port" : 9200,
+            "full" : "http://10.107.11.66:9200",
+            "scheme" : "http",
+            "domain" : "10.107.11.66"
+          },
+          "event" : {
+            "dataset" : "http"
+          },
+          "ecs" : {
+            "version" : "1.12.0"
+          },
+          "agent" : {
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b",
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24",
+            "name" : "es01a.dev.verticaltest.nd",
+            "type" : "heartbeat",
+            "version" : "7.17.21",
+            "hostname" : "es01a.dev.verticaltest.nd"
+          }
+        }
+      },
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "dX1LaI8BTkOtzmRfkPsv",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:32.661Z",
+          "observer" : {
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ],
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ]
+          },
+          "monitor" : {
+            "status" : "up",
+            "duration" : {
+              "us" : 3417
+            },
+            "check_group" : "14a0a47c-0fac-11ef-af1c-fa163e045c1f",
+            "ip" : "10.107.11.75",
+            "timespan" : {
+              "gte" : "2024-05-11T15:35:32.664Z",
+              "lt" : "2024-05-11T15:35:48.664Z"
+            },
+            "type" : "http",
+            "id" : "[Elasticsearch Node] dev-cluster-d745ad3de0dd5d5",
+            "name" : "[Elasticsearch Node] dev-cluster"
+          },
+          "http" : {
+            "response" : {
+              "status_code" : 200,
+              "body" : {
+                "hash" : "d5e841797626e99e729e22c683b5ce31990e777ad8801245262731257992c3d3",
+                "bytes" : 539
+              },
+              "mime_type" : "application/json",
+              "headers" : {
+                "Content-Length" : "539",
+                "X-Elastic-Product" : "Elasticsearch",
+                "Content-Type" : "application/json; charset=UTF-8"
+              }
+            },
+            "rtt" : {
+              "write_request" : {
+                "us" : 29
+              },
+              "response_header" : {
+                "us" : 1982
+              },
+              "validate" : {
+                "us" : 2242
+              },
+              "content" : {
+                "us" : 259
+              },
+              "total" : {
+                "us" : 3303
+              }
+            }
+          },
+          "ecs" : {
+            "version" : "1.12.0"
+          },
+          "event" : {
+            "dataset" : "http"
+          },
+          "agent" : {
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b",
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24",
+            "name" : "es01a.dev.verticaltest.nd",
+            "type" : "heartbeat",
+            "version" : "7.17.21"
+          },
+          "url" : {
+            "scheme" : "http",
+            "domain" : "10.107.11.75",
+            "port" : 9200,
+            "full" : "http://10.107.11.75:9200"
+          },
+          "summary" : {
+            "down" : 0,
+            "up" : 1
+          },
+          "tcp" : {
+            "rtt" : {
+              "connect" : {
+                "us" : 1006
+              }
+            }
+          }
+        }
+      },
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "dn1LaI8BTkOtzmRfkPsv",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:32.662Z",
+          "agent" : {
+            "type" : "heartbeat",
+            "version" : "7.17.21",
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b",
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24",
+            "name" : "es01a.dev.verticaltest.nd"
+          },
+          "ecs" : {
+            "version" : "1.12.0"
+          },
+          "tcp" : {
+            "rtt" : {
+              "connect" : {
+                "us" : 615
+              }
+            }
+          },
+          "http" : {
+            "response" : {
+              "status_code" : 200,
+              "body" : {
+                "hash" : "1dfc7632d5dbccc6eb3bd311d59c7db83dd77b75b937e08f5edd4d8e5298f595",
+                "bytes" : 541
+              },
+              "mime_type" : "application/json",
+              "headers" : {
+                "X-Elastic-Product" : "Elasticsearch",
+                "Content-Type" : "application/json; charset=UTF-8",
+                "Content-Length" : "541"
+              }
+            },
+            "rtt" : {
+              "response_header" : {
+                "us" : 1486
+              },
+              "validate" : {
+                "us" : 1765
+              },
+              "content" : {
+                "us" : 279
+              },
+              "total" : {
+                "us" : 2427
+              },
+              "write_request" : {
+                "us" : 220
+              }
+            }
+          },
+          "monitor" : {
+            "ip" : "10.107.11.59",
+            "timespan" : {
+              "gte" : "2024-05-11T15:35:32.664Z",
+              "lt" : "2024-05-11T15:35:48.664Z"
+            },
+            "type" : "http",
+            "id" : "[Elasticsearch Node] dev-cluster-f3d81fd890b25fa3",
+            "name" : "[Elasticsearch Node] dev-cluster",
+            "status" : "up",
+            "duration" : {
+              "us" : 2544
+            },
+            "check_group" : "14a0a6ab-0fac-11ef-af1c-fa163e045c1f"
+          },
+          "url" : {
+            "port" : 9200,
+            "full" : "http://10.107.11.59:9200",
+            "scheme" : "http",
+            "domain" : "10.107.11.59"
+          },
+          "summary" : {
+            "up" : 1,
+            "down" : 0
+          },
+          "event" : {
+            "dataset" : "http"
+          },
+          "observer" : {
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ],
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ]
+          }
+        }
+      },
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "d31LaI8BTkOtzmRfkPsv",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:32.661Z",
+          "monitor" : {
+            "timespan" : {
+              "lt" : "2024-05-11T15:35:48.664Z",
+              "gte" : "2024-05-11T15:35:32.664Z"
+            },
+            "type" : "http",
+            "id" : "[Elasticsearch Node] dev-cluster-b5699672bd5bdbb1",
+            "name" : "[Elasticsearch Node] dev-cluster",
+            "status" : "up",
+            "duration" : {
+              "us" : 3184
+            },
+            "check_group" : "14a09a03-0fac-11ef-af1c-fa163e045c1f",
+            "ip" : "10.107.11.71"
+          },
+          "summary" : {
+            "up" : 1,
+            "down" : 0
+          },
+          "tcp" : {
+            "rtt" : {
+              "connect" : {
+                "us" : 489
+              }
+            }
+          },
+          "ecs" : {
+            "version" : "1.12.0"
+          },
+          "observer" : {
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ],
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ],
+            "hostname" : "es01a.dev.verticaltest.nd"
+          },
+          "url" : {
+            "scheme" : "http",
+            "domain" : "10.107.11.71",
+            "port" : 9200,
+            "full" : "http://10.107.11.71:9200"
+          },
+          "http" : {
+            "response" : {
+              "headers" : {
+                "Content-Type" : "application/json; charset=UTF-8",
+                "Content-Length" : "539",
+                "X-Elastic-Product" : "Elasticsearch"
+              },
+              "status_code" : 200,
+              "body" : {
+                "hash" : "c47e8e1db68366d3ef310a0dba08d9f21c575a630fe221fc980fd98ed973f738",
+                "bytes" : 539
+              },
+              "mime_type" : "application/json"
+            },
+            "rtt" : {
+              "content" : {
+                "us" : 202
+              },
+              "total" : {
+                "us" : 3046
+              },
+              "response_header" : {
+                "us" : 2275
+              },
+              "write_request" : {
+                "us" : 18
+              },
+              "validate" : {
+                "us" : 2477
+              }
+            }
+          },
+          "event" : {
+            "dataset" : "http"
+          },
+          "agent" : {
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b",
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24",
+            "name" : "es01a.dev.verticaltest.nd",
+            "type" : "heartbeat",
+            "version" : "7.17.21"
+          }
+        }
+      },
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "eH1LaI8BTkOtzmRfkPsv",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:32.663Z",
+          "summary" : {
+            "up" : 1,
+            "down" : 0
+          },
+          "event" : {
+            "dataset" : "http"
+          },
+          "ecs" : {
+            "version" : "1.12.0"
+          },
+          "observer" : {
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ],
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ]
+          },
+          "tcp" : {
+            "rtt" : {
+              "connect" : {
+                "us" : 194
+              }
+            }
+          },
+          "monitor" : {
+            "name" : "[Elasticsearch Cluster] dev-cluster",
+            "type" : "http",
+            "id" : "[Elasticsearch Cluster] dev-cluster",
+            "status" : "up",
+            "duration" : {
+              "us" : 3764
+            },
+            "check_group" : "14a0f2df-0fac-11ef-af1c-fa163e045c1f",
+            "ip" : "10.107.11.66",
+            "timespan" : {
+              "lt" : "2024-05-11T15:35:42.667Z",
+              "gte" : "2024-05-11T15:35:32.667Z"
+            }
+          },
+          "url" : {
+            "full" : "http://10.107.11.66:9200/_cluster/health",
+            "scheme" : "http",
+            "domain" : "10.107.11.66",
+            "port" : 9200,
+            "path" : "/_cluster/health"
+          },
+          "agent" : {
+            "name" : "es01a.dev.verticaltest.nd",
+            "type" : "heartbeat",
+            "version" : "7.17.21",
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b",
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24"
+          },
+          "http" : {
+            "response" : {
+              "body" : {
+                "hash" : "e367276450c95342f9001c34275c8a2f9d479ae5ee916b66a7b838e20756f4c0",
+                "bytes" : 396
+              },
+              "mime_type" : "application/json",
+              "headers" : {
+                "X-Elastic-Product" : "Elasticsearch",
+                "Content-Type" : "application/json; charset=UTF-8",
+                "Content-Length" : "396"
+              },
+              "status_code" : 200
+            },
+            "rtt" : {
+              "response_header" : {
+                "us" : 2701
+              },
+              "validate" : {
+                "us" : 2943
+              },
+              "content" : {
+                "us" : 242
+              },
+              "total" : {
+                "us" : 3636
+              },
+              "write_request" : {
+                "us" : 62
+              }
+            }
+          }
+        }
+      },
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "eX1LaI8BTkOtzmRfkPsv",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:32.661Z",
+          "url" : {
+            "domain" : "10.107.13.60",
+            "port" : 9200,
+            "full" : "http://10.107.13.60:9200",
+            "scheme" : "http"
+          },
+          "event" : {
+            "dataset" : "http"
+          },
+          "http" : {
+            "rtt" : {
+              "total" : {
+                "us" : 10779
+              },
+              "write_request" : {
+                "us" : 41
+              },
+              "response_header" : {
+                "us" : 9768
+              },
+              "validate" : {
+                "us" : 10107
+              },
+              "content" : {
+                "us" : 339
+              }
+            },
+            "response" : {
+              "mime_type" : "application/json",
+              "headers" : {
+                "X-Elastic-Product" : "Elasticsearch",
+                "Content-Type" : "application/json; charset=UTF-8",
+                "Content-Length" : "540"
+              },
+              "status_code" : 200,
+              "body" : {
+                "bytes" : 540,
+                "hash" : "dea7be7e3b0b7fdd8f8258048e6e054e2ade481d937eb9bad51414cf148d1fe5"
+              }
+            }
+          },
+          "monitor" : {
+            "type" : "http",
+            "status" : "up",
+            "duration" : {
+              "us" : 11114
+            },
+            "check_group" : "14a2f7d4-0fac-11ef-af1c-fa163e045c1f",
+            "ip" : "10.107.13.60",
+            "timespan" : {
+              "lt" : "2024-05-11T15:35:48.672Z",
+              "gte" : "2024-05-11T15:35:32.672Z"
+            },
+            "id" : "[Elasticsearch Node] v_dev-cluster-9cde03aad0adc24d",
+            "name" : "[Elasticsearch Node] v_dev-cluster"
+          },
+          "ecs" : {
+            "version" : "1.12.0"
+          },
+          "agent" : {
+            "name" : "es01a.dev.verticaltest.nd",
+            "type" : "heartbeat",
+            "version" : "7.17.21",
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b",
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24"
+          },
+          "observer" : {
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ],
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ],
+            "hostname" : "es01a.dev.verticaltest.nd"
+          },
+          "tcp" : {
+            "rtt" : {
+              "connect" : {
+                "us" : 460
+              }
+            }
+          },
+          "summary" : {
+            "down" : 0,
+            "up" : 1
+          }
+        }
+      },
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "en1LaI8BTkOtzmRfkPsv",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:32.661Z",
+          "http" : {
+            "response" : {
+              "body" : {
+                "hash" : "97d0f20fc99d997a4287ec959795df57934f66d9bf6fd27b49245ee42bab940a",
+                "bytes" : 405,
+                "content" : """{"cluster_name":"v-cluster-dev","status":"red","timed_out":false,"number_of_nodes":2,"number_of_data_nodes":2,"active_primary_shards":523,"active_shards":674,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":338,"delayed_unassigned_shards":338,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":66.600790513834}"""
+              },
+              "mime_type" : "application/json",
+              "headers" : {
+                "Content-Length" : "405",
+                "X-Elastic-Product" : "Elasticsearch",
+                "Content-Type" : "application/json; charset=UTF-8"
+              },
+              "status_code" : 200
+            },
+            "rtt" : {
+              "total" : {
+                "us" : 16398
+              },
+              "write_request" : {
+                "us" : 73
+              },
+              "response_header" : {
+                "us" : 15314
+              },
+              "validate" : {
+                "us" : 15654
+              },
+              "content" : {
+                "us" : 340
+              }
+            }
+          },
+          "monitor" : {
+            "id" : "[Elasticsearch Cluster] v_dev-cluster",
+            "name" : "[Elasticsearch Cluster] v_dev-cluster",
+            "type" : "http",
+            "status" : "down",
+            "duration" : {
+              "us" : 16518
+            },
+            "check_group" : "14a4ab7f-0fac-11ef-af1c-fa163e045c1f",
+            "ip" : "10.107.13.60",
+            "timespan" : {
+              "gte" : "2024-05-11T15:35:32.677Z",
+              "lt" : "2024-05-11T15:35:42.677Z"
+            }
+          },
+          "error" : {
+            "message" : """JSON body did not match 1 expressions or conditions 'rule 'cluster health check'(status != "red") not matched.'. Received JSON (first 2048 chars): {"cluster_name":"v-cluster-dev","status":"red","timed_out":false,"number_of_nodes":2,"number_of_data_nodes":2,"active_primary_shards":523,"active_shards":674,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":338,"delayed_unassigned_shards":338,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":66.600790513834""",
+            "type" : "validate"
+          },
+          "event" : {
+            "dataset" : "http"
+          },
+          "agent" : {
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b",
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24",
+            "name" : "es01a.dev.verticaltest.nd",
+            "type" : "heartbeat",
+            "version" : "7.17.21"
+          },
+          "observer" : {
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ],
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ],
+            "hostname" : "es01a.dev.verticaltest.nd"
+          },
+          "tcp" : {
+            "rtt" : {
+              "connect" : {
+                "us" : 593
+              }
+            }
+          },
+          "summary" : {
+            "down" : 1,
+            "up" : 0
+          },
+          "ecs" : {
+            "version" : "1.12.0"
+          },
+          "url" : {
+            "port" : 9200,
+            "path" : "/_cluster/health",
+            "full" : "http://10.107.13.60:9200/_cluster/health",
+            "scheme" : "http",
+            "domain" : "10.107.13.60"
+          }
+        }
+      },
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "e31LaI8BTkOtzmRfkPsv",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:32.661Z",
+          "url" : {
+            "domain" : "10.107.11.56",
+            "port" : 9200,
+            "full" : "http://10.107.11.56:9200",
+            "scheme" : "http"
+          },
+          "summary" : {
+            "up" : 1,
+            "down" : 0
+          },
+          "event" : {
+            "dataset" : "http"
+          },
+          "observer" : {
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ],
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ]
+          },
+          "tcp" : {
+            "rtt" : {
+              "connect" : {
+                "us" : 642
+              }
+            }
+          },
+          "http" : {
+            "response" : {
+              "body" : {
+                "bytes" : 541,
+                "hash" : "da3ff18894e60c18355dbc31798325a39d7379ae0e828832a9ea5d208f5c13cc"
+              },
+              "mime_type" : "application/json",
+              "headers" : {
+                "X-Elastic-Product" : "Elasticsearch",
+                "Content-Type" : "application/json; charset=UTF-8",
+                "Content-Length" : "541"
+              },
+              "status_code" : 200
+            },
+            "rtt" : {
+              "validate" : {
+                "us" : 144920
+              },
+              "content" : {
+                "us" : 509
+              },
+              "total" : {
+                "us" : 145908
+              },
+              "write_request" : {
+                "us" : 34
+              },
+              "response_header" : {
+                "us" : 144411
+              }
+            }
+          },
+          "monitor" : {
+            "name" : "[Elasticsearch Node] dev-cluster",
+            "type" : "http",
+            "id" : "[Elasticsearch Node] dev-cluster-70766ddf82cf6602",
+            "status" : "up",
+            "duration" : {
+              "us" : 146085
+            },
+            "check_group" : "14b64be8-0fac-11ef-af1c-fa163e045c1f",
+            "ip" : "10.107.11.56",
+            "timespan" : {
+              "gte" : "2024-05-11T15:35:32.807Z",
+              "lt" : "2024-05-11T15:35:48.807Z"
+            }
+          },
+          "ecs" : {
+            "version" : "1.12.0"
+          },
+          "agent" : {
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b",
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24",
+            "name" : "es01a.dev.verticaltest.nd",
+            "type" : "heartbeat",
+            "version" : "7.17.21",
+            "hostname" : "es01a.dev.verticaltest.nd"
+          }
+        }
+      },
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "dRNLaI8BLPyTWz75aXcS",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:22.660Z",
+          "observer" : {
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ],
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ],
+            "hostname" : "es01a.dev.verticaltest.nd"
+          },
+          "monitor" : {
+            "name" : "[Elasticsearch Node] v_dev-cluster",
+            "type" : "http",
+            "id" : "[Elasticsearch Node] v_dev-cluster-46861f49b16d2609",
+            "status" : "down",
+            "duration" : {
+              "us" : 761
+            },
+            "check_group" : "0eaa6b5c-0fac-11ef-af1c-fa163e045c1f",
+            "ip" : "10.107.13.64",
+            "timespan" : {
+              "lt" : "2024-05-11T15:35:38.661Z",
+              "gte" : "2024-05-11T15:35:22.661Z"
+            }
+          },
+          "url" : {
+            "domain" : "10.107.13.64",
+            "port" : 9200,
+            "full" : "http://10.107.13.64:9200",
+            "scheme" : "http"
+          },
+          "error" : {
+            "type" : "io",
+            "message" : """Get "http://10.107.13.64:9200": dial tcp 10.107.13.64:9200: connect: connection refused"""
+          },
+          "summary" : {
+            "up" : 0,
+            "down" : 1
+          },
+          "event" : {
+            "dataset" : "http"
+          },
+          "ecs" : {
+            "version" : "1.12.0"
+          },
+          "agent" : {
+            "type" : "heartbeat",
+            "version" : "7.17.21",
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b",
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24",
+            "name" : "es01a.dev.verticaltest.nd"
+          }
+        }
+      },
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "dhNLaI8BLPyTWz75aXcS",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:22.660Z",
+          "ecs" : {
+            "version" : "1.12.0"
+          },
+          "agent" : {
+            "type" : "heartbeat",
+            "version" : "7.17.21",
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b",
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24",
+            "name" : "es01a.dev.verticaltest.nd"
+          },
+          "observer" : {
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ],
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ]
+          },
+          "tcp" : {
+            "rtt" : {
+              "connect" : {
+                "us" : 878
+              },
+              "validate" : {
+                "us" : 384
+              }
+            }
+          },
+          "monitor" : {
+            "name" : "[Redis] redis-farm-dev-6379",
+            "type" : "tcp",
+            "id" : "redis-farm-dev-8878b4ea8b40dcec",
+            "status" : "up",
+            "duration" : {
+              "us" : 1393
+            },
+            "check_group" : "0eab09a4-0fac-11ef-af1c-fa163e045c1f",
+            "ip" : "10.107.11.59",
+            "timespan" : {
+              "gte" : "2024-05-11T15:35:22.661Z",
+              "lt" : "2024-05-11T15:35:32.661Z"
+            }
+          },
+          "url" : {
+            "full" : "tcp://10.107.11.59:6379",
+            "scheme" : "tcp",
+            "domain" : "10.107.11.59",
+            "port" : 6379
+          },
+          "summary" : {
+            "up" : 1,
+            "down" : 0
+          },
+          "event" : {
+            "dataset" : "tcp"
+          }
+        }
+      },
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "dxNLaI8BLPyTWz75aXcS",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:22.660Z",
+          "agent" : {
+            "name" : "es01a.dev.verticaltest.nd",
+            "type" : "heartbeat",
+            "version" : "7.17.21",
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b",
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24"
+          },
+          "observer" : {
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ],
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ]
+          },
+          "tcp" : {
+            "rtt" : {
+              "connect" : {
+                "us" : 615
+              },
+              "validate" : {
+                "us" : 513
+              }
+            }
+          },
+          "monitor" : {
+            "timespan" : {
+              "gte" : "2024-05-11T15:35:22.662Z",
+              "lt" : "2024-05-11T15:35:32.662Z"
+            },
+            "name" : "[Redis] redis-farm-dev-6379",
+            "type" : "tcp",
+            "id" : "redis-farm-dev-f2d69f3656479a71",
+            "status" : "up",
+            "duration" : {
+              "us" : 1866
+            },
+            "check_group" : "0eaa6050-0fac-11ef-af1c-fa163e045c1f",
+            "ip" : "10.107.11.56"
+          },
+          "url" : {
+            "port" : 6379,
+            "full" : "tcp://10.107.11.56:6379",
+            "scheme" : "tcp",
+            "domain" : "10.107.11.56"
+          },
+          "summary" : {
+            "up" : 1,
+            "down" : 0
+          },
+          "event" : {
+            "dataset" : "tcp"
+          },
+          "ecs" : {
+            "version" : "1.12.0"
+          }
+        }
+      },
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "eBNLaI8BLPyTWz75aXcS",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:22.661Z",
+          "url" : {
+            "scheme" : "tcp",
+            "domain" : "10.107.11.75",
+            "port" : 6379,
+            "full" : "tcp://10.107.11.75:6379"
+          },
+          "summary" : {
+            "up" : 1,
+            "down" : 0
+          },
+          "event" : {
+            "dataset" : "tcp"
+          },
+          "ecs" : {
+            "version" : "1.12.0"
+          },
+          "agent" : {
+            "type" : "heartbeat",
+            "version" : "7.17.21",
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b",
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24",
+            "name" : "es01a.dev.verticaltest.nd"
+          },
+          "observer" : {
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ],
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ]
+          },
+          "tcp" : {
+            "rtt" : {
+              "connect" : {
+                "us" : 614
+              },
+              "validate" : {
+                "us" : 1231
+              }
+            }
+          },
+          "monitor" : {
+            "timespan" : {
+              "gte" : "2024-05-11T15:35:22.663Z",
+              "lt" : "2024-05-11T15:35:32.663Z"
+            },
+            "name" : "[Redis] redis-farm-dev-6379",
+            "type" : "tcp",
+            "id" : "redis-farm-dev-71622da28a8fbfa2",
+            "status" : "up",
+            "duration" : {
+              "us" : 1983
+            },
+            "check_group" : "0eaa7791-0fac-11ef-af1c-fa163e045c1f",
+            "ip" : "10.107.11.75"
+          }
+        }
+      },
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "eRNLaI8BLPyTWz75aXcS",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:22.660Z",
+          "monitor" : {
+            "status" : "up",
+            "duration" : {
+              "us" : 2989
+            },
+            "check_group" : "0eaa99f8-0fac-11ef-af1c-fa163e045c1f",
+            "ip" : "10.107.13.55",
+            "timespan" : {
+              "gte" : "2024-05-11T15:35:22.663Z",
+              "lt" : "2024-05-11T15:35:38.663Z"
+            },
+            "id" : "[Elasticsearch Node] v_dev-cluster-dbafe1395b0dda5",
+            "name" : "[Elasticsearch Node] v_dev-cluster",
+            "type" : "http"
+          },
+          "summary" : {
+            "up" : 1,
+            "down" : 0
+          },
+          "ecs" : {
+            "version" : "1.12.0"
+          },
+          "agent" : {
+            "name" : "es01a.dev.verticaltest.nd",
+            "type" : "heartbeat",
+            "version" : "7.17.21",
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b",
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24"
+          },
+          "observer" : {
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ],
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ]
+          },
+          "url" : {
+            "scheme" : "http",
+            "domain" : "10.107.13.55",
+            "port" : 9200,
+            "full" : "http://10.107.13.55:9200"
+          },
+          "tcp" : {
+            "rtt" : {
+              "connect" : {
+                "us" : 638
+              }
+            }
+          },
+          "http" : {
+            "response" : {
+              "status_code" : 200,
+              "body" : {
+                "hash" : "e133c5a1d303895a4f4ac4e538f40fae6ed7abb93d76d4c5c98604b6c3717cfb",
+                "bytes" : 540
+              },
+              "mime_type" : "application/json",
+              "headers" : {
+                "Content-Length" : "540",
+                "X-Elastic-Product" : "Elasticsearch",
+                "Content-Type" : "application/json; charset=UTF-8"
+              }
+            },
+            "rtt" : {
+              "validate" : {
+                "us" : 1934
+              },
+              "content" : {
+                "us" : 427
+              },
+              "total" : {
+                "us" : 2857
+              },
+              "response_header" : {
+                "us" : 1506
+              },
+              "write_request" : {
+                "us" : 41
+              }
+            }
+          },
+          "event" : {
+            "dataset" : "http"
+          }
+        }
+      },
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "ehNLaI8BLPyTWz75aXcS",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:22.660Z",
+          "url" : {
+            "domain" : "10.107.11.71",
+            "port" : 9200,
+            "full" : "http://10.107.11.71:9200",
+            "scheme" : "http"
+          },
+          "tcp" : {
+            "rtt" : {
+              "connect" : {
+                "us" : 697
+              }
+            }
+          },
+          "ecs" : {
+            "version" : "1.12.0"
+          },
+          "agent" : {
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b",
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24",
+            "name" : "es01a.dev.verticaltest.nd",
+            "type" : "heartbeat",
+            "version" : "7.17.21",
+            "hostname" : "es01a.dev.verticaltest.nd"
+          },
+          "summary" : {
+            "down" : 0,
+            "up" : 1
+          },
+          "http" : {
+            "response" : {
+              "body" : {
+                "hash" : "c47e8e1db68366d3ef310a0dba08d9f21c575a630fe221fc980fd98ed973f738",
+                "bytes" : 539
+              },
+              "mime_type" : "application/json",
+              "headers" : {
+                "X-Elastic-Product" : "Elasticsearch",
+                "Content-Type" : "application/json; charset=UTF-8",
+                "Content-Length" : "539"
+              },
+              "status_code" : 200
+            },
+            "rtt" : {
+              "content" : {
+                "us" : 186
+              },
+              "total" : {
+                "us" : 2546
+              },
+              "response_header" : {
+                "us" : 1573
+              },
+              "write_request" : {
+                "us" : 45
+              },
+              "validate" : {
+                "us" : 1760
+              }
+            }
+          },
+          "monitor" : {
+            "status" : "up",
+            "duration" : {
+              "us" : 2675
+            },
+            "check_group" : "0eaaa873-0fac-11ef-af1c-fa163e045c1f",
+            "ip" : "10.107.11.71",
+            "timespan" : {
+              "gte" : "2024-05-11T15:35:22.663Z",
+              "lt" : "2024-05-11T15:35:38.663Z"
+            },
+            "id" : "[Elasticsearch Node] dev-cluster-b5699672bd5bdbb1",
+            "name" : "[Elasticsearch Node] dev-cluster",
+            "type" : "http"
+          },
+          "event" : {
+            "dataset" : "http"
+          },
+          "observer" : {
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ],
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ],
+            "hostname" : "es01a.dev.verticaltest.nd"
+          }
+        }
+      },
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "exNLaI8BLPyTWz75aXcS",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:22.661Z",
+          "ecs" : {
+            "version" : "1.12.0"
+          },
+          "tcp" : {
+            "rtt" : {
+              "connect" : {
+                "us" : 406
+              }
+            }
+          },
+          "url" : {
+            "scheme" : "http",
+            "domain" : "10.107.11.75",
+            "port" : 9200,
+            "full" : "http://10.107.11.75:9200"
+          },
+          "summary" : {
+            "up" : 1,
+            "down" : 0
+          },
+          "agent" : {
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b",
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24",
+            "name" : "es01a.dev.verticaltest.nd",
+            "type" : "heartbeat",
+            "version" : "7.17.21",
+            "hostname" : "es01a.dev.verticaltest.nd"
+          },
+          "observer" : {
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ],
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ]
+          },
+          "http" : {
+            "response" : {
+              "mime_type" : "application/json",
+              "headers" : {
+                "X-Elastic-Product" : "Elasticsearch",
+                "Content-Type" : "application/json; charset=UTF-8",
+                "Content-Length" : "539"
+              },
+              "status_code" : 200,
+              "body" : {
+                "hash" : "d5e841797626e99e729e22c683b5ce31990e777ad8801245262731257992c3d3",
+                "bytes" : 539
+              }
+            },
+            "rtt" : {
+              "validate" : {
+                "us" : 2024
+              },
+              "content" : {
+                "us" : 148
+              },
+              "total" : {
+                "us" : 2529
+              },
+              "response_header" : {
+                "us" : 1876
+              },
+              "write_request" : {
+                "us" : 37
+              }
+            }
+          },
+          "monitor" : {
+            "type" : "http",
+            "id" : "[Elasticsearch Node] dev-cluster-d745ad3de0dd5d5",
+            "status" : "up",
+            "duration" : {
+              "us" : 2631
+            },
+            "check_group" : "0eaac0d2-0fac-11ef-af1c-fa163e045c1f",
+            "ip" : "10.107.11.75",
+            "timespan" : {
+              "gte" : "2024-05-11T15:35:22.663Z",
+              "lt" : "2024-05-11T15:35:38.663Z"
+            },
+            "name" : "[Elasticsearch Node] dev-cluster"
+          },
+          "event" : {
+            "dataset" : "http"
+          }
+        }
+      },
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "fBNLaI8BLPyTWz75aXcS",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:22.661Z",
+          "summary" : {
+            "down" : 0,
+            "up" : 1
+          },
+          "tcp" : {
+            "rtt" : {
+              "connect" : {
+                "us" : 492
+              }
+            }
+          },
+          "monitor" : {
+            "duration" : {
+              "us" : 2721
+            },
+            "check_group" : "0eab77d0-0fac-11ef-af1c-fa163e045c1f",
+            "ip" : "10.107.11.59",
+            "timespan" : {
+              "gte" : "2024-05-11T15:35:22.663Z",
+              "lt" : "2024-05-11T15:35:38.663Z"
+            },
+            "id" : "[Elasticsearch Node] dev-cluster-f3d81fd890b25fa3",
+            "name" : "[Elasticsearch Node] dev-cluster",
+            "type" : "http",
+            "status" : "up"
+          },
+          "agent" : {
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b",
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24",
+            "name" : "es01a.dev.verticaltest.nd",
+            "type" : "heartbeat",
+            "version" : "7.17.21",
+            "hostname" : "es01a.dev.verticaltest.nd"
+          },
+          "http" : {
+            "response" : {
+              "status_code" : 200,
+              "body" : {
+                "hash" : "1dfc7632d5dbccc6eb3bd311d59c7db83dd77b75b937e08f5edd4d8e5298f595",
+                "bytes" : 541
+              },
+              "mime_type" : "application/json",
+              "headers" : {
+                "X-Elastic-Product" : "Elasticsearch",
+                "Content-Type" : "application/json; charset=UTF-8",
+                "Content-Length" : "541"
+              }
+            },
+            "rtt" : {
+              "validate" : {
+                "us" : 2048
+              },
+              "content" : {
+                "us" : 265
+              },
+              "total" : {
+                "us" : 2609
+              },
+              "write_request" : {
+                "us" : 57
+              },
+              "response_header" : {
+                "us" : 1783
+              }
+            }
+          },
+          "url" : {
+            "scheme" : "http",
+            "domain" : "10.107.11.59",
+            "port" : 9200,
+            "full" : "http://10.107.11.59:9200"
+          },
+          "event" : {
+            "dataset" : "http"
+          },
+          "ecs" : {
+            "version" : "1.12.0"
+          },
+          "observer" : {
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ],
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ],
+            "hostname" : "es01a.dev.verticaltest.nd"
+          }
+        }
+      },
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "fRNLaI8BLPyTWz75aXcS",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:22.659Z",
+          "monitor" : {
+            "duration" : {
+              "us" : 4436
+            },
+            "check_group" : "0eaa6e18-0fac-11ef-af1c-fa163e045c1f",
+            "ip" : "10.107.11.66",
+            "timespan" : {
+              "gte" : "2024-05-11T15:35:22.663Z",
+              "lt" : "2024-05-11T15:35:38.663Z"
+            },
+            "name" : "[Elasticsearch Node] dev-cluster",
+            "type" : "http",
+            "id" : "[Elasticsearch Node] dev-cluster-ac1cf9c55a09d8c5",
+            "status" : "up"
+          },
+          "url" : {
+            "full" : "http://10.107.11.66:9200",
+            "scheme" : "http",
+            "domain" : "10.107.11.66",
+            "port" : 9200
+          },
+          "event" : {
+            "dataset" : "http"
+          },
+          "ecs" : {
+            "version" : "1.12.0"
+          },
+          "tcp" : {
+            "rtt" : {
+              "connect" : {
+                "us" : 608
+              }
+            }
+          },
+          "http" : {
+            "response" : {
+              "body" : {
+                "hash" : "48bd946ca8c93450c0fdc1cdf8955bfc4d002c6cf07d32bf3b9377539c90f859",
+                "bytes" : 541
+              },
+              "mime_type" : "application/json",
+              "headers" : {
+                "Content-Length" : "541",
+                "X-Elastic-Product" : "Elasticsearch",
+                "Content-Type" : "application/json; charset=UTF-8"
+              },
+              "status_code" : 200
+            },
+            "rtt" : {
+              "total" : {
+                "us" : 4202
+              },
+              "write_request" : {
+                "us" : 71
+              },
+              "response_header" : {
+                "us" : 2859
+              },
+              "validate" : {
+                "us" : 3148
+              },
+              "content" : {
+                "us" : 288
+              }
+            }
+          },
+          "observer" : {
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ],
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ],
+            "hostname" : "es01a.dev.verticaltest.nd"
+          },
+          "summary" : {
+            "down" : 0,
+            "up" : 1
+          },
+          "agent" : {
+            "type" : "heartbeat",
+            "version" : "7.17.21",
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b",
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24",
+            "name" : "es01a.dev.verticaltest.nd"
+          }
+        }
+      },
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "fhNLaI8BLPyTWz75aXcS",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:22.663Z",
+          "summary" : {
+            "up" : 1,
+            "down" : 0
+          },
+          "event" : {
+            "dataset" : "http"
+          },
+          "agent" : {
+            "version" : "7.17.21",
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b",
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24",
+            "name" : "es01a.dev.verticaltest.nd",
+            "type" : "heartbeat"
+          },
+          "url" : {
+            "full" : "http://10.107.11.66:9200/_cluster/health",
+            "scheme" : "http",
+            "domain" : "10.107.11.66",
+            "port" : 9200,
+            "path" : "/_cluster/health"
+          },
+          "ecs" : {
+            "version" : "1.12.0"
+          },
+          "observer" : {
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ],
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ],
+            "hostname" : "es01a.dev.verticaltest.nd"
+          },
+          "tcp" : {
+            "rtt" : {
+              "connect" : {
+                "us" : 311
+              }
+            }
+          },
+          "http" : {
+            "rtt" : {
+              "total" : {
+                "us" : 2680
+              },
+              "write_request" : {
+                "us" : 50
+              },
+              "response_header" : {
+                "us" : 2025
+              },
+              "validate" : {
+                "us" : 2303
+              },
+              "content" : {
+                "us" : 278
+              }
+            },
+            "response" : {
+              "mime_type" : "application/json",
+              "headers" : {
+                "Content-Type" : "application/json; charset=UTF-8",
+                "Content-Length" : "396",
+                "X-Elastic-Product" : "Elasticsearch"
+              },
+              "status_code" : 200,
+              "body" : {
+                "bytes" : 396,
+                "hash" : "e367276450c95342f9001c34275c8a2f9d479ae5ee916b66a7b838e20756f4c0"
+              }
+            }
+          },
+          "monitor" : {
+            "type" : "http",
+            "id" : "[Elasticsearch Cluster] dev-cluster",
+            "name" : "[Elasticsearch Cluster] dev-cluster",
+            "status" : "up",
+            "duration" : {
+              "us" : 2807
+            },
+            "check_group" : "0eab0c93-0fac-11ef-af1c-fa163e045c1f",
+            "ip" : "10.107.11.66",
+            "timespan" : {
+              "lt" : "2024-05-11T15:35:32.665Z",
+              "gte" : "2024-05-11T15:35:22.665Z"
+            }
+          }
+        }
+      },
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "fxNLaI8BLPyTWz75aXcS",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:22.660Z",
+          "tcp" : {
+            "rtt" : {
+              "connect" : {
+                "us" : 504
+              }
+            }
+          },
+          "http" : {
+            "response" : {
+              "body" : {
+                "hash" : "dea7be7e3b0b7fdd8f8258048e6e054e2ade481d937eb9bad51414cf148d1fe5",
+                "bytes" : 540
+              },
+              "mime_type" : "application/json",
+              "headers" : {
+                "Content-Length" : "540",
+                "X-Elastic-Product" : "Elasticsearch",
+                "Content-Type" : "application/json; charset=UTF-8"
+              },
+              "status_code" : 200
+            },
+            "rtt" : {
+              "response_header" : {
+                "us" : 17787
+              },
+              "validate" : {
+                "us" : 18015
+              },
+              "content" : {
+                "us" : 227
+              },
+              "total" : {
+                "us" : 18664
+              },
+              "write_request" : {
+                "us" : 30
+              }
+            }
+          },
+          "event" : {
+            "dataset" : "http"
+          },
+          "observer" : {
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ],
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ]
+          },
+          "summary" : {
+            "down" : 0,
+            "up" : 1
+          },
+          "monitor" : {
+            "type" : "http",
+            "id" : "[Elasticsearch Node] v_dev-cluster-9cde03aad0adc24d",
+            "name" : "[Elasticsearch Node] v_dev-cluster",
+            "status" : "up",
+            "duration" : {
+              "us" : 18761
+            },
+            "check_group" : "0eaad99e-0fac-11ef-af1c-fa163e045c1f",
+            "ip" : "10.107.13.60",
+            "timespan" : {
+              "gte" : "2024-05-11T15:35:22.679Z",
+              "lt" : "2024-05-11T15:35:38.679Z"
+            }
+          },
+          "agent" : {
+            "version" : "7.17.21",
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b",
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24",
+            "name" : "es01a.dev.verticaltest.nd",
+            "type" : "heartbeat"
+          },
+          "ecs" : {
+            "version" : "1.12.0"
+          },
+          "url" : {
+            "scheme" : "http",
+            "domain" : "10.107.13.60",
+            "port" : 9200,
+            "full" : "http://10.107.13.60:9200"
+          }
+        }
+      },
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "gBNLaI8BLPyTWz75aXcS",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:22.661Z",
+          "summary" : {
+            "down" : 1,
+            "up" : 0
+          },
+          "tcp" : {
+            "rtt" : {
+              "connect" : {
+                "us" : 432
+              }
+            }
+          },
+          "http" : {
+            "response" : {
+              "mime_type" : "application/json",
+              "headers" : {
+                "X-Elastic-Product" : "Elasticsearch",
+                "Content-Type" : "application/json; charset=UTF-8",
+                "Content-Length" : "405"
+              },
+              "status_code" : 200,
+              "body" : {
+                "bytes" : 405,
+                "content" : """{"cluster_name":"v-cluster-dev","status":"red","timed_out":false,"number_of_nodes":2,"number_of_data_nodes":2,"active_primary_shards":523,"active_shards":674,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":338,"delayed_unassigned_shards":338,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":66.600790513834}""",
+                "hash" : "97d0f20fc99d997a4287ec959795df57934f66d9bf6fd27b49245ee42bab940a"
+              }
+            },
+            "rtt" : {
+              "write_request" : {
+                "us" : 46
+              },
+              "response_header" : {
+                "us" : 27757
+              },
+              "validate" : {
+                "us" : 28287
+              },
+              "content" : {
+                "us" : 530
+              },
+              "total" : {
+                "us" : 28764
+              }
+            }
+          },
+          "url" : {
+            "domain" : "10.107.13.60",
+            "port" : 9200,
+            "path" : "/_cluster/health",
+            "full" : "http://10.107.13.60:9200/_cluster/health",
+            "scheme" : "http"
+          },
+          "event" : {
+            "dataset" : "http"
+          },
+          "ecs" : {
+            "version" : "1.12.0"
+          },
+          "agent" : {
+            "type" : "heartbeat",
+            "version" : "7.17.21",
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b",
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24",
+            "name" : "es01a.dev.verticaltest.nd"
+          },
+          "error" : {
+            "message" : """JSON body did not match 1 expressions or conditions 'rule 'cluster health check'(status != "red") not matched.'. Received JSON (first 2048 chars): {"cluster_name":"v-cluster-dev","status":"red","timed_out":false,"number_of_nodes":2,"number_of_data_nodes":2,"active_primary_shards":523,"active_shards":674,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":338,"delayed_unassigned_shards":338,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":66.600790513834""",
+            "type" : "validate"
+          },
+          "monitor" : {
+            "timespan" : {
+              "gte" : "2024-05-11T15:35:22.690Z",
+              "lt" : "2024-05-11T15:35:32.690Z"
+            },
+            "id" : "[Elasticsearch Cluster] v_dev-cluster",
+            "name" : "[Elasticsearch Cluster] v_dev-cluster",
+            "type" : "http",
+            "status" : "down",
+            "duration" : {
+              "us" : 28920
+            },
+            "check_group" : "0eac70f9-0fac-11ef-af1c-fa163e045c1f",
+            "ip" : "10.107.13.60"
+          },
+          "observer" : {
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ],
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ]
+          }
+        }
+      },
+      {
+        "_index" : "heartbeat-7.17.21-2024.05.07-000001",
+        "_type" : "_doc",
+        "_id" : "gRNLaI8BLPyTWz75aXcS",
+        "_score" : 1.0,
+        "_source" : {
+          "@timestamp" : "2024-05-11T15:35:22.660Z",
+          "summary" : {
+            "down" : 0,
+            "up" : 1
+          },
+          "http" : {
+            "response" : {
+              "status_code" : 200,
+              "body" : {
+                "hash" : "da3ff18894e60c18355dbc31798325a39d7379ae0e828832a9ea5d208f5c13cc",
+                "bytes" : 541
+              },
+              "mime_type" : "application/json",
+              "headers" : {
+                "X-Elastic-Product" : "Elasticsearch",
+                "Content-Type" : "application/json; charset=UTF-8",
+                "Content-Length" : "541"
+              }
+            },
+            "rtt" : {
+              "response_header" : {
+                "us" : 144176
+              },
+              "write_request" : {
+                "us" : 25
+              },
+              "validate" : {
+                "us" : 144572
+              },
+              "content" : {
+                "us" : 396
+              },
+              "total" : {
+                "us" : 145088
+              }
+            }
+          },
+          "event" : {
+            "dataset" : "http"
+          },
+          "agent" : {
+            "name" : "es01a.dev.verticaltest.nd",
+            "type" : "heartbeat",
+            "version" : "7.17.21",
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ephemeral_id" : "69ba246a-8a04-45f4-9b7e-d5f72d9bdf5b",
+            "id" : "3017c5af-c9a2-4150-8ee1-d6f84e68ee24"
+          },
+          "observer" : {
+            "hostname" : "es01a.dev.verticaltest.nd",
+            "ip" : [
+              "10.107.11.66",
+              "fe80::f816:3eff:fe04:5c1f",
+              "192.168.16.1",
+              "192.168.49.1",
+              "192.168.0.1",
+              "172.29.0.1",
+              "192.168.58.1",
+              "10.17.250.1"
+            ],
+            "mac" : [
+              "fa:16:3e:04:5c:1f",
+              "02:42:a2:b0:4d:88",
+              "02:42:b0:fa:ec:81",
+              "02:42:de:e0:d0:27",
+              "02:42:8a:24:f5:be",
+              "02:42:e0:17:49:fb",
+              "02:42:64:57:1b:c0"
+            ]
+          },
+          "monitor" : {
+            "status" : "up",
+            "duration" : {
+              "us" : 145255
+            },
+            "check_group" : "0ec09476-0fac-11ef-af1c-fa163e045c1f",
+            "ip" : "10.107.11.56",
+            "timespan" : {
+              "gte" : "2024-05-11T15:35:22.805Z",
+              "lt" : "2024-05-11T15:35:38.805Z"
+            },
+            "name" : "[Elasticsearch Node] dev-cluster",
+            "type" : "http",
+            "id" : "[Elasticsearch Node] dev-cluster-70766ddf82cf6602"
+          },
+          "url" : {
+            "port" : 9200,
+            "full" : "http://10.107.11.56:9200",
+            "scheme" : "http",
+            "domain" : "10.107.11.56"
+          },
+          "tcp" : {
+            "rtt" : {
+              "connect" : {
+                "us" : 453
+              }
+            }
+          },
+          "ecs" : {
+            "version" : "1.12.0"
+          }
+        }
+      }
+    ]
+  },
+  "aggregations" : {
+    "service" : {
+      "doc_count_error_upper_bound" : 0,
+      "sum_other_doc_count" : 0,
+      "buckets" : [
+        {
+          "key" : "[Elasticsearch Node] dev-cluster",
+          "doc_count" : 10,
+          "ip" : {
+            "doc_count_error_upper_bound" : 0,
+            "sum_other_doc_count" : 0,
+            "buckets" : [
+              {
+                "key" : "10.107.11.56",
+                "doc_count" : 2
+              },
+              {
+                "key" : "10.107.11.59",
+                "doc_count" : 2
+              },
+              {
+                "key" : "10.107.11.66",
+                "doc_count" : 2
+              },
+              {
+                "key" : "10.107.11.71",
+                "doc_count" : 2
+              },
+              {
+                "key" : "10.107.11.75",
+                "doc_count" : 2
+              }
+            ]
+          }
+        },
+        {
+          "key" : "[Elasticsearch Node] v_dev-cluster",
+          "doc_count" : 6,
+          "ip" : {
+            "doc_count_error_upper_bound" : 0,
+            "sum_other_doc_count" : 0,
+            "buckets" : [
+              {
+                "key" : "10.107.13.55",
+                "doc_count" : 2
+              },
+              {
+                "key" : "10.107.13.60",
+                "doc_count" : 2
+              },
+              {
+                "key" : "10.107.13.64",
+                "doc_count" : 2
+              }
+            ]
+          }
+        },
+        {
+          "key" : "[Redis] redis-farm-dev-6379",
+          "doc_count" : 6,
+          "ip" : {
+            "doc_count_error_upper_bound" : 0,
+            "sum_other_doc_count" : 0,
+            "buckets" : [
+              {
+                "key" : "10.107.11.56",
+                "doc_count" : 2
+              },
+              {
+                "key" : "10.107.11.59",
+                "doc_count" : 2
+              },
+              {
+                "key" : "10.107.11.75",
+                "doc_count" : 2
+              }
+            ]
+          }
+        },
+        {
+          "key" : "[Elasticsearch Cluster] dev-cluster",
+          "doc_count" : 2,
+          "ip" : {
+            "doc_count_error_upper_bound" : 0,
+            "sum_other_doc_count" : 0,
+            "buckets" : [
+              {
+                "key" : "10.107.11.66",
+                "doc_count" : 2
+              }
+            ]
+          }
+        },
+        {
+          "key" : "[Elasticsearch Cluster] v_dev-cluster",
+          "doc_count" : 2,
+          "ip" : {
+            "doc_count_error_upper_bound" : 0,
+            "sum_other_doc_count" : 0,
+            "buckets" : [
+              {
+                "key" : "10.107.13.60",
+                "doc_count" : 2
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

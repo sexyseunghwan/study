@@ -8,13 +8,13 @@ rdkafka_request.c:2940:29: warning: format specifies type 'long' but the argumen
 ./rdkafka_int.h:886:66: note: expanded from macro 'rd_kafka_dbg'
                                       (RD_KAFKA_DBG_##ctx), fac, __VA_ARGS__); \
                                                                  ^~~~~~~~~~~
+1 warning generated.
 rdbuf.c:908:16: warning: variable 'remains' set but not used [-Wunused-but-set-variable]
         size_t remains = size;
                ^
 rdmap.c:482:13: warning: variable 'fails' set but not used [-Wunused-but-set-variable]
         int fails = 0;
             ^
-1 warning generated.
 1 warning generated.
 1 warning generated.
 snappy.c:1440:9: warning: variable 'written' set but not used [-Wunused-but-set-variable]

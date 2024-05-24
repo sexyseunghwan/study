@@ -10,6 +10,7 @@ cargo install diesel_cli --no-default-features --features "mysql"
 # The up.sql file contains SQL commands that are executed when you apply the migration, and the down.sql file contains SQL commands that are executed when you rollback the migration.
 diesel migration generate <migration_name>
 diesel migration generate gellery_ver1
+diesel migration generate migrations
 
 
 # 3. Use the following commands to apply created migrations to the database

@@ -38,5 +38,4 @@ async fn main() {
             error!("{:?}", e);
         }
     }
-}
-       
+}      

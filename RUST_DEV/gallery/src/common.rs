@@ -22,7 +22,8 @@ pub use dotenv::dotenv;
 
 pub use log::{info, error};
 
-pub use flexi_logger::{Logger, FileSpec, Criterion, Age, Naming, Cleanup, Record};use elasticsearch::params::Sort::Duration;
+pub use flexi_logger::{Logger, FileSpec, Criterion, Age, Naming, Cleanup, Record};
+//pub use elasticsearch::params::Sort::Duration;
 pub use flexi_logger::writers::FileLogWriter;
 
 pub use futures::future::{ok, Ready};

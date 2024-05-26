@@ -37,7 +37,7 @@ cargo:rerun-if-env-changed=HOST_CFLAGS
 HOST_CFLAGS = None
 cargo:rerun-if-env-changed=CFLAGS
 CFLAGS = None
-version: 3_2_1
+version: 3_3_0
 cargo:rustc-cfg=osslconf="OPENSSL_NO_SSL3_METHOD"
 cargo:conf=OPENSSL_NO_SSL3_METHOD
 cargo:rustc-cfg=openssl
@@ -55,7 +55,7 @@ cargo:rustc-cfg=ossl111
 cargo:rustc-cfg=ossl111b
 cargo:rustc-cfg=ossl111c
 cargo:rustc-cfg=ossl111d
-cargo:version_number=30200010
+cargo:version_number=30300000
 cargo:rerun-if-env-changed=AARCH64_APPLE_DARWIN_OPENSSL_LIBS
 AARCH64_APPLE_DARWIN_OPENSSL_LIBS unset
 cargo:rerun-if-env-changed=OPENSSL_LIBS

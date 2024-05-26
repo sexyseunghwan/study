@@ -201,8 +201,8 @@ g++ -MD -MP -gstrict-dwarf -O2 -fPIC -Wall -Wsign-compare -Wfloat-equal -Wpointe
 [33mGenerating pkg-config file rdkafka++-static.pc(B[m
 [33mCreating static library librdkafka++.a(B[m
 [33mCreating shared library librdkafka++.1.dylib(B[m
-ar rcs librdkafka++.a RdKafka.o ConfImpl.o HandleImpl.o ConsumerImpl.o ProducerImpl.o KafkaConsumerImpl.o TopicImpl.o TopicPartitionImpl.o MessageImpl.o HeadersImpl.o QueueImpl.o MetadataImpl.o
 g++  -shared -dynamiclib -Wl,-install_name,/usr/local/lib/librdkafka++.1.dylib RdKafka.o ConfImpl.o HandleImpl.o ConsumerImpl.o ProducerImpl.o KafkaConsumerImpl.o TopicImpl.o TopicPartitionImpl.o MessageImpl.o HeadersImpl.o QueueImpl.o MetadataImpl.o -o librdkafka++.1.dylib -L../src -lrdkafka
+ar rcs librdkafka++.a RdKafka.o ConfImpl.o HandleImpl.o ConsumerImpl.o ProducerImpl.o KafkaConsumerImpl.o TopicImpl.o TopicPartitionImpl.o MessageImpl.o HeadersImpl.o QueueImpl.o MetadataImpl.o
 cp librdkafka++.a librdkafka++-dbg.a
 cp librdkafka++.1.dylib librdkafka++-dbg.1.dylib
 [33mCreating librdkafka++.dylib symlink(B[m

@@ -3,6 +3,8 @@
 ## [DISEL]
 # 1. Use Cargo to Install the Dell CLI across the System
 cargo install diesel_cli --no-default-features --features "mysql"
+cargo uninstall diesel_cli
+
 
 # 2. To create a migration, use the following command.
 # where <migration_name> is the name of the migration you want to create. 
@@ -39,3 +41,9 @@ ZADD postLikes:postID123 1713862543 user1
 
 
 ZADD likePhoto:100 1713862543 1
+
+
+sudo ln -s /usr/local/mysql/lib/libmysqlclient.dylib /opt/homebrew/opt/mysql/lib/libmysqlclient.dylib
+
+
+ln -s /usr/local/mysql/lib/libmysqlclient.21.dylib /usr/local/lib/libmysqlclient.21.dylib

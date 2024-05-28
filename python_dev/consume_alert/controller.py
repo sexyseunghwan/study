@@ -9,7 +9,7 @@ def run_app():
     global_logger.info("Python Telegram Bot start")
     
     tele_token = os.getenv("TELE_TOKEN")
-    
+
     updater = Updater(token=tele_token, use_context=True)
     dispatcher = updater.dispatcher    
     

@@ -16,4 +16,5 @@ import time
 from dateutil import parser
 import os
 from dotenv import load_dotenv
+import matplotlib.pyplot as plt
 

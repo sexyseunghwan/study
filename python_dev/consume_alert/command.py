@@ -4,6 +4,7 @@ from utils.es_util import *
 from utils.tele_util import *
 from utils.mongo_util import *
 from import_data.common import *
+from utils.matplot_util import *
 
 korea_tz = pytz.timezone('Asia/Seoul')
 
@@ -280,7 +281,7 @@ def command_consumption_per_salary(update, context, grant_group_name):
     tele_bot = TeleInfo(update)
     es_obj = ESObject()
     mongo_obj = MongoObject()
-
+    
     try:
 
         if (mongo_obj.check_group_auth(tele_bot.user_id, grant_group_name)):
@@ -306,7 +307,12 @@ def command_consumption_per_salary(update, context, grant_group_name):
                 total_cost = es_obj.get_consume_total_cost('consuming_index_prod_new', formatted_now_date, formatted_end_date)
                 consume_info_list = es_obj.get_consume_info_detail_list('consuming_index_prod_new', formatted_now_date, formatted_end_date)
 
-                tele_bot.send_message_consume(context, formatted_now_date, formatted_end_date , total_cost, consume_info_list, 10)
+                for elem in consume_info_list:
+                    print(elem.name, elem.date, elem.cost)
+
+                calculate_cosume_res(consume_info_list)
+
+                #tele_bot.send_message_consume(context, formatted_now_date, formatted_end_date , total_cost, consume_info_list, 10)
                 
             else:
                 tele_bot.send_message_text(context, "There is a problem with the parameter you entered. Please check again. \nEX) /cs")
@@ -315,7 +321,7 @@ def command_consumption_per_salary(update, context, grant_group_name):
         else:
             tele_bot.send_message_text(context, "The group does not have access.")
             raise Exception('Group {} attempted to access the "{}" permission.'.format(tele_bot.user_id, grant_group_name))
-
+    
     except Exception as e:
         global_logger.error(str(e), exc_info=True)
 

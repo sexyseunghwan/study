@@ -1,0 +1,14 @@
+/Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/deps/libclang_sys-d5d06da6be476249.rmeta: /Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/clang-sys-1.8.0/src/lib.rs /Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/clang-sys-1.8.0/src/support.rs /Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/clang-sys-1.8.0/src/link.rs /Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/build/clang-sys-1bed4b6d0450844f/out/macros.rs /Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/build/clang-sys-1bed4b6d0450844f/out/common.rs /Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/build/clang-sys-1bed4b6d0450844f/out/dynamic.rs
+
+/Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/deps/libclang_sys-d5d06da6be476249.rlib: /Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/clang-sys-1.8.0/src/lib.rs /Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/clang-sys-1.8.0/src/support.rs /Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/clang-sys-1.8.0/src/link.rs /Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/build/clang-sys-1bed4b6d0450844f/out/macros.rs /Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/build/clang-sys-1bed4b6d0450844f/out/common.rs /Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/build/clang-sys-1bed4b6d0450844f/out/dynamic.rs
+
+/Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/deps/clang_sys-d5d06da6be476249.d: /Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/clang-sys-1.8.0/src/lib.rs /Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/clang-sys-1.8.0/src/support.rs /Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/clang-sys-1.8.0/src/link.rs /Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/build/clang-sys-1bed4b6d0450844f/out/macros.rs /Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/build/clang-sys-1bed4b6d0450844f/out/common.rs /Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/build/clang-sys-1bed4b6d0450844f/out/dynamic.rs
+
+/Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/clang-sys-1.8.0/src/lib.rs:
+/Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/clang-sys-1.8.0/src/support.rs:
+/Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/clang-sys-1.8.0/src/link.rs:
+/Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/build/clang-sys-1bed4b6d0450844f/out/macros.rs:
+/Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/build/clang-sys-1bed4b6d0450844f/out/common.rs:
+/Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/build/clang-sys-1bed4b6d0450844f/out/dynamic.rs:
+
+# env-dep:OUT_DIR=/Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/build/clang-sys-1bed4b6d0450844f/out

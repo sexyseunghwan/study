@@ -1,0 +1,37 @@
+Building and linking librdkafka statically
+Running command: "cp -a librdkafka/. /Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/build/rdkafka-sys-00326ed25559080f/out" in dir: .
+Running command: "/Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/build/rdkafka-sys-00326ed25559080f/out/configure --disable-ssl --disable-gssapi --disable-curl --disable-zstd --disable-lz4-ext" in dir: /Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/build/rdkafka-sys-00326ed25559080f/out
+Running command: "make libs" in dir: /Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/build/rdkafka-sys-00326ed25559080f/out
+rdkafka_broker.c:799:13: warning: variable 'idx' set but not used [-Wunused-but-set-variable]
+        int idx = -1;
+            ^
+rdkafka_request.c:2940:29: warning: format specifies type 'long' but the argument has type 'int64_t' (aka 'long long') [-Wformat]
+                            session_lifetime_ms);
+                            ^~~~~~~~~~~~~~~~~~~
+./rdkafka_int.h:886:66: note: expanded from macro 'rd_kafka_dbg'
+                                      (RD_KAFKA_DBG_##ctx), fac, __VA_ARGS__); \
+                                                                 ^~~~~~~~~~~
+rdkafka_cgrp.c:1360:13: warning: variable 'not_revoking' set but not used [-Wunused-but-set-variable]
+        int not_revoking   = 0;
+            ^
+1 warning generated.
+rdbuf.c:908:16: warning: variable 'remains' set but not used [-Wunused-but-set-variable]
+        size_t remains = size;
+               ^
+rdmap.c:482:13: warning: variable 'fails' set but not used [-Wunused-but-set-variable]
+        int fails = 0;
+            ^
+1 warning generated.
+1 warning generated.
+snappy.c:1440:9: warning: variable 'written' set but not used [-Wunused-but-set-variable]
+        size_t written = 0;
+               ^
+1 warning generated.
+1 warning generated.
+1 warning generated.
+ld: warning: search path '/Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/build/libz-sys-aba0cbfdcde81816/out/build' not found
+ld: warning: search path '/Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/build/libz-sys-aba0cbfdcde81816/out/build' not found
+ld: warning: search path '/Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/build/libz-sys-aba0cbfdcde81816/out/build' not found
+ld: warning: search path '/Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/build/libz-sys-aba0cbfdcde81816/out/build' not found
+ld: warning: search path '/Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/build/libz-sys-aba0cbfdcde81816/out/build' not found
+ld: warning: search path '/Users/we/Documents/study/work/rust_dev/elastic_monitor/target/debug/build/libz-sys-aba0cbfdcde81816/out/build' not found

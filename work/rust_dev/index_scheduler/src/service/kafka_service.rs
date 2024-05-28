@@ -14,25 +14,6 @@ pub struct ProduceBroker {
 }
 
 
-/*
-    Function to send a warning alarm to a specific topic in Kafka
-*/
-pub async fn send_message_to_kafka_alarm<T: AlarmDetail>(mon_metric_form: &AlarmMetricForm<T>, kafka_client: &ProduceBroker, topic_name: &str) -> Result<(), anyhow::Error> {
-
-    let mon_metric_form = serde_json::to_string(&mon_metric_form)?;
-    let mon_metric_form_str = mon_metric_form.as_str();
-    
-    match kafka_client.produce_message(topic_name, mon_metric_form_str).await {
-        Ok(_) => (),
-        Err(err) => {
-            return Err(anyhow!(err.to_string()));
-        }
-    }
-    
-    Ok(())
-}
-
-
 impl ProduceBroker {
     
     /*
@@ -57,11 +38,10 @@ impl ProduceBroker {
     /* 
         Kafka Function that produces messages on a specific topic
     */
-    pub async fn produce_message(&self, topic: &str, message: &str) -> Result<(), anyhow::Error>  {
+    async fn produce_message(&self, topic: &str, message: &str) -> Result<(), anyhow::Error>  {
 
         let kafka_producer = &self.produce_broker;
-
-
+        
         let record = FutureRecord::to(topic)
             .payload(message)
             .key("");  // You can set a key for the message if needed
@@ -70,6 +50,42 @@ impl ProduceBroker {
             Ok(_) => { Ok(()) },
             Err((e, _)) => Err(anyhow!(e.to_string())),
         }
+    }
+
+    /*
+        Function to send a warning alarm to a specific topic in Kafka
+    */
+    pub async fn send_message_to_kafka_alarm<T: MsgDetail>(&self, mon_metric_form: &AlarmMetricForm<T>, topic_name: &str) -> Result<(), anyhow::Error> {
+        
+        let mon_metric_form = serde_json::to_string(&mon_metric_form)?;
+        let mon_metric_form_str = mon_metric_form.as_str();
+        
+        match self.produce_message(topic_name, mon_metric_form_str).await {
+            Ok(_) => (),
+            Err(err) => {
+                return Err(anyhow!(err.to_string()));
+            }
+        }
+        
+        Ok(())
+    }
+    
+    /*
+        Function to send a log to a specific topic in Kafka
+    */
+    pub async fn send_message_to_kafka_log<T: MsgDetail>(&self, msg_form: &T, topic_name: &str) -> Result<(), anyhow::Error> {
+
+        let msg_forms = serde_json::to_string(&msg_form)?;
+        let msg_forms_str = msg_forms.as_str();
+        
+        match self.produce_message(topic_name, msg_forms_str).await {
+            Ok(_) => (),
+            Err(err) => {
+                return Err(anyhow!(err.to_string()));
+            }
+        }
+        
+        Ok(())
     }
     
 }

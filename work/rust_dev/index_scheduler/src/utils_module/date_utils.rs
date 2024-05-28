@@ -3,15 +3,16 @@ use crate::common::*;
 /*
     Function that returns the current time in "NaiveDate" format  
 */
-pub fn get_curr_utc_time() -> Result<NaiveDate, String> {
+pub fn get_curr_utc_time() -> Result<NaiveDate, anyhow::Error> {
     
     let now: DateTime<Utc> = Utc::now();
     
     match NaiveDate::from_ymd_opt(now.year(), now.month(), now.day()) {
         Some(date) => Ok(date),
-        None => Err("Invalid date.".to_string())
+        None => Err(anyhow!("Invalid date.".to_string()))
     }
 }
+
 
 
 /*

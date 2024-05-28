@@ -129,7 +129,7 @@ impl NosqlScheduleInfoExtend {
     ======================================================================   
 */
 
-pub trait AlarmDetail: Serialize {}
+pub trait MsgDetail: Serialize {}
 
 #[derive(Serialize, Deserialize, Debug, Getters, Setters, new)]
 #[getset(get = "pub")]
@@ -139,8 +139,18 @@ pub struct AlarmDetailInfo {
     pub metric_val: f64,
 }
 
-impl AlarmDetail for AlarmDetailInfo {}
+impl MsgDetail for AlarmDetailInfo {}
 
+
+#[derive(Serialize, Deserialize, Debug, Getters, Setters, new)]
+#[getset(get = "pub")]
+pub struct LogDetail {
+    pub index_name: String,
+    pub success_yn: bool,
+    pub detail_msg: String
+}
+
+impl MsgDetail for LogDetail {}
 
 #[derive(Serialize, Deserialize, Debug, Getters, Setters, new)]
 #[getset(get = "pub")]
@@ -148,10 +158,10 @@ pub struct AlarmDetailError {
     pub err_content: String,
 }
 
-impl AlarmDetail for AlarmDetailError {}
+impl MsgDetail for AlarmDetailError {}
 
 #[derive(Serialize, Deserialize, Debug, new)]
-pub struct AlarmMetricForm<T> where T: AlarmDetail{
+pub struct AlarmMetricForm<T> where T: MsgDetail{
     pub alarm_type: String,
     pub monitor_type: String,
     pub cluster_name: String,

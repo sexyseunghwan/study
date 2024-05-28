@@ -92,12 +92,7 @@ pub async fn delete_index_belong_pattern(kafka_client: &ProduceBroker, target_es
         Calculates the date by subtracting the log storage period specified in the INDEX PATTERN from today's date.
     */
     // current datetime
-    let today_date = match get_curr_utc_time() {
-        Ok(today_date) => today_date,
-        Err(err) => {
-            return Err(anyhow!("{:?}", err));
-        }
-    };
+    let today_date = get_curr_utc_time()?;
 
     // The date pattern to find.
     let date_regex = Regex::new(r"\d{4}\.\d{2}\.\d{2}")?;
@@ -120,7 +115,7 @@ pub async fn delete_index_belong_pattern(kafka_client: &ProduceBroker, target_es
             index_vec = [nd-partner-log.2024.01.09, nd-partner-log.2024.01.10, nd-partner-log.2024.01.11]
         */
         let index_pattern_vec: Vec<&str> = es_cat_res.split('\n').filter(|&s| !s.is_empty()).collect();
-        
+
         for index_name in index_pattern_vec {
 
             if let Some(date_match) = date_regex.find(index_name) {
@@ -143,17 +138,23 @@ pub async fn delete_index_belong_pattern(kafka_client: &ProduceBroker, target_es
                         // if index removal fails
                         let error_resp: Value = serde_json::from_value(resp_json)?;
                         error!("{}", error_resp);
-
-                        let alarm_error_list = vec![AlarmDetailError::new(error_resp.to_string())];
-                        let detail_infos: AlarmMetricForm<AlarmDetailError> = AlarmMetricForm::new(String::from("error_alarm"), String::from("ES"), cluster_name.to_string(), kibana_url.to_string(),alarm_error_list);
-                
-                        send_message_to_kafka_alarm(&detail_infos, kafka_client, "nosql_mon_log").await?;
+                        let alarm_error_list = vec![AlarmDetailError::new(format!("Failed to clear '{}' index. : {}", index_name, error_resp.to_string()))];
+                        let alarm_detail_infos: AlarmMetricForm<AlarmDetailError> = AlarmMetricForm::new(String::from("error_alarm"), String::from("ES"), cluster_name.to_string(), kibana_url.to_string(),alarm_error_list);
+                        kafka_client.send_message_to_kafka_alarm(&alarm_detail_infos, "nosql_mon_log").await?;
+                        
+                        // It records the error log. - ERROR LOG
+                        let log_detail = LogDetail::new(index_name.to_string(), false, error_resp.to_string());
+                        kafka_client.send_message_to_kafka_log(&log_detail, "index_schedule_log").await?;
                         
                     } else {
                         // If index removal succeeds
                         let success_response: Value = serde_json::from_value(resp_json)?;
                         let msg_log = format!("[{}] {} index was successfully deleted. {}", cluster_name, index_name, success_response);
                         info!("{}", msg_log);
+                        
+                        // It records the error log. - SUCCESS LOG
+                        let log_detail = LogDetail::new(index_name.to_string(), true, msg_log);
+                        kafka_client.send_message_to_kafka_log(&log_detail, "index_schedule_log").await?;
                     }
                 } 
             }

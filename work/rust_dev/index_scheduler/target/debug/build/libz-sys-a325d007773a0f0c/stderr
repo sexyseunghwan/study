@@ -1,0 +1,9 @@
+In file included from src/smoke.c:1:
+In file included from /usr/local/include/zlib.h:9:
+In file included from /usr/local/include/cryptlib.h:105:
+In file included from /usr/local/include/config.h:19:
+In file included from /usr/local/include/config_align.h:20:
+/usr/local/include/config_cxx.h:29:10: fatal error: 'string' file not found
+#include <string>
+         ^~~~~~~~
+1 error generated.

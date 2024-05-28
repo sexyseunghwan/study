@@ -1,0 +1,28 @@
+[package]
+name = "index_scheduler"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+futures = "0.3"
+chrono = "0.4.31"
+env_logger = "0.9"
+flexi_logger = "0.27.4"
+log = "0.4"
+log4rs = "1.0"
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+anyhow = "1.0.79"
+dotenv = "0.15.0"
+rand = "0.8.5"
+reqwest = { version = "0.11", features = ["json"] }
+regex = "1.10.3"
+mysql_async = "0.34.1"
+openssl = "0.10.63"
+percent-encoding = "2.3.1"
+getset = "0.1.2"
+derive-new = "0.6.0"
+rdkafka = "0.26"

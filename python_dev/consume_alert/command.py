@@ -279,12 +279,18 @@ def command_consumption_per_today(update, context, grant_group_name):
 def command_consumption_per_salary(update, context, grant_group_name):
     
     tele_bot = TeleInfo(update)
+    print("1")
     es_obj = ESObject()
+    print("2")
     mongo_obj = MongoObject()
     
+    print("??")
+
     try:
 
         if (mongo_obj.check_group_auth(tele_bot.user_id, grant_group_name)):
+            
+            print("@@")
 
             if tele_bot.type == 1:
                 

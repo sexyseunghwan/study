@@ -41,8 +41,8 @@ class TeleInfo:
     # Function that sends a message through a telegram chat bot and then returns the response result.
     def send_msg_request(self, message):
         
-        bot_token = read_file_to_json('./data/conn_info/tele_info.json')['token']
-
+        #bot_token = read_file_to_json('./data/conn_info/tele_info.json')['token']
+        bot_token = os.getenv("TELE_TOKEN")
         send_url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
 
         data = {

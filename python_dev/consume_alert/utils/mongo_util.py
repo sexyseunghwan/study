@@ -20,7 +20,7 @@ class MongoObject:
             
             mongos_list = os.getenv("MONGO_HOST").split(",")
             mongo_id = os.getenv("MONGO_ID")
-            mongo_pw = os.getenv("MOONGO_PW")
+            mongo_pw = os.getenv("MONGO_PW")
             
             list_idx=0
 

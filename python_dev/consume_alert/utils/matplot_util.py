@@ -5,7 +5,7 @@ from import_data.common import *
 
 def calculate_cosume_res(consume_list):
     
-    # 결과를 저장할 두 리스트
+    # Ordered Dictionary to save results
     results = OrderedDict()
 
     for elem in consume_list:
@@ -13,10 +13,10 @@ def calculate_cosume_res(consume_list):
         elem_date = elem.date 
         elem_cost = elem.cost 
         
-        # datetime 객체로 파싱
+        # parsing into datetime objects
         dt = datetime.fromisoformat(elem_date.rstrip('Z'))
 
-        # 년-월-일 형식으로 날짜 추출
+        # Extract date in year-month-day format
         date_only = dt.date().isoformat()
 
         if date_only in results:
@@ -24,9 +24,33 @@ def calculate_cosume_res(consume_list):
         else:
             results[date_only] = elem_cost
 
-    for date, total_cost in results.items():
-        print(date, total_cost)
+    # for date, total_cost in results.items():
+    #     print(date, total_cost)
+
+    draw_graph(results)
+
+    #return results
 
 
-#def draw_graph(x_list, y_list):
+
+
+def draw_graph(order_dict):
     
+    x = []
+    y = []
+
+    for date, total_cost in order_dict.items():
+        x.append(date)
+        y.append(total_cost)
+
+    # 그래프 생성
+    plt.figure()
+    plt.plot(x, y, marker='o', color='red', label='This')
+    plt.title('Consume Plot')
+    plt.xlabel('Date')
+    plt.ylabel('Consume Cost')  
+
+    plt.legend()
+    plt.savefig('./data/img/plot.png')  
+    plt.close()  
+

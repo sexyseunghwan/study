@@ -16,6 +16,9 @@ import time
 from dateutil import parser
 import os
 from dotenv import load_dotenv
+import matplotlib
+matplotlib.use('Agg')  # 백엔드를 Agg로 설정
 import matplotlib.pyplot as plt
+from matplotlib.ticker import FuncFormatter
 from collections import OrderedDict
 

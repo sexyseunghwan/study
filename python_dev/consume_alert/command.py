@@ -205,7 +205,11 @@ def command_consumption_per_term(update, context, grant_group_name):
                     total_cost = es_obj.get_consume_total_cost('consuming_index_prod_new', formatted_start_date, formatted_end_date)
                     consume_info_list = es_obj.get_consume_info_detail_list('consuming_index_prod_new', formatted_start_date, formatted_end_date)
                     
+                    calculate_cosume_res(consume_info_list)
+
                     tele_bot.send_message_consume(context, start_date, end_date , total_cost, consume_info_list, 10)
+
+                    send_image(update, context, './data/img/plot.png')
 
             else:
                 tele_bot.send_message_text(context, "There is a problem with the parameter you entered. Please check again. \nEX) /ctr 2023.07.07-2023.08.01")
@@ -299,7 +303,7 @@ def command_consumption_per_salary(update, context, grant_group_name):
                     now_date = now_date.replace(day=1) - timedelta(days=1)
                     now_date = now_date.replace(day=25, hour=0, minute=0, second=0, microsecond=0)
                     end_date = end_date.replace(day=25, hour=0, minute=0, second=0, microsecond=0)
-
+                
                 formatted_now_date = now_date.strftime("%Y-%m-%dT%H:%M:%SZ")
                 formatted_end_date = end_date.strftime("%Y-%m-%dT%H:%M:%SZ")
                 
@@ -312,8 +316,9 @@ def command_consumption_per_salary(update, context, grant_group_name):
 
                 calculate_cosume_res(consume_info_list)
 
+                tele_bot.send_message_consume(context, formatted_now_date, formatted_end_date , total_cost, consume_info_list, 10)
 
-                #tele_bot.send_message_consume(context, formatted_now_date, formatted_end_date , total_cost, consume_info_list, 10)
+                send_image(update, context, './data/img/plot.png')
                 
             else:
                 tele_bot.send_message_text(context, "There is a problem with the parameter you entered. Please check again. \nEX) /cs")

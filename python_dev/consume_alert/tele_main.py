@@ -40,7 +40,8 @@ History     : 2023-05-04 Seunghwan Shin       # first create
                                                     If there is no data within 24 hours, search in 48 hours. 
                                                     If there is no data within 48 hours, it is 72 hours. Use logic to query.
                                                 2) Create a meeting-related index (promise_check_index) and add logic to index data into the index.
-              2024-05-28 Seunghwan Shin       # Change source code to manage information such as db connection as a ".env" file        
+              2024-05-28 Seunghwan Shin       # Change source code to manage information such as db connection as a ".env" file  
+              2024-05-30 Seunghwan Shin       # Developing a function to graph consumption trends      
 """
 from controller import run_app
 

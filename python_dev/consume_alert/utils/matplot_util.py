@@ -1,19 +1,19 @@
-from config import global_logger
 from utils.common_util import *
 from import_data.common import *
 
 
+# An object containing information in a consumption trend
 class ConsumeInfoDict:
 
-    def __init__(self, total_cost, start_date, end_date, consume_res_list):
-        self.total_cost = total_cost
+    def __init__(self, totals_cost, start_date, end_date, consume_res_list):
+        self.totals_cost = totals_cost
         self.start_date = start_date
         self.end_date = end_date
         self.consume_res_list = consume_res_list
 
 
-# 
-def parsing_consume_object(total_cost, start_date, end_date, consume_list):
+# Function that objectifies data on consumption trends
+def parsing_consume_object(totals_cost, start_date, end_date, consume_list):
 
     order_dict = OrderedDict()
     consume_res_list = []
@@ -41,20 +41,26 @@ def parsing_consume_object(total_cost, start_date, end_date, consume_list):
         total_consume += total_cost
         consume_res_list.append(total_consume)
 
-    consume_info = ConsumeInfoDict(total_cost, start_date, end_date, consume_res_list)
+    consume_info = ConsumeInfoDict(totals_cost, start_date.strftime('%Y-%m-%d'), end_date.strftime('%Y-%m-%d'), consume_res_list)
     
     return consume_info
 
 
-# 
-def calculate_cosume_res(consume_list, total_cost, start_date, end_date, consume_pre_list, total_pre_cost, pre_start_date, pre_end_date):
+# Function that visualizes two consumption trends
+def calculate_cosume_res_dual(consume_list, totals_cost, start_date, end_date, consume_pre_list, totals_pre_cost, pre_start_date, pre_end_date):
     
-    consume_info = parsing_consume_object(total_cost, start_date, end_date, consume_list)
-    consume_info_pre = parsing_consume_object(total_pre_cost, pre_start_date, pre_end_date, consume_pre_list)
+    consume_info = parsing_consume_object(totals_cost, start_date, end_date, consume_list)
+    consume_info_pre = parsing_consume_object(totals_pre_cost, pre_start_date, pre_end_date, consume_pre_list)
     
     draw_graph_dual(consume_info, consume_info_pre)
+
+
+# Function that visualizes consumption trends
+def calculate_cosume_res_single(consume_list, totals_cost, start_date, end_date):
     
-    #return results
+    consume_info = parsing_consume_object(totals_cost, start_date, end_date, consume_list)
+    
+    draw_graph_single(consume_info)
 
 
 # Formatter Function Definition
@@ -62,6 +68,23 @@ def thousands_formatter(x, pos):
     return f'{int(x):,}'
 
 
+# Function that draws a graph
+def draw_graph(plt, title, x_label, y_label, save_fig):
+
+    # y-axis label formatting
+    formatter = FuncFormatter(thousands_formatter)
+    plt.gca().yaxis.set_major_formatter(formatter)
+    
+    plt.title(title)
+    plt.xlabel(x_label)
+    plt.ylabel(y_label)  
+
+    plt.legend()
+    plt.savefig(save_fig)  
+    plt.close()      
+
+
+# Function that plots a graph of two consumption trends
 def draw_graph_dual(consume_info_1, consume_info_2):
     
     longer_len = 0
@@ -82,48 +105,24 @@ def draw_graph_dual(consume_info_1, consume_info_2):
         longer_len = consume_info_1_len
     
     x = [i+1 for i in range(longer_len)]
-
-
-
-    # if consume_info_1_len > consume_info_2_len:
-    #     count_gap = consume_info_1_len - consume_info_2_len 
-        
-    #     for _ in range(0,count_gap):
-    #         consume_info_2.consume_res_list.append(consume_info_2.consume_res_list[consume_info_2_len])
-
-    #     consume_max_len = consume_info_1_len
-    # elif consume_info_1_len == consume_info_2_len:
-    #     consume_max_len = len(consume_info_1.consume_res_list)
-    # else:
-    #     count_gap =  consume_info_2_len - consume_info_1_len
-        
-    #     for _ in range(0,count_gap):
-    #         consume_info_1.consume_res_list.append(consume_info_1.consume_res_list[consume_info_1_len])
-
-    #     consume_max_len = consume_info_2_len
-
-
-    #consume_info_max_len = max(len(consume_info_1.consume_res_list), len(consume_info_1.consume_res_list))
     
-    # for i in range(0,consume_info_max_len):
-    #     x.append(i)
-    
-
-    # 그래프 생성
+    # Create Graphs
     plt.figure()
-    plt.plot(x, consume_info_1.consume_res_list, marker='o', color='red', label=consume_info_1.total_cost)
-    plt.plot(x, consume_info_2.consume_res_list, marker='o', color='black', label=consume_info_2.total_cost)
+    plt.plot(x, consume_info_1.consume_res_list, color='red', label="[{} ~ {}]".format(consume_info_1.start_date, consume_info_1.end_date))
+    plt.plot(x, consume_info_2.consume_res_list, color='black', label="[{} ~ {}]".format(consume_info_2.start_date, consume_info_2.end_date))
 
-    # y축 레이블 포맷 설정
-    formatter = FuncFormatter(thousands_formatter)
-    plt.gca().yaxis.set_major_formatter(formatter)
+    draw_graph(plt, "[{} ~ {}] {} won".format(consume_info_1.start_date, consume_info_1.end_date, consume_info_1.totals_cost), 'Date', 'Consume Cost', './data/img/plot.png')
 
 
-    plt.title('Consume Plot')
-    plt.xlabel('Date')
-    plt.ylabel('Consume Cost')  
+# Function that plots a graph of a consumption trend
+def draw_graph_single(consume_info):
+    
+    consume_info_len = len(consume_info.consume_res_list)
+    
+    x = [i+1 for i in range(consume_info_len)]
+    
+    # Create Graphs
+    plt.figure()
+    plt.plot(x, consume_info.consume_res_list, color='red', label="[{} ~ {}]".format(consume_info.start_date, consume_info.end_date))
 
-    plt.legend()
-    plt.savefig('./data/img/plot.png')  
-    plt.close()  
-
+    draw_graph(plt, "[{} ~ {}] {} won".format(consume_info.start_date, consume_info.end_date, consume_info.totals_cost), 'Date', 'Consume Cost', './data/img/plot.png')

@@ -205,7 +205,7 @@ def command_consumption_per_term(update, context, grant_group_name):
                     total_cost = es_obj.get_consume_total_cost('consuming_index_prod_new', formatted_start_date, formatted_end_date)
                     consume_info_list = es_obj.get_consume_info_detail_list('consuming_index_prod_new', formatted_start_date, formatted_end_date)
                     
-                    calculate_cosume_res(consume_info_list)
+                    calculate_cosume_res_single(consume_info_list, total_cost, start_date, end_date)
 
                     tele_bot.send_message_consume(context, start_date, end_date , total_cost, consume_info_list, 10)
 
@@ -324,19 +324,16 @@ def command_consumption_per_salary(update, context, grant_group_name):
                 # This Month
                 total_cost = es_obj.get_consume_total_cost('consuming_index_prod_new', formatted_start_date, formatted_end_date)
                 consume_info_list = es_obj.get_consume_info_detail_list('consuming_index_prod_new', formatted_start_date, formatted_end_date)
-                
+
                 # Pre Month
                 total_cost_pre = es_obj.get_consume_total_cost('consuming_index_prod_new', formatted_pre_start_date, formatted_pre_end_date)
                 consume_pre_info_list = es_obj.get_consume_info_detail_list('consuming_index_prod_new', formatted_pre_start_date, formatted_pre_end_date)
                 
-                for elem in consume_info_list:
-                    print(elem.name, elem.date, elem.cost)
+                calculate_cosume_res_dual(consume_info_list, total_cost, start_date, end_date, consume_pre_info_list, total_cost_pre, pre_start_date, pre_end_date)
                 
-                calculate_cosume_res(consume_info_list, total_cost, start_date, end_date, consume_pre_info_list, total_cost_pre, pre_start_date, pre_end_date)
+                #tele_bot.send_message_consume(context, formatted_start_date, formatted_end_date , total_cost, consume_info_list, 10)
                 
-                # tele_bot.send_message_consume(context, formatted_now_date, formatted_end_date , total_cost, consume_info_list, 10)
-                
-                # send_image(update, context, './data/img/plot.png')
+                send_image(update, context, './data/img/plot.png')
                 
             else:
                 tele_bot.send_message_text(context, "There is a problem with the parameter you entered. Please check again. \nEX) /cs")

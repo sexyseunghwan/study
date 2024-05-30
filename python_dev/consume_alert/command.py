@@ -292,33 +292,51 @@ def command_consumption_per_salary(update, context, grant_group_name):
             
             if tele_bot.type == 1:
                 
-                now_date = datetime.now(tz=korea_tz)
+                start_date = datetime.now(tz=korea_tz)
                 end_date = datetime.now(tz=korea_tz)
-                
-                if (now_date.day >= 25):
-                    now_date = now_date.replace(day=25, hour=0, minute=0, second=0, microsecond=0)
-                    end_date = end_date.replace(day=1) + timedelta(days=32)
-                    end_date = end_date.replace(day=1)
+
+                # To compare with previous month's consumption.
+                pre_start_date = datetime.now(tz=korea_tz)
+                pre_end_date = datetime.now(tz=korea_tz)
+
+                if (start_date.day >= 25):
+                    start_date = start_date.replace(day=25, hour=0, minute=0, second=0, microsecond=0)
+                    end_date = end_date.replace(day=25, hour=0, minute=0, second=0, microsecond=0) + relativedelta(months=1)
+
+                    pre_start_date = start_date - relativedelta(months=1)
+                    pre_end_date = end_date - relativedelta(months=1)
+
                 else:
-                    now_date = now_date.replace(day=1) - timedelta(days=1)
-                    now_date = now_date.replace(day=25, hour=0, minute=0, second=0, microsecond=0)
+                    start_date = start_date.replace(day=25, hour=0, minute=0, second=0, microsecond=0) - relativedelta(months=1)
                     end_date = end_date.replace(day=25, hour=0, minute=0, second=0, microsecond=0)
+
+                    pre_start_date = start_date - relativedelta(months=1)
+                    pre_end_date = end_date - relativedelta(months=1)
                 
-                formatted_now_date = now_date.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+                formatted_start_date = start_date.strftime("%Y-%m-%dT%H:%M:%SZ")
                 formatted_end_date = end_date.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+                formatted_pre_start_date = pre_start_date.strftime("%Y-%m-%dT%H:%M:%SZ")
+                formatted_pre_end_date = pre_end_date.strftime("%Y-%m-%dT%H:%M:%SZ")
                 
                 # Get total summed money value
-                total_cost = es_obj.get_consume_total_cost('consuming_index_prod_new', formatted_now_date, formatted_end_date)
-                consume_info_list = es_obj.get_consume_info_detail_list('consuming_index_prod_new', formatted_now_date, formatted_end_date)
-
+                # This Month
+                total_cost = es_obj.get_consume_total_cost('consuming_index_prod_new', formatted_start_date, formatted_end_date)
+                consume_info_list = es_obj.get_consume_info_detail_list('consuming_index_prod_new', formatted_start_date, formatted_end_date)
+                
+                # Pre Month
+                total_cost_pre = es_obj.get_consume_total_cost('consuming_index_prod_new', formatted_pre_start_date, formatted_pre_end_date)
+                consume_pre_info_list = es_obj.get_consume_info_detail_list('consuming_index_prod_new', formatted_pre_start_date, formatted_pre_end_date)
+                
                 for elem in consume_info_list:
                     print(elem.name, elem.date, elem.cost)
-
-                calculate_cosume_res(consume_info_list)
-
-                tele_bot.send_message_consume(context, formatted_now_date, formatted_end_date , total_cost, consume_info_list, 10)
-
-                send_image(update, context, './data/img/plot.png')
+                
+                calculate_cosume_res(consume_info_list, total_cost, start_date, end_date, consume_pre_info_list, total_cost_pre, pre_start_date, pre_end_date)
+                
+                # tele_bot.send_message_consume(context, formatted_now_date, formatted_end_date , total_cost, consume_info_list, 10)
+                
+                # send_image(update, context, './data/img/plot.png')
                 
             else:
                 tele_bot.send_message_text(context, "There is a problem with the parameter you entered. Please check again. \nEX) /cs")

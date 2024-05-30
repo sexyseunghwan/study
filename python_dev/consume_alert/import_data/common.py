@@ -14,6 +14,7 @@ from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure
 import time
 from dateutil import parser
+from dateutil.relativedelta import relativedelta
 import os
 from dotenv import load_dotenv
 import matplotlib

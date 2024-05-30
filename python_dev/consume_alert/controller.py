@@ -38,4 +38,3 @@ def run_app():
     updater.idle()
 
     global_logger.info("Python Telegram Bot Stop")
-

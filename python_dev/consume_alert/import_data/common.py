@@ -18,7 +18,7 @@ from dateutil.relativedelta import relativedelta
 import os
 from dotenv import load_dotenv
 import matplotlib
-matplotlib.use('Agg')  # 백엔드를 Agg로 설정
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
 from collections import OrderedDict

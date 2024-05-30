@@ -331,7 +331,7 @@ def command_consumption_per_salary(update, context, grant_group_name):
                 
                 calculate_cosume_res_dual(consume_info_list, total_cost, start_date, end_date, consume_pre_info_list, total_cost_pre, pre_start_date, pre_end_date)
                 
-                #tele_bot.send_message_consume(context, formatted_start_date, formatted_end_date , total_cost, consume_info_list, 10)
+                tele_bot.send_message_consume(context, formatted_start_date, formatted_end_date , total_cost, consume_info_list, 10)
                 
                 send_image(update, context, './data/img/plot.png')
                 

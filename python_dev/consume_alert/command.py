@@ -126,12 +126,18 @@ def command_consumption_per_mon(update, context, grant_group_name):
 
             if (tele_bot.type == 1):
                 
-                now = datetime.now(tz=korea_tz)
+                now = datetime.now(tz=korea_tz).replace(day=1, hour=0, minute=0, second=0, microsecond=0)
+                pre_now = now - relativedelta(months=1)
+                
                 now_str = '{}.{}.01'.format(now.year, now.month)
+                pre_now_str = '{}.{}.01'.format(pre_now.year, pre_now.month)
 
                 start_date = datetime.strptime(now_str, "%Y.%m.%d")
-                last_day = calendar.monthrange(start_date.year, start_date.month)[1]
+                pre_start_date = datetime.strptime(pre_now_str, "%Y.%m.%d")
 
+                last_day = calendar.monthrange(start_date.year, start_date.month)[1]
+                pre_last_day = calendar.monthrange(pre_start_date.year, pre_start_date.month)[1]
+                
             else:
                 
                 input_val = tele_bot.argument.strip()
@@ -141,17 +147,30 @@ def command_consumption_per_mon(update, context, grant_group_name):
                     raise Exception("The input parameter value of the 'command_consumption_per_mon()' function does not satisfy the specified date format. - input_val : {}".format(input_val))
                     
                 input_mon = '{}.01'.format(input_val)
-                start_date = datetime.strptime(input_mon, "%Y.%m.%d")
-                last_day = calendar.monthrange(start_date.year, start_date.month)[1]
                 
-            
+                start_date = datetime.strptime(input_mon, "%Y.%m.%d")
+                pre_start_date = start_date - relativedelta(months=1)
+
+                last_day = calendar.monthrange(start_date.year, start_date.month)[1]
+                pre_last_day = calendar.monthrange(pre_start_date.year, pre_start_date.month)[1]
+
+ 
             end_date = start_date.replace(day=last_day, hour=23, minute=59, second=59, microsecond=0)
+            pre_end_date = pre_start_date.replace(day=pre_last_day, hour=23, minute=59, second=59, microsecond=0)
+
 
             # Get total summed money value
             total_cost = es_obj.get_consume_total_cost('consuming_index_prod_new', start_date.strftime("%Y-%m-%dT%H:%M:%SZ"), end_date.strftime("%Y-%m-%dT%H:%M:%SZ"))
             consume_info_list = es_obj.get_consume_info_detail_list('consuming_index_prod_new', start_date.strftime("%Y-%m-%dT%H:%M:%SZ"), end_date.strftime("%Y-%m-%dT%H:%M:%SZ"))
 
+            pre_total_cost = es_obj.get_consume_total_cost('consuming_index_prod_new', pre_start_date.strftime("%Y-%m-%dT%H:%M:%SZ"), pre_end_date.strftime("%Y-%m-%dT%H:%M:%SZ"))
+            pre_consume_info_list = es_obj.get_consume_info_detail_list('consuming_index_prod_new', pre_start_date.strftime("%Y-%m-%dT%H:%M:%SZ"), pre_end_date.strftime("%Y-%m-%dT%H:%M:%SZ"))
+            
+            calculate_cosume_res_dual(consume_info_list, total_cost, start_date, end_date, pre_consume_info_list, pre_total_cost, pre_start_date, pre_end_date)
+            
             tele_bot.send_message_consume(context, start_date, end_date , total_cost, consume_info_list, 10)
+
+            send_image(update, context, './data/img/plot.png')
 
         else:
             tele_bot.send_message_text(context, "The group does not have access.")

@@ -30,7 +30,7 @@ pub fn draw_test() -> Result<(), anyhow::Error> {
         .build_cartesian_2d(
             start_time..end_time,
             0..100)?;
-
+    
     chart.configure_mesh()
         //.disable_y_mesh()
         .disable_x_mesh()

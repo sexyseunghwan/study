@@ -107,7 +107,7 @@ def draw_graph_dual(consume_info_1, consume_info_2):
     x = [i+1 for i in range(longer_len)]
     
     # Create Graphs
-    plt.figure()
+    plt.figure(figsize=(10,7))
     plt.plot(x, consume_info_1.consume_res_list, color='red', label="[{} ~ {}]".format(consume_info_1.start_date, consume_info_1.end_date))
     plt.plot(x, consume_info_2.consume_res_list, color='black', label="[{} ~ {}]".format(consume_info_2.start_date, consume_info_2.end_date))
 
@@ -122,7 +122,7 @@ def draw_graph_single(consume_info):
     x = [i+1 for i in range(consume_info_len)]
     
     # Create Graphs
-    plt.figure()
+    plt.figure(figsize=(10,7))
     plt.plot(x, consume_info.consume_res_list, color='red', label="[{} ~ {}]".format(consume_info.start_date, consume_info.end_date))
 
     draw_graph(plt, "[{} ~ {}] {} won".format(consume_info.start_date, consume_info.end_date, consume_info.totals_cost), 'Date', 'Consume Cost', './data/img/plot.png')

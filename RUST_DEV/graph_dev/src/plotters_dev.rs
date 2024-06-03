@@ -1,7 +1,6 @@
 use crate::common::*;
 
 
-
 const OUT_FILE_NAME: &str = "./graph_data/test.png";
 
 pub fn draw_test() -> Result<(), anyhow::Error> {

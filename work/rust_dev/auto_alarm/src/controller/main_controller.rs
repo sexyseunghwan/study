@@ -28,7 +28,7 @@ pub async fn main_controller() {
             return;
         }
     };
-
+    
     // MySQL connection
     let mysql_client = match MySqlAsyncClient::new(&rdb_url).await {
         Ok(mysql_client) => mysql_client,

@@ -3,6 +3,7 @@ use crate::common::*;
 use crate::service::kafka_service::*;
 use crate::service::mysql_async_service::*;
 use crate::service::alarm_service::*;
+use crate::service::es_service::*;
 
 
 /*
@@ -11,7 +12,7 @@ use crate::service::alarm_service::*;
 pub async fn main_controller() {
 
     // Record program start time for performance measurement
-    let start_time = Instant::now();
+    //let start_time = Instant::now();
 
     // Select compilation environment
     dotenv().ok();
@@ -19,7 +20,11 @@ pub async fn main_controller() {
     //let c_version = env::var("COMPILE_ENV").expect("Compile type must be set");
     let rdb_url = env::var("RDB_URL").expect("'RDB_URL' must be set");
     let kafka_host = env::var("KAFKA_HOST").expect("'KAFKA_HOST' must be set");
-    
+    let es_host: Vec<String> = env::var("ES_DB_URL").expect("'ES_DB_URL' must be set").split(",").map(|s| s.to_string()).collect();
+    let es_id = env::var("ES_ID").expect("'ES_ID' must be set");
+    let es_pw = env::var("ES_PW").expect("'ES_PW' must be set");
+
+
     // Kafka connection
     let kafka_client = match KafkaBroker::new(&kafka_host) {
         Ok(kafka_client) => kafka_client,
@@ -38,18 +43,27 @@ pub async fn main_controller() {
         }
     };
     
+    // Elasticsearch connection
+    let es_client = match EsHelper::new(es_host, &es_id, &es_pw) {
+        Ok(mysql_client) => mysql_client,
+        Err(err) => {
+            error!("Failed to create mysql client: {:?}", err);
+            panic!("Failed to create mysql client: {:?}", err);
+        }
+    };
+    
     /*
         KAFKA -- consuming --> alarm data --> catch --> SEND Telegram Bot
     */
-    match push_alarm_to_telebot(kafka_client, mysql_client).await {
+    match push_alarm_to_telebot(kafka_client, mysql_client, es_client).await {
         Ok(_) => (),
         Err(err) => {
             error!("{:?}", err);
         } 
     }
     
-    let duration = start_time.elapsed(); 
-    println!("Time elapsed: {:?}", duration);
+    //let duration = start_time.elapsed(); 
+    //println!("Time elapsed: {:?}", duration);
 
 
 }

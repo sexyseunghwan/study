@@ -1,6 +1,6 @@
 pub use std::io::{Read, Write};
 pub use std::thread;
-pub use std::time::{Duration, Instant};
+pub use std::time::Instant;
 pub use std::env;
 
 pub use mysql_async::Pool;
@@ -40,3 +40,4 @@ pub use getset::{Getters, Setters, MutGetters};
 
 pub use derive_new::new;
 
+pub use tokio::time::{timeout, Duration};

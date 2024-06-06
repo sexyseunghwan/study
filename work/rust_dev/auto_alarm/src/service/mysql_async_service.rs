@@ -42,17 +42,23 @@ impl MySqlAsyncClient {
        Function responsible for connecting to MySQL
     */
     async fn connect(&mut self, db_url: &str) -> Result<(), anyhow::Error> {
-                
-        let opts_url = mysql_async::Opts::from_url(db_url)?;
-        let conn_pool = mysql_async::Pool::new(opts_url);
-        
-        self.pool = Some(conn_pool);
-        
-        info!("MySQL Connection POOL creation was successful");
-        
-        Ok(())
-    }
 
+        let opts = mysql_async::Opts::from_url(db_url)?;
+        let conn_pool = mysql_async::Pool::new(opts);
+
+        // Set a 3-second timeout for the connection attempt
+        match tokio::time::timeout(Duration::from_secs(5), conn_pool.get_conn()).await {
+            Ok(Ok(conn)) => {
+                drop(conn);  // Return the connection to the pool
+                self.pool = Some(conn_pool);
+                info!("MySQL Connection POOL creation was successful");
+                Ok(())
+            },
+            Ok(Err(e)) => Err(anyhow!("Failed to get connection: {}", e)),
+            Err(_) => Err(anyhow!("Connection attempt timed out")),
+        }
+    }
+    
     /*
         Functions that import the connection from the MySQL Connection pool.
     */

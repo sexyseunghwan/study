@@ -1,55 +1,78 @@
 use crate::common::*;
 
-#[derive(Debug, Getters, new)]
+#[derive(Debug, Getters)]
 #[getset(get = "pub")]
 pub struct EsHelper {
     mon_es_pool: Vec<EsObj>
 }
 
-#[derive(Debug, Getters, new)]
+#[derive(Debug, Getters, Clone, new)]
 #[getset(get = "pub")]
 pub struct EsObj {
     es_host: String,
     es_pool: Elasticsearch
 }
 
-/*
-    Function to initialize Elasticsearch connection
-*/
-pub fn init_es_conn_list(es_url_vec: Vec<String>, es_id: &str, es_pw: &str) -> Result<EsHelper, anyhow::Error> {
 
-    let mut mon_es_clients: Vec<EsObj> = Vec::new();
-    
-    for url in es_url_vec {
+impl EsHelper {
 
-        let parse_url = format!("http://{}:{}@{}", es_id, es_pw, url);
-
-        let es_url = Url::parse(&parse_url)?;
-        let conn_pool = SingleNodeConnectionPool::new(es_url);
-        let transport = TransportBuilder::new(conn_pool)
-            .timeout(Duration::new(5,0))
-            .build()?;
+    /* 
+        Constructor
+    */
+    pub fn new(es_url_vec: Vec<String>, es_id: &str, es_pw: &str) -> Result<Self, anyhow::Error> {
         
-        mon_es_clients.push(EsObj::new(url, Elasticsearch::new(transport)));
+        let mut mon_es_clients: Vec<EsObj> = Vec::new();
+    
+        for url in es_url_vec {
+    
+            let parse_url = format!("http://{}:{}@{}", es_id, es_pw, url);
+    
+            let es_url = Url::parse(&parse_url)?;
+            let conn_pool = SingleNodeConnectionPool::new(es_url);
+            let transport = TransportBuilder::new(conn_pool)
+                .timeout(Duration::new(5,0))
+                .build()?;
+            
+            mon_es_clients.push(EsObj::new(url, Elasticsearch::new(transport)));
+        }
+        
+        Ok(EsHelper{mon_es_pool: mon_es_clients})
     }
 
-    Ok(EsHelper::new(mon_es_clients))
-    
+    /*
+
+    */
+    pub async fn conn_es_from_pool(&self) -> Result<EsObj, anyhow::Error> {
+
+        let mut rng = StdRng::from_entropy();
+        
+        let mut es_clients = self.mon_es_pool.clone();
+        es_clients.shuffle(&mut rng);
+
+
+        for es_obj in es_clients.into_iter() {
+            
+            let response: elasticsearch::http::response::Response = es_obj.es_pool.ping().send().await?;
+
+            if response.status_code().is_success() {
+                info!("Connected to Elasticsearch!");
+                return Ok(es_obj);
+
+            } else {
+                error!("Failed to connect to Elasticsearch. Status code: {}", response.status_code());
+                continue;
+            }
+        }
+
+        Err(anyhow!("All Elasticsearch connections failed"))
+    }
+
+
 }
 
 
 impl EsObj {
 
-
-    /*
-
-    */
-    // async fn es_pool_connection(&self) -> Result<&Elasticsearch, anyhow::Error> {
-
-
-
-    //     Ok()
-    // }
 
     /*
         Function that EXECUTES elasticsearch queries
@@ -72,5 +95,7 @@ impl EsObj {
             Err(anyhow!("response status is failed"))
         }
     }
+
+    
 
 }

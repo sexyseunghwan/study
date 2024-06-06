@@ -1,12 +1,12 @@
 use crate::common::*;
 use crate::dtos::data_obj::*;
 use crate::service::tele_bot_service::*;
+use crate::service::es_service::*;
 
 #[derive(Clone, Serialize, Deserialize, Debug)]
 pub struct KafkaBroker {
     pub brokers: String,
 }
-
 
 
 impl KafkaBroker {
@@ -45,12 +45,12 @@ impl KafkaBroker {
     /*
         Asynchronous function that consumes messages from a specific topic.
     */
-    pub async fn consume_and_send_messages(&self, topic: &str, shared_res: Arc<SharedResource>) -> Result<(), anyhow::Error> {
+    pub async fn consume_and_send_messages(&self, topic: &str, es_client: EsHelper, shared_res: Arc<SharedResource>) -> Result<(), anyhow::Error> {
 
         let consumer: StreamConsumer = self.create_consumer(topic)?;
 
         let mut message_stream = consumer.stream();
-        
+
         while let Some(message) = message_stream.next().await {
             
             match message {
@@ -83,9 +83,10 @@ impl KafkaBroker {
                             }
                         };
                         
-                        let telegram_data = shared_res.tele_data.read().await;
+                        let telegram_data: tokio::sync::RwLockReadGuard<Vec<Telebot>> = shared_res.tele_data.read().await;
 
                         match alarm_type {
+
                             "error_alarm" => {
                                 
                                 let monitor_metric_obj:AlarmMetricForm<AlarmDetailError> = match serde_json::from_str(payload_data) {
@@ -111,9 +112,28 @@ impl KafkaBroker {
                                     }
                                 };
                                 
-                                for tele_bot in &*telegram_data {
-                                    tele_bot.process_msg(&monitor_metric_obj).await?;
-                                }
+                                //여기에 그래프를 넣어주는 알고리즘을 생성해야 될 거 같은데...
+                                info!("{:?}", monitor_metric_obj);
+                                let ref_es_client = &es_client; 
+                                ref_es_client.conn_es_from_pool().await?;
+
+                                //let metric_obj_vec: Vec<AlarmDetailInfo> = monitor_metric_obj.contents;
+                                
+                                // for alarm_elem in metric_obj_vec {
+
+                                //     let host_info = alarm_elem.host_info;
+                                //     let metric_type = alarm_elem.metric_type;
+
+                                        
+
+
+                                // }
+
+
+                                // Send Message to Telegram Bot
+                                // for tele_bot in &*telegram_data {
+                                //     tele_bot.process_msg(&monitor_metric_obj).await?;
+                                // }
                             },
                             _ => {
                                 error!("Unknown alarm type");

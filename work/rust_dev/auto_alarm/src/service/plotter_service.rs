@@ -13,8 +13,7 @@ pub struct PlotterStruct {
     pub time_slice: i32, 
 }
 
-
-// 1분간격..
+/* */
 impl PlotterStruct {
     
     //

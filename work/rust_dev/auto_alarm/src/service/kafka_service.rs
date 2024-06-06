@@ -114,8 +114,8 @@ impl KafkaBroker {
                                 
                                 //여기에 그래프를 넣어주는 알고리즘을 생성해야 될 거 같은데...
                                 info!("{:?}", monitor_metric_obj);
-                                let ref_es_client = &es_client; 
-                                ref_es_client.conn_es_from_pool().await?;
+                                // let ref_es_client = &es_client; 
+                                // ref_es_client.conn_es_from_pool().await?;
 
                                 //let metric_obj_vec: Vec<AlarmDetailInfo> = monitor_metric_obj.contents;
                                 

@@ -13,7 +13,7 @@ pub use log::{info, error};
 pub use flexi_logger::{Logger, FileSpec, Criterion, Age, Naming, Cleanup, Record};
 
 pub use serde::{Serialize, Deserialize};
-pub use serde_json::Value;
+pub use serde_json::{json, Value};
 
 pub use dotenv::dotenv;
 

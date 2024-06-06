@@ -42,30 +42,56 @@ impl EsHelper {
     /*
 
     */
-    pub async fn conn_es_from_pool(&self) -> Result<EsObj, anyhow::Error> {
+    pub async fn cluster_search_query(&self, es_query: Value, index_name: &str) -> Result<Value, anyhow::Error> {
 
-        let mut rng = StdRng::from_entropy();
-        
-        let mut es_clients = self.mon_es_pool.clone();
-        es_clients.shuffle(&mut rng);
+        for es_obj in self.mon_es_pool.iter() {
 
-
-        for es_obj in es_clients.into_iter() {
-            
-            let response: elasticsearch::http::response::Response = es_obj.es_pool.ping().send().await?;
-
-            if response.status_code().is_success() {
-                info!("Connected to Elasticsearch!");
-                return Ok(es_obj);
-
-            } else {
-                error!("Failed to connect to Elasticsearch. Status code: {}", response.status_code());
-                continue;
-            }
+            match es_obj.node_search_query(&es_query, index_name).await {
+                Ok(resp) => return Ok(resp),
+                Err(err) => {
+                    error!("{:?}", err);      
+                    continue;
+                }
+            }   
         }
 
         Err(anyhow!("All Elasticsearch connections failed"))
+        
     }
+
+
+    /*
+
+    */
+    // pub async fn conn_es_from_pool(&self) -> Result<EsObj, anyhow::Error> {
+
+    //     info!("come");
+
+    //     let mut rng = StdRng::from_entropy();
+        
+    //     let mut es_clients = self.mon_es_pool.clone();
+    //     es_clients.shuffle(&mut rng);
+
+
+    //     for es_obj in es_clients.into_iter() {
+            
+    //         info!("{:?}", es_obj);
+            
+    //         // let response: elasticsearch::http::response::Response = es_obj.es_pool.ping().send().await?;
+            
+    //         // if response.status_code().is_success() {
+    //         //     info!("Connected to Elasticsearch!");
+    //         //     return Ok(es_obj);
+
+    //         // } else {
+    //         //     error!("Failed to connect to Elasticsearch. Status code: {}", response.status_code());
+    //         //     continue;
+    //         // }
+    //     }
+        
+    //     // All nodes in the cluster failed to connect
+    //     Err(anyhow!("All Elasticsearch connections failed"))
+    // }
 
 
 }
@@ -77,7 +103,7 @@ impl EsObj {
     /*
         Function that EXECUTES elasticsearch queries
     */
-    pub async fn es_search_query(&self, es_query: Value, index_name: &str) -> Result<Value, anyhow::Error> {
+    pub async fn node_search_query(&self, es_query: &Value, index_name: &str) -> Result<Value, anyhow::Error> {
 
         info!("{} host executed the query.",self.es_host);
         
@@ -95,6 +121,7 @@ impl EsObj {
             Err(anyhow!("response status is failed"))
         }
     }
+    
 
     
 

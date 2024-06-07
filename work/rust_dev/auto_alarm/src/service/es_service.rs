@@ -111,20 +111,32 @@ impl EsHelper {
             let mut metric_data_set_list:Vec<(DateTime<Utc>,f64)> = Vec::new();
 
             for res_elem in query_res_vec {
-
-                println!("res_elem : {:?}\n=======", res_elem);
-
-                let time_stamp = res_elem["time_stamp"].as_str().unwrap_or_else(|| "none");
-                let metric_value = res_elem["metric_type"].as_str().unwrap_or_else(|| "0").parse::<f64>()?;
-
-                let time_stamp_date: DateTime<Utc> = DateTime::parse_from_rfc3339(time_stamp)
-                    .map(|dt| dt.with_timezone(&Utc))?;
                 
-                println!("time_stamp: {:?}", time_stamp);
-                println!("metric_value: {:?}", metric_value);
-                println!("time_stamp_date: {:?}", time_stamp_date);
-                
-                metric_data_set_list.push((time_stamp_date, metric_value));
+                let time_stamp = if let Value::String(time_stamp) = &res_elem["_source"]["time_stamp"] {
+                    match DateTime::parse_from_rfc3339(time_stamp).map(|dt| dt.with_timezone(&Utc)) {
+                        Ok(res) => res,
+                        Err(e) => {
+                            error!("{:?}",e);
+                            continue
+                        }    
+                    }
+                } else {
+                    error!("'time_stamp' parsing failed.");
+                    continue
+                };
+
+
+                let metric_value: f64 = if let Value::Number(metric_value) = &res_elem["_source"]["metric_value"] {
+                    metric_value.as_f64().unwrap_or_else(|| {
+                        error!("Failed to parse number as f64, defaulting to 0.0");
+                        0.0
+                    })
+                } else {
+                    error!("metric_value is not a number, defaulting to 0.0");
+                    0.0
+                };
+            
+                metric_data_set_list.push((time_stamp, metric_value));
             }
             
             let metric_obj = MetricObject::new(cluster_name.to_string(), metric_type.to_string(), metric_data_set_list);

@@ -18,7 +18,8 @@ impl AlarmDetail for AlarmDetailInfo {
         
         map.insert("host_info".to_string(), self.host_info.clone());
         map.insert(self.metric_type.to_string(), self.metric_val.to_string());
-        
+        map.insert("metric_types".to_string(), self.metric_type.to_string());
+
         map
     }
 

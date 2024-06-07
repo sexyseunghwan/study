@@ -1,6 +1,10 @@
 use crate::common::*;
+
 use crate::service::mysql_async_service::*;
+use crate::service::es_service::*;
+
 use crate::dtos::data_obj::*;
+
 
 #[derive(Clone, Serialize, Deserialize, FromRow, Debug)]
 pub struct Telebot {
@@ -53,11 +57,11 @@ impl Telebot {
     /*
         Function that processes messages received from Kafka
     */
-    pub async fn process_msg<T: AlarmDetail>(&self, alarm_msg: &AlarmMetricForm<T>) -> Result<(), anyhow::Error> {
+    pub async fn process_msg<T: AlarmDetail>(&self, alarm_msg: &AlarmMetricForm<T>, es_client: &EsHelper) -> Result<(), anyhow::Error> {
 
-        let mut msg_contents = String::new();   
+        let mut msg_contents = String::new();
+        let mut metric_picture_list: Vec<String> = Vec::new();   
         let mut process_yn = false;
-
         
         if alarm_msg.alarm_type == "metric_alarm" {
 
@@ -94,9 +98,15 @@ impl Telebot {
                         let metrics = format_str.replace("{}", alarm_detail_map[key].as_str());
                         msg_contents.push_str(&metrics);
                     }
-                } 
+                }
+
+                println!("===================================");
+
+                let es_res = es_client.get_metric_obj_info(&alarm_msg.cluster_name, alarm_detail_map["host_info"].as_str(), alarm_detail_map["metric_types"].as_str(), 20).await?;
+                
+                println!("{:?}", es_res);
             } // for
-        
+            
 
         } else if alarm_msg.alarm_type == "error_alarm"  {
 
@@ -127,15 +137,17 @@ impl Telebot {
             } // for
         } 
         
-        if process_yn {
+        
+        // 메시지를 보내주는 코드.
+        // if process_yn {
 
-            match self.bot_send(&msg_contents).await {
-                Ok(_) => (),
-                Err(err) => {
-                    error!("{:?}", err);
-                }
-            }
-        }
+        //     match self.bot_send(&msg_contents).await {
+        //         Ok(_) => (),
+        //         Err(err) => {
+        //             error!("{:?}", err);
+        //         }
+        //     }
+        // }
         
         Ok(())
 

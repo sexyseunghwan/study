@@ -98,7 +98,7 @@ impl KafkaBroker {
                                 };
                                 
                                 for tele_bot in &*telegram_data {
-                                    tele_bot.process_msg(&monitor_metric_obj).await?;
+                                    tele_bot.process_msg(&monitor_metric_obj, &es_client).await?;
                                 }
 
                             },
@@ -112,28 +112,10 @@ impl KafkaBroker {
                                     }
                                 };
                                 
-                                //여기에 그래프를 넣어주는 알고리즘을 생성해야 될 거 같은데...
-                                info!("{:?}", monitor_metric_obj);
-                                // let ref_es_client = &es_client; 
-                                // ref_es_client.conn_es_from_pool().await?;
-
-                                //let metric_obj_vec: Vec<AlarmDetailInfo> = monitor_metric_obj.contents;
-                                
-                                // for alarm_elem in metric_obj_vec {
-
-                                //     let host_info = alarm_elem.host_info;
-                                //     let metric_type = alarm_elem.metric_type;
-
-                                        
-
-
-                                // }
-
-
                                 // Send Message to Telegram Bot
-                                // for tele_bot in &*telegram_data {
-                                //     tele_bot.process_msg(&monitor_metric_obj).await?;
-                                // }
+                                for tele_bot in &*telegram_data {
+                                    tele_bot.process_msg(&monitor_metric_obj, &es_client).await?;
+                                }
                             },
                             _ => {
                                 error!("Unknown alarm type");

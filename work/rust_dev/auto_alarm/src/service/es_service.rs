@@ -1,5 +1,9 @@
 use crate::common::*;
 
+use crate::service::plotter_service::*;
+
+use crate::utils_modules::time_utils::*;
+
 #[derive(Debug, Getters)]
 #[getset(get = "pub")]
 pub struct EsHelper {
@@ -39,8 +43,9 @@ impl EsHelper {
         Ok(EsHelper{mon_es_pool: mon_es_clients})
     }
 
+    
     /*
-
+        Functions that handle queries at the Elasticsearch Cluster LEVEL
     */
     pub async fn cluster_search_query(&self, es_query: Value, index_name: &str) -> Result<Value, anyhow::Error> {
 
@@ -54,45 +59,81 @@ impl EsHelper {
                 }
             }   
         }
-
-        Err(anyhow!("All Elasticsearch connections failed"))
         
+        Err(anyhow!("All Elasticsearch connections failed"))
     }
-
-
+    
     /*
 
     */
-    // pub async fn conn_es_from_pool(&self) -> Result<EsObj, anyhow::Error> {
-
-    //     info!("come");
-
-    //     let mut rng = StdRng::from_entropy();
+    pub async fn get_metric_obj_info(&self, cluster_name: &str, host_info: &str, metric_type: &str, size: i32) -> Result<MetricObject, anyhow::Error> {
         
-    //     let mut es_clients = self.mon_es_pool.clone();
-    //     es_clients.shuffle(&mut rng);
-
-
-    //     for es_obj in es_clients.into_iter() {
-            
-    //         info!("{:?}", es_obj);
-            
-    //         // let response: elasticsearch::http::response::Response = es_obj.es_pool.ping().send().await?;
-            
-    //         // if response.status_code().is_success() {
-    //         //     info!("Connected to Elasticsearch!");
-    //         //     return Ok(es_obj);
-
-    //         // } else {
-    //         //     error!("Failed to connect to Elasticsearch. Status code: {}", response.status_code());
-    //         //     continue;
-    //         // }
-    //     }
+        let cur_time = get_current_utc_time("%Y.%m.%d");
+        let index_name = format!("nosql_metric_log-{}",cur_time);
         
-    //     // All nodes in the cluster failed to connect
-    //     Err(anyhow!("All Elasticsearch connections failed"))
-    // }
+        let query = json!({
+            "query": {
+                "bool": {
+                  "filter": [
+                    {
+                      "term": {
+                        "host_info.keyword": host_info
+                      }
+                    },
+                    {
+                      "term": {
+                        "metric_type.keyword": metric_type
+                      }
+                    },
+                    {
+                    "term": {
+                        "cluster_name.keyword": cluster_name
+                        }
+                    }
+                  ]
+                }
+              },
+              "sort": [
+                {
+                  "@timestamp": {
+                    "order": "desc" 
+                  }
+                }
+              ],
+              "size": size
+        });
 
+
+        let query_res = self.cluster_search_query(query, &index_name).await?;
+
+        if let Some(query_res_vec) = query_res["hits"]["hits"].as_array() {
+
+            let mut metric_data_set_list:Vec<(DateTime<Utc>,f64)> = Vec::new();
+
+            for res_elem in query_res_vec {
+
+                println!("res_elem : {:?}\n=======", res_elem);
+
+                let time_stamp = res_elem["time_stamp"].as_str().unwrap_or_else(|| "none");
+                let metric_value = res_elem["metric_type"].as_str().unwrap_or_else(|| "0").parse::<f64>()?;
+
+                let time_stamp_date: DateTime<Utc> = DateTime::parse_from_rfc3339(time_stamp)
+                    .map(|dt| dt.with_timezone(&Utc))?;
+                
+                println!("time_stamp: {:?}", time_stamp);
+                println!("metric_value: {:?}", metric_value);
+                println!("time_stamp_date: {:?}", time_stamp_date);
+                
+                metric_data_set_list.push((time_stamp_date, metric_value));
+            }
+            
+            let metric_obj = MetricObject::new(cluster_name.to_string(), metric_type.to_string(), metric_data_set_list);
+
+            return Ok(metric_obj);
+        }
+        
+        Err(anyhow!("All Elasticsearch connections failed"))
+    }
 
 }
 
@@ -114,6 +155,8 @@ impl EsObj {
             .send()
             .await?;
         
+        info!("{:?}", response);
+
         if response.status_code().is_success() { 
             let response_body = response.json::<Value>().await?;
             Ok(response_body)

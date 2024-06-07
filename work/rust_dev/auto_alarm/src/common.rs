@@ -51,7 +51,7 @@ pub use reqwest::Method;
 pub use getset::{Getters, Setters};
 pub use derive_new::new;
 
-pub use chrono::{DateTime, Utc};
+pub use chrono::{DateTime, Utc, TimeZone};
 
 
 pub use rand::{Rng, SeedableRng};

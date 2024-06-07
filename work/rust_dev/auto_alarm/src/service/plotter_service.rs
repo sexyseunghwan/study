@@ -1,9 +1,10 @@
 use crate::common::*;
 
-#[derive(Debug)]
+#[derive(Debug, new)]
 pub struct MetricObject {
-    pub metric_name: String, 
-    pub metric_data_set_list: Vec<(DateTime<Utc>,i32)>, 
+    pub cluster_name: String,
+    pub metric_type: String, 
+    pub metric_data_set_list: Vec<(DateTime<Utc>,f64)>, 
 }
 
 #[derive(Debug)]

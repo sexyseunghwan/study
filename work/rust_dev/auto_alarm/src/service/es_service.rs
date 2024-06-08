@@ -63,8 +63,9 @@ impl EsHelper {
         Err(anyhow!("All Elasticsearch connections failed"))
     }
     
-    /*
 
+    /*
+        
     */
     pub async fn get_metric_obj_info(&self, cluster_name: &str, host_info: &str, metric_type: &str, size: i32) -> Result<MetricObject, anyhow::Error> {
         
@@ -144,7 +145,7 @@ impl EsHelper {
             return Ok(metric_obj);
         }
         
-        Err(anyhow!("All Elasticsearch connections failed"))
+        Err(anyhow!("[get_metric_obj_info()] The result of the query does not exist."))
     }
 
 }

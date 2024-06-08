@@ -8,7 +8,6 @@ History     : 2023-02-06 Seunghwan Shin       # first create => Do not perform D
               2023-04-04 Seunghwan Shin       # Change the source to the way it is referenced in the DB information ".env" file for system security
               2024-05-23 Seunghwan Shin       # Add kibana_url information for immediate access using kibanaurl in the event of an elasticsearch cluster problem
               2024-06-07 Seunghwan Shin       # Change source code to cause panic to exit the program if MySQL initial connection fails.
-
 */ 
 mod common;
 

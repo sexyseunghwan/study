@@ -2,6 +2,7 @@ use crate::common::*;
 
 use crate::service::mysql_async_service::*;
 use crate::service::es_service::*;
+use crate::service::plotter_service::*;
 
 use crate::dtos::data_obj::*;
 
@@ -59,8 +60,8 @@ impl Telebot {
     */
     pub async fn process_msg<T: AlarmDetail>(&self, alarm_msg: &AlarmMetricForm<T>, es_client: &EsHelper) -> Result<(), anyhow::Error> {
 
-        let mut msg_contents = String::new();
-        let mut metric_picture_list: Vec<String> = Vec::new();   
+        let mut msg_contents: String = String::new();
+        let mut metric_picture_list: Vec<PlotterStruct> = Vec::new();   
         let mut process_yn = false;
         
         if alarm_msg.alarm_type == "metric_alarm" {
@@ -99,12 +100,10 @@ impl Telebot {
                         msg_contents.push_str(&metrics);
                     }
                 }
-
-                println!("===================================");
-
-                let es_res = es_client.get_metric_obj_info(&alarm_msg.cluster_name, alarm_detail_map["host_info"].as_str(), alarm_detail_map["metric_types"].as_str(), 20).await?;
                 
-                println!("{:?}", es_res);
+                let metric_graph_obj: MetricObject = es_client.get_metric_obj_info(&alarm_msg.cluster_name, alarm_detail_map["host_info"].as_str(), alarm_detail_map["metric_types"].as_str(), 20).await?;
+                
+                
             } // for
             
 
@@ -151,6 +150,24 @@ impl Telebot {
         
         Ok(())
 
+    }
+
+    /*
+
+    */
+    pub async fn bot_send_with_metric(&self, plotter_obj: PlotterStruct) -> Result<(), anyhow::Error> {
+
+
+
+        Ok(())
+    }
+
+
+    pub async fn bot_send_with_error(&self, send_msg: &str) -> Result<(), anyhow::Error> {
+
+        
+
+        Ok(())
     }
 
     

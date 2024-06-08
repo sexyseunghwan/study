@@ -46,7 +46,7 @@ pub use plotters::prelude::*;
 
 
 pub use reqwest;
-pub use reqwest::Method;
+pub use reqwest::{Method, multipart};
 
 pub use getset::{Getters, Setters};
 pub use derive_new::new;

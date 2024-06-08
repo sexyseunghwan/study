@@ -130,16 +130,20 @@ async fn multi_es_monitor(host_info_list: Vec<ESMetricInfoExtend>, kafka_client:
 */
 pub async fn metric_monitor(kafka_client: &ProduceBroker, mysql_client: &MySqlAsyncClient, aes_infos: &AesInfosDTO) -> Result<(), anyhow::Error> {
     
-    // At the time of index generation, the thread is stopped.
+    /*
+        At the time of index generation, the thread is stopped.
+    */
     monitor_thread_stop();
-
+    
     /*
         ============================================================================================
         =========== 1) Collects all information on the ES Cluster subject to monitoring. ===========
         ============================================================================================
     */
-    // Instance of nosql cluster infos (MySQL Object)
-    // => {cluster_name, user_id, user_pw_enc, system_version, ssl_option, shard_limit, disk_limit, cpu_limit, jvm_limit}
+    /* 
+        Instance of nosql cluster infos (MySQL Object)
+        => {cluster_name, user_id, user_pw_enc, system_version, ssl_option, shard_limit, disk_limit, cpu_limit, jvm_limit} 
+    */
     let sql_res_cluster_infos: Vec<ESMetricInfo> = 
         mysql_client.query_select_from_param(
             r"
@@ -197,9 +201,10 @@ pub async fn metric_monitor(kafka_client: &ProduceBroker, mysql_client: &MySqlAs
             None => String::from("")
         };
 
-        // Instance of NOSQL_HOST_INFO (MySQL Table)
-        // => {host_ip, host_port}
-        //let node_host_infos = mysql_client.query_host_info("ES", &clust_name)?;
+        /* 
+            Instance of NOSQL_HOST_INFO (MySQL Table)
+            => {host_ip, host_port}
+        */
         let node_host_infos: Vec<String> = 
             mysql_client.query_select_from_param(
                 r"

@@ -38,7 +38,7 @@ impl KafkaBroker {
         // StreamConsumer creation result processing
         let consumer: StreamConsumer = consumer_res?;
         consumer.subscribe(&[topic])?;
-
+        
         Ok(consumer)
     }
     

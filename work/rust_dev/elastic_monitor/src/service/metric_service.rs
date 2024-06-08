@@ -85,14 +85,13 @@ pub async fn get_shard_status(es_client: &EsHelper, cluster_name: &str, shard_li
     } 
     
     let total_avail_shard_cnt = data_node_cnt * max_shards_per_node;
-    let used_shard_per = round_to_two_decimal_places((using_shard_cnt / total_avail_shard_cnt) * 100.0);    
-    
+    let used_shard_per = round_to_two_decimal_places((using_shard_cnt / total_avail_shard_cnt) * 100.0);
 
     // ========================================================================================================================
     // ============================== 4. Monitoring information is produced in Monitoring Kafka. ==============================
     // ========================================================================================================================
     let cur_time_utc = get_current_utc_time("%Y-%m-%dT%H:%M:%S%.3fZ");
-    
+
     let monitor_metric_from = 
         MonitorMetricForm::new(cur_time_utc, String::from("ES"), cluster_name.to_string(), String::from(""), String::from("shard_usage"), used_shard_per);
     
@@ -109,9 +108,9 @@ pub async fn get_shard_status(es_client: &EsHelper, cluster_name: &str, shard_li
         let msg_info_list: Vec<AlarmDetailInfo> = vec![msg_info];
         
         let alarm_info = 
-            AlarmMetricForm::new(String::from("metric_alarm"), String::from("ES"), cluster_name.to_string(), kibana_url.to_string(),msg_info_list);
+            AlarmMetricForm::new(String::from("metric_alarm"), String::from("ES"), cluster_name.to_string(), kibana_url.to_string(), msg_info_list);
 
-            kafka_client.send_message_to_kafka_alarm(&alarm_info, "nosql_mon_log").await?;//?nosql_mon_info
+            kafka_client.send_message_to_kafka_alarm(&alarm_info, "nosql_mon_log").await?;
     }
 
 
@@ -192,13 +191,14 @@ pub async fn get_es_disk_state(es_client: &EsHelper, kafka_client: &ProduceBroke
 
             // ============================== Monitoring information is produced in Monitoring Kafka. ==============================
             let cur_time_utc = get_current_utc_time("%Y-%m-%dT%H:%M:%S%.3fZ");
-            
+
             let monitor_metric_from = 
                 MonitorMetricForm::new(cur_time_utc, String::from("ES"), cluster_name.clone(), host_ip_port.to_string(), String::from("disk_used"), usage_disk_per);
             
             let monitor_metric_list: Vec<MonitorMetricForm> = vec![monitor_metric_from];
             kafka_client.send_message_to_kafka_metric(&monitor_metric_list, "nosql_metric_log").await?;
             
+            // [ Deprecated ]
             if usage_disk_per >= disk_limit {
                 
                 let detail_infos = AlarmDetailInfo::new(host_ip_port.to_string(), String::from("disk_used"), usage_disk_per);
@@ -274,7 +274,7 @@ pub async fn get_es_jvm_cpu_state(es_client: &EsHelper, kafka_client: &ProduceBr
             }
         }
     });
-
+    
     let cpu_jvm_result = es_client.es_search(index_name.as_str(), query, 5).await?;
 
     let mut msg_json_list: Vec<AlarmDetailInfo> = Vec::new();

@@ -8,7 +8,9 @@ pub struct MonitorMetricForm {
     pub cluster_name: String,
     pub host_info: String,
     pub metric_type: String,
-    pub metric_value: f64
+    pub metric_value: f64,
+    pub kibana_url: String,
+    pub exceed_yn: bool
 }
 
 

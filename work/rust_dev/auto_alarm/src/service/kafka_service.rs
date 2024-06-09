@@ -84,24 +84,24 @@ impl KafkaBroker {
                         };
                         
                         let telegram_data: tokio::sync::RwLockReadGuard<Vec<Telebot>> = shared_res.tele_data.read().await;
-
+                        
                         match alarm_type {
 
-                            "error_alarm" => {
+                            // "error_alarm" => {
                                 
-                                let monitor_metric_obj:AlarmMetricForm<AlarmDetailError> = match serde_json::from_str(payload_data) {
-                                    Ok(monitor_metric_obj) => monitor_metric_obj,
-                                    Err(err) => {
-                                        error!("{:?}", err);
-                                        continue;
-                                    }
-                                };
+                            //     let monitor_err_obj:AlarmMetricForm<AlarmDetailError> = match serde_json::from_str(payload_data) {
+                            //         Ok(monitor_err_obj) => monitor_err_obj,
+                            //         Err(err) => {
+                            //             error!("{:?}", err);
+                            //             continue;
+                            //         }
+                            //     };
                                 
-                                for tele_bot in &*telegram_data {
-                                    tele_bot.process_msg(&monitor_metric_obj, &es_client).await?;
-                                }
+                            //     for tele_bot in &*telegram_data {
+                            //         tele_bot.process_msg(&monitor_err_obj, &es_client).await?;
+                            //     }
 
-                            },
+                            // },
                             "metric_alarm" => {
                                 
                                 let monitor_metric_obj:AlarmMetricForm<AlarmDetailInfo> = match serde_json::from_str(payload_data) {

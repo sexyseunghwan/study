@@ -14,8 +14,7 @@ use crate::utils_modules::time_utils::*;
 */
 pub async fn get_shard_status(es_client: &EsHelper, cluster_name: &str, shard_limit: f64, kibana_url: &str, kafka_client: &ProduceBroker) -> Result<bool, anyhow::Error> {
 
-    // If there are enough shards that can be allocated to the ES cluster, the bool_flag value becomes TRUE.
-    let mut bool_flag = false;
+    //let mut bool_flag = false;
     
     // ==============================================================
     // ========== 1. Get the value of max_shards_per_node. ==========
@@ -92,29 +91,31 @@ pub async fn get_shard_status(es_client: &EsHelper, cluster_name: &str, shard_li
     // ========================================================================================================================
     let cur_time_utc = get_current_utc_time("%Y-%m-%dT%H:%M:%S%.3fZ");
 
+    // If there are enough shards that can be allocated to the ES cluster, the bool_flag value becomes TRUE.
+    let exceed_flag = used_shard_per >= shard_limit;
+
     let monitor_metric_from = 
-        MonitorMetricForm::new(cur_time_utc, String::from("ES"), cluster_name.to_string(), String::from(""), String::from("shard_usage"), used_shard_per);
+        MonitorMetricForm::new(cur_time_utc, String::from("ES"), cluster_name.to_string(), String::from(""), String::from("shard_usage"), used_shard_per, kibana_url.to_string(), exceed_flag);
     
     let monitor_metric_list = vec![monitor_metric_from];
     
     kafka_client.send_message_to_kafka_metric(&monitor_metric_list, "nosql_metric_log").await?;
     
-    if used_shard_per >= shard_limit {
-        bool_flag = true;
+    // if used_shard_per >= shard_limit {
+    //     bool_flag = true;
         
-        let msg_info = 
-            AlarmDetailInfo::new(String::from(""),String::from("shard_usage"), used_shard_per);
+    //     let msg_info = 
+    //         AlarmDetailInfo::new(String::from(""),String::from("shard_usage"), used_shard_per);
 
-        let msg_info_list: Vec<AlarmDetailInfo> = vec![msg_info];
+    //     let msg_info_list: Vec<AlarmDetailInfo> = vec![msg_info];
         
-        let alarm_info = 
-            AlarmMetricForm::new(String::from("metric_alarm"), String::from("ES"), cluster_name.to_string(), kibana_url.to_string(), msg_info_list);
+    //     let alarm_info = 
+    //         AlarmMetricForm::new(String::from("metric_alarm"), String::from("ES"), cluster_name.to_string(), kibana_url.to_string(), msg_info_list);
 
-            kafka_client.send_message_to_kafka_alarm(&alarm_info, "nosql_mon_log").await?;
-    }
+    //         kafka_client.send_message_to_kafka_alarm(&alarm_info, "nosql_mon_log").await?;
+    // }
 
-
-    Ok(bool_flag)
+    Ok(exceed_flag)
 }
 
 
@@ -191,30 +192,31 @@ pub async fn get_es_disk_state(es_client: &EsHelper, kafka_client: &ProduceBroke
 
             // ============================== Monitoring information is produced in Monitoring Kafka. ==============================
             let cur_time_utc = get_current_utc_time("%Y-%m-%dT%H:%M:%S%.3fZ");
+            let exceed_yn = usage_disk_per >= disk_limit;
 
             let monitor_metric_from = 
-                MonitorMetricForm::new(cur_time_utc, String::from("ES"), cluster_name.clone(), host_ip_port.to_string(), String::from("disk_used"), usage_disk_per);
+                MonitorMetricForm::new(cur_time_utc, String::from("ES"), cluster_name.clone(), host_ip_port.to_string(), String::from("disk_used"), usage_disk_per, kibana_url.to_string(), exceed_yn);
             
             let monitor_metric_list: Vec<MonitorMetricForm> = vec![monitor_metric_from];
             kafka_client.send_message_to_kafka_metric(&monitor_metric_list, "nosql_metric_log").await?;
             
             // [ Deprecated ]
-            if usage_disk_per >= disk_limit {
+            // if usage_disk_per >= disk_limit {
                 
-                let detail_infos = AlarmDetailInfo::new(host_ip_port.to_string(), String::from("disk_used"), usage_disk_per);
+            //     let detail_infos = AlarmDetailInfo::new(host_ip_port.to_string(), String::from("disk_used"), usage_disk_per);
                 
-                msg_json_list.push(detail_infos)
-            }
+            //     msg_json_list.push(detail_infos)
+            // }
         }//for
     }
     
     // Message for which an alarm should be sent.
-    if !msg_json_list.is_empty() {
+    // if !msg_json_list.is_empty() {
         
-        let msg_info = AlarmMetricForm::new(String::from("metric_alarm"), String::from("ES"), cluster_name.to_string(), kibana_url.to_string(), msg_json_list);
+    //     let msg_info = AlarmMetricForm::new(String::from("metric_alarm"), String::from("ES"), cluster_name.to_string(), kibana_url.to_string(), kibana_url.to_string(), msg_json_list);
 
-        kafka_client.send_message_to_kafka_alarm(&msg_info, "nosql_mon_log").await?;
-    }
+    //     kafka_client.send_message_to_kafka_alarm(&msg_info, "nosql_mon_log").await?;
+    // }
     
     Ok(())
 }
@@ -299,13 +301,16 @@ pub async fn get_es_jvm_cpu_state(es_client: &EsHelper, kafka_client: &ProduceBr
             let mut monitor_metric_list: Vec<MonitorMetricForm> = Vec::new();
             let cur_time_utc = get_current_utc_time("%Y-%m-%dT%H:%M:%S%.3fZ");
             
+            let cpu_exceed_yn = use_cpu >= cpu_limit;
+            let jvm_exceed_yn = use_jvm >= jvm_limit;
+
             // cpu metric
             let monitor_metric_from_cpu = 
-                MonitorMetricForm::new(cur_time_utc.clone(), String::from("ES"), cluster_name.clone(), host_ip_port.to_string(), String::from("cpu_used_avg"), use_cpu);
+                MonitorMetricForm::new(cur_time_utc.clone(), String::from("ES"), cluster_name.clone(), host_ip_port.to_string(), String::from("cpu_used_avg"), use_cpu, kibana_url.to_string(), cpu_exceed_yn);
             
             // jvm metric
             let monitor_metric_from_jvm = 
-                MonitorMetricForm::new(cur_time_utc.clone(), String::from("ES"), cluster_name.clone(), host_ip_port.to_string(), String::from("jvm_used_avg"), use_jvm);
+                MonitorMetricForm::new(cur_time_utc.clone(), String::from("ES"), cluster_name.clone(), host_ip_port.to_string(), String::from("jvm_used_avg"), use_jvm, kibana_url.to_string(), jvm_exceed_yn);
             
                         
             monitor_metric_list.push(monitor_metric_from_cpu);
@@ -313,22 +318,21 @@ pub async fn get_es_jvm_cpu_state(es_client: &EsHelper, kafka_client: &ProduceBr
 
             kafka_client.send_message_to_kafka_metric(&monitor_metric_list, "nosql_metric_log").await?;
             
-            
-            if use_jvm >= jvm_limit {
+            // if use_jvm >= jvm_limit {
                 
-                let detail_infos = 
-                    AlarmDetailInfo::new(host_ip_port.to_string(), String::from("jvm_used_avg"), use_jvm); 
+            //     let detail_infos = 
+            //         AlarmDetailInfo::new(host_ip_port.to_string(), String::from("jvm_used_avg"), use_jvm); 
                 
-                msg_json_list.push(detail_infos)
-            }
+            //     msg_json_list.push(detail_infos)
+            // }
 
-            if use_cpu >= cpu_limit {
+            // if use_cpu >= cpu_limit {
                 
-                let detail_infos = 
-                    AlarmDetailInfo::new(host_ip_port.to_string(), String::from("cpu_used_avg"), use_cpu);
+            //     let detail_infos = 
+            //         AlarmDetailInfo::new(host_ip_port.to_string(), String::from("cpu_used_avg"), use_cpu);
                 
-                msg_json_list.push(detail_infos)
-            }
+            //     msg_json_list.push(detail_infos)
+            // }
             
         }
     }
@@ -343,4 +347,3 @@ pub async fn get_es_jvm_cpu_state(es_client: &EsHelper, kafka_client: &ProduceBr
     
     Ok(())
 }
-

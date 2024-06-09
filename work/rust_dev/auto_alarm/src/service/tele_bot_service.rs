@@ -89,8 +89,9 @@ impl Telebot {
                 ("m_s_sync", "- master_slave_sync_sec: {} sec ago\n")
             ];
             
+            // There may be multiple metric sets for a specific NoSQL CLUSTER.
             for alarm_detail_info in &alarm_msg.contents {
-
+                
                 let alarm_detail_map = alarm_detail_info.to_map();
                 
                 for (key, format_str) in metrics_mapping {
@@ -103,38 +104,38 @@ impl Telebot {
                 
                 let metric_graph_obj: MetricObject = es_client.get_metric_obj_info(&alarm_msg.cluster_name, alarm_detail_map["host_info"].as_str(), alarm_detail_map["metric_types"].as_str(), 20).await?;
                 
-                
             } // for
             
 
-        } else if alarm_msg.alarm_type == "error_alarm"  {
-
-            msg_contents.push_str(format!("==== Error Alert {}====\n", alarm_msg.monitor_type).as_ref());
-            msg_contents.push_str(format!("[{}]\n", alarm_msg.cluster_name).as_ref());
-
-            if alarm_msg.monitor_type == "ES" {
-                msg_contents.push_str(format!("[kibana url] {}\n\n", alarm_msg.kibana_url).as_ref());
-            }
-            
-            process_yn = true;
-
-            let metrics_mapping = [
-                ("err_content", "{}\n")
-            ];
-            
-            for alarm_detail_info in &alarm_msg.contents {
-
-                let alarm_detail_map = alarm_detail_info.to_map();
-                
-                for (key, format_str) in metrics_mapping {
-                    
-                    if alarm_detail_map.contains_key(key) {
-                        let metrics = format_str.replace("{}", alarm_detail_map[key].as_str());
-                        msg_contents.push_str(&metrics);
-                    }
-                } 
-            } // for
         } 
+        // else if alarm_msg.alarm_type == "error_alarm"  {
+
+        //     msg_contents.push_str(format!("==== Error Alert {}====\n", alarm_msg.monitor_type).as_ref());
+        //     msg_contents.push_str(format!("[{}]\n", alarm_msg.cluster_name).as_ref());
+
+        //     if alarm_msg.monitor_type == "ES" {
+        //         msg_contents.push_str(format!("[kibana url] {}\n\n", alarm_msg.kibana_url).as_ref());
+        //     }
+            
+        //     process_yn = true;
+
+        //     let metrics_mapping = [
+        //         ("err_content", "{}\n")
+        //     ];
+            
+        //     for alarm_detail_info in &alarm_msg.contents {
+
+        //         let alarm_detail_map = alarm_detail_info.to_map();
+                
+        //         for (key, format_str) in metrics_mapping {
+                    
+        //             if alarm_detail_map.contains_key(key) {
+        //                 let metrics = format_str.replace("{}", alarm_detail_map[key].as_str());
+        //                 msg_contents.push_str(&metrics);
+        //             }
+        //         } 
+        //     } // for
+        // } 
         
         
         // 메시지를 보내주는 코드.

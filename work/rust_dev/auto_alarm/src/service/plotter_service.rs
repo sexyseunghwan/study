@@ -5,7 +5,7 @@ pub struct MetricObject {
     pub cluster_name: String,
     pub metric_type: String, 
     pub metric_data_set_list: Vec<(DateTime<Utc>,f64)>,
-    pub msg_contents: String
+    //pub msg_contents: String
 }
 
 #[derive(Debug, new)]

@@ -159,7 +159,7 @@ impl EsObj {
     */
     pub async fn node_search_query(&self, es_query: &Value, index_name: &str) -> Result<Value, anyhow::Error> {
 
-        info!("{} host executed the query.",self.es_host);
+        //info!("{} host executed the query.",self.es_host);
         
         // Response Of ES-Query
         let response = self.es_pool

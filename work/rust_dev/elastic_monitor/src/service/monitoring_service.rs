@@ -89,11 +89,11 @@ async fn multi_es_monitor(host_info_list: Vec<ESMetricInfoExtend>, kafka_client:
         let es_host_client = match EsHelper::new(&es_cluster).await {
             Ok(res) => res,
             Err(err) => {
-                error!("{:?}",err);
-                let alarm_error_list = vec![AlarmDetailError::new(err.to_string())];
-                let detail_infos: AlarmMetricForm<AlarmDetailError> = AlarmMetricForm::new(String::from("error_alarm"), String::from("ES"), es_cluster.cluster_name, es_cluster.kibana_url, alarm_error_list);
+                //error!("{:?}",err);
+                //let error_msg = AlarmDetailError::new(es_cluster.cluster_name().to_string(), es_cluster.kibana_url().to_string(), err.to_string());
+                //let detail_infos: AlarmMetricForm<AlarmDetailError> = AlarmMetricForm::new(String::from("error_alarm"), String::from("ES"), es_cluster.cluster_name, es_cluster.kibana_url, alarm_error_list);
                 
-                kafka_client.send_message_to_kafka_alarm(&detail_infos,  "nosql_mon_log").await?;
+                kafka_client.send_message_to_kafka_alarm(&error_msg, "nosql_err_log").await?;
                 continue;
             }
         };

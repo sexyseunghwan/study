@@ -1,5 +1,8 @@
 use crate::common::*;
 
+use crate::dto::alarm_related_dtos::*;
+
+use crate::service::kafka_service::*;
 /*
     Function responsible for logging
 */
@@ -28,4 +31,24 @@ fn custom_format(w: &mut dyn Write, now: &mut flexi_logger::DeferredNow, record:
         record.level(),
         std::thread::current().name().unwrap_or("unknown"),
         &record.args())
+}
+
+/*
+    
+*/
+pub fn infos(info_msg: &str) {
+    info!("{:?}", info_msg);
+    
+    match send_message_to_kafka_log().await {
+        Ok(_) => _,
+        Err(e) => error!(e)
+    }
+}
+
+
+/*
+
+*/
+pub fn errors(err_msg: &str) {
+    error!("{:?}", err_msg);
 }

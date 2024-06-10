@@ -56,9 +56,27 @@ impl ProduceBroker {
     /*
         Function to send a warning alarm to a specific topic in Kafka
     */
-    pub async fn send_message_to_kafka_alarm<T: AlarmDetail>(&self, mon_metric_form: &AlarmMetricForm<T>, topic_name: &str) -> Result<(), anyhow::Error> {
+    // pub async fn send_message_to_kafka_alarm(&self, mon_metric_form: &AlarmDetailError, topic_name: &str) -> Result<(), anyhow::Error> {
 
-        let mon_metric_form = serde_json::to_string(&mon_metric_form)?;
+    //     let mon_metric_form = serde_json::to_string(&mon_metric_form)?;
+    //     let mon_metric_form_str = mon_metric_form.as_str();
+        
+    //     match self.produce_message(topic_name, mon_metric_form_str).await {
+    //         Ok(_) => (),
+    //         Err(err) => {
+    //             return Err(anyhow!(err.to_string()));
+    //         }
+    //     }
+        
+    //     Ok(())
+    // }
+    
+    /*
+        
+    */
+    pub async fn send_message_to_kafka_log(&self, err_msg: &LogDetail, topic_name: &str) -> Result<(), anyhow::Error> {
+
+        let mon_metric_form = serde_json::to_string(err_msg)?;
         let mon_metric_form_str = mon_metric_form.as_str();
         
         match self.produce_message(topic_name, mon_metric_form_str).await {
@@ -70,7 +88,7 @@ impl ProduceBroker {
         
         Ok(())
     }
-
+    
 
     /*
         Function to send indicator logs to a specific topic in Kafka

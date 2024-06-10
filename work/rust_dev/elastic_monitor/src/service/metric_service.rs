@@ -170,7 +170,7 @@ pub async fn get_es_disk_state(es_client: &EsHelper, kafka_client: &ProduceBroke
     
     let disk_result = es_client.es_search(index_name.as_str(), query, 5).await?;
     
-    let mut msg_json_list: Vec<AlarmDetailInfo> = Vec::new();
+    //let mut msg_json_list: Vec<AlarmDetailInfo> = Vec::new();
 
     if let Some(buckets) = disk_result["aggregations"]["nodes"]["buckets"].as_array() {
         
@@ -279,7 +279,7 @@ pub async fn get_es_jvm_cpu_state(es_client: &EsHelper, kafka_client: &ProduceBr
     
     let cpu_jvm_result = es_client.es_search(index_name.as_str(), query, 5).await?;
 
-    let mut msg_json_list: Vec<AlarmDetailInfo> = Vec::new();
+    //let mut msg_json_list: Vec<AlarmDetailInfo> = Vec::new();
 
     if let Some(buckets) = cpu_jvm_result["aggregations"]["terms"]["buckets"].as_array() {
         
@@ -311,7 +311,6 @@ pub async fn get_es_jvm_cpu_state(es_client: &EsHelper, kafka_client: &ProduceBr
             // jvm metric
             let monitor_metric_from_jvm = 
                 MonitorMetricForm::new(cur_time_utc.clone(), String::from("ES"), cluster_name.clone(), host_ip_port.to_string(), String::from("jvm_used_avg"), use_jvm, kibana_url.to_string(), jvm_exceed_yn);
-            
                         
             monitor_metric_list.push(monitor_metric_from_cpu);
             monitor_metric_list.push(monitor_metric_from_jvm);
@@ -338,12 +337,12 @@ pub async fn get_es_jvm_cpu_state(es_client: &EsHelper, kafka_client: &ProduceBr
     }
     
     // Message for which an alarm should be sent.
-    if !msg_json_list.is_empty() {
+    // if !msg_json_list.is_empty() {
         
-        let msg_info = AlarmMetricForm::new(String::from("metric_alarm"), String::from("ES"), cluster_name.to_string(), kibana_url.to_string(), msg_json_list);
+    //     let msg_info = AlarmMetricForm::new(String::from("metric_alarm"), String::from("ES"), cluster_name.to_string(), kibana_url.to_string(), msg_json_list);
 
-        kafka_client.send_message_to_kafka_alarm(&msg_info, "nosql_mon_log").await?;
-    }
+    //     kafka_client.send_message_to_kafka_alarm(&msg_info, "nosql_mon_log").await?;
+    // }
     
     Ok(())
 }

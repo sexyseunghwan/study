@@ -510,6 +510,7 @@ dependencies = [
  "getset",
  "log",
  "mysql_async",
+ "once_cell",
  "openssl",
  "percent-encoding",
  "rand",

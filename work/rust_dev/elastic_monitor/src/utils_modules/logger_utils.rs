@@ -36,12 +36,24 @@ fn custom_format(w: &mut dyn Write, now: &mut flexi_logger::DeferredNow, record:
 /*
     
 */
-pub fn infos(info_msg: &str) {
+pub async fn infos(info_msg: &str) {
     info!("{:?}", info_msg);
     
-    match send_message_to_kafka_log().await {
-        Ok(_) => _,
-        Err(e) => error!(e)
+    let producer_lock = match LOGGER_PRODUCER.lock() {
+        Ok(producer_lock) => producer_lock,
+        Err(e) => {
+            error!("{:?}", e);
+            panic!("Cannot recover from locking failure");
+        }
+    };
+
+    let producer = producer_lock;
+
+    let msg_detail = LogDetail::new(String::from("ELASTIC_MONITOR"), String::from("INFO"), info_msg.to_string());
+
+    match producer.send_message_to_kafka_log(&msg_detail, "nosql_mon_log").await {
+        Ok(_) => (),
+        Err(e) => error!("{:?}", e)
     }
 }
 
@@ -49,6 +61,25 @@ pub fn infos(info_msg: &str) {
 /*
 
 */
-pub fn errors(err_msg: &str) {
+pub async fn errors(err_msg: anyhow::Error) {
     error!("{:?}", err_msg);
+
+
+    let producer_lock = match LOGGER_PRODUCER.lock() {
+        Ok(producer_lock) => producer_lock,
+        Err(e) => {
+            error!("{:?}", e);
+            panic!("Cannot recover from locking failure");
+        }
+    };
+
+    let producer = producer_lock;
+
+    let msg_detail = LogDetail::new(String::from("ELASTIC_MONITOR"), String::from("INFO"), err_msg.to_string());
+
+    match producer.send_message_to_kafka_log(&msg_detail, "nosql_mon_log").await {
+        Ok(_) => (),
+        Err(e) => error!("{:?}", e)
+    }
+
 }

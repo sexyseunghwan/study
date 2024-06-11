@@ -8,9 +8,10 @@ pub struct KafkaBroker {
     
 }
 
-#[derive(Clone)]
+#[derive(Clone, Getters)]
+#[getset(get = "pub")]
 pub struct ProduceBroker {
-    produce_broker: FutureProducer
+    pub produce_broker: FutureProducer
 }
 
 
@@ -74,9 +75,9 @@ impl ProduceBroker {
     /*
         
     */
-    pub async fn send_message_to_kafka_log(&self, err_msg: &LogDetail, topic_name: &str) -> Result<(), anyhow::Error> {
+    pub async fn send_message_to_kafka_log(&self, msg: &LogDetail, topic_name: &str) -> Result<(), anyhow::Error> {
 
-        let mon_metric_form = serde_json::to_string(err_msg)?;
+        let mon_metric_form = serde_json::to_string(msg)?;
         let mon_metric_form_str = mon_metric_form.as_str();
         
         match self.produce_message(topic_name, mon_metric_form_str).await {

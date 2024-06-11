@@ -2,6 +2,7 @@ pub use std::io::{Read, Write};
 pub use std::thread;
 pub use std::time::Instant;
 pub use std::env;
+pub use std::sync::{Arc, Mutex};
 
 pub use mysql_async::Pool;
 pub use mysql_async::prelude::*;
@@ -41,3 +42,17 @@ pub use getset::{Getters, Setters, MutGetters};
 pub use derive_new::new;
 
 pub use tokio::time::{timeout, Duration};
+
+pub use once_cell::sync::Lazy;
+
+use crate::service::kafka_service::*;
+
+
+// Kafka producer to MANAGE logging
+pub static LOGGER_PRODUCER: Lazy<Arc<Mutex<ProduceBroker>>> = Lazy::new(|| {
+    
+    let kafka_host = env::var("KAFKA_HOST").expect("'KAFKA_HOST' must be set");
+    let producer = ProduceBroker::new(&kafka_host).expect("ProduceBroker creation failed");
+
+    Arc::new(Mutex::new(producer))
+});

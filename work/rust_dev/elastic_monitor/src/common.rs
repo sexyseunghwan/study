@@ -53,6 +53,19 @@ pub static LOGGER_PRODUCER: Lazy<Arc<Mutex<ProduceBroker>>> = Lazy::new(|| {
     
     let kafka_host = env::var("KAFKA_HOST").expect("'KAFKA_HOST' must be set");
     let producer = ProduceBroker::new(&kafka_host).expect("ProduceBroker creation failed");
-
+    
     Arc::new(Mutex::new(producer))
+});
+
+#[derive(Debug, Getters, Clone, new)]
+#[getset(get = "pub")]
+pub struct Testing {
+    pub name: String
+}
+
+pub static TEST_VAL: Lazy<Arc<Mutex<Testing>>> = Lazy::new(|| {
+    
+    let test = Testing::new(String::from("test"));
+
+    Arc::new(Mutex::new(test))
 });

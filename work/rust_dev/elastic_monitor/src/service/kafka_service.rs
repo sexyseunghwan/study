@@ -43,7 +43,6 @@ impl ProduceBroker {
 
         let kafka_producer = &self.produce_broker;
 
-
         let record = FutureRecord::to(topic)
             .payload(message)
             .key("");  // You can set a key for the message if needed

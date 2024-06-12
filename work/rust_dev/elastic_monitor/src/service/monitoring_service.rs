@@ -13,6 +13,7 @@ use crate::dto::alarm_related_dtos::*;
 use crate::utils_modules::time_utils::*;
 use crate::utils_modules::dec_utils::*;
 use crate::utils_modules::parsing_utils::*;
+use crate::utils_modules::logger_utils::*;
 
 /*
     Considering the system monitoring index creation time, monitoring is stopped while the system index is being created.
@@ -83,17 +84,15 @@ fn get_multi_thread_es_vec(host_info_list: Vec<ESMetricInfoExtend>) -> Result<Ve
 */
 async fn multi_es_monitor(host_info_list: Vec<ESMetricInfoExtend>, kafka_client: ProduceBroker) -> Result<(), anyhow::Error> {
     
+    infos("test").await;
+
     for es_cluster in host_info_list {
 
         // ES connection object for which MONITORING will be performed
         let es_host_client = match EsHelper::new(&es_cluster).await {
             Ok(res) => res,
             Err(err) => {
-                //error!("{:?}",err);
-                //let error_msg = AlarmDetailError::new(es_cluster.cluster_name().to_string(), es_cluster.kibana_url().to_string(), err.to_string());
-                //let detail_infos: AlarmMetricForm<AlarmDetailError> = AlarmMetricForm::new(String::from("error_alarm"), String::from("ES"), es_cluster.cluster_name, es_cluster.kibana_url, alarm_error_list);
-                
-                kafka_client.send_message_to_kafka_alarm(&error_msg, "nosql_err_log").await?;
+                errors(err).await;
                 continue;
             }
         };
@@ -110,14 +109,17 @@ async fn multi_es_monitor(host_info_list: Vec<ESMetricInfoExtend>, kafka_client:
         
         match get_es_disk_state(&es_host_client, &kafka_client, &es_cluster, es_cluster.disk_limit, es_cluster.kibana_url()).await {
             Ok(_) => {},
-            Err(err) => { error!("get_es_disk_state ERROR : {:?}",err )}
+            Err(err) => { 
+                errors(anyhow!(format!("get_es_disk_state ERROR : {:?}", err))).await;
+            }
         }
         
         match get_es_jvm_cpu_state(&es_host_client, &kafka_client, &es_cluster, es_cluster.jvm_limit, es_cluster.cpu_limit, es_cluster.kibana_url()).await {
             Ok(_) => {},
-            Err(err) => { error!("get_es_jvm_cpu_state ERROR : {:?}",err )}
+            Err(err) => { 
+                errors(anyhow!(format!("get_es_jvm_cpu_state ERROR : {:?}", err))).await;
+            }
         }
-        
     }
     
     Ok(())
@@ -234,6 +236,13 @@ pub async fn metric_monitor(kafka_client: &ProduceBroker, mysql_client: &MySqlAs
     let multi_lists = get_multi_thread_es_vec(host_info_list)?;
     let mut handles: Vec<tokio::task::JoinHandle<()>> = Vec::new();
 
+    // match multi_es_monitor(multi_lists[0].clone(), kafka_client.clone()).await {
+    //     Ok(_) => (),
+    //     Err(err) => {
+    //         error!("{:?}", err);
+    //     }
+    // }
+
     for metric_obj in multi_lists {
 
         let kafka_client_clone = kafka_client.clone();
@@ -246,7 +255,7 @@ pub async fn metric_monitor(kafka_client: &ProduceBroker, mysql_client: &MySqlAs
                 }
             }
         });
-        
+
         handles.push(handle);
     }
     
@@ -257,4 +266,3 @@ pub async fn metric_monitor(kafka_client: &ProduceBroker, mysql_client: &MySqlAs
     
     Ok(())
 }
-   

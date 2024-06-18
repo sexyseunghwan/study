@@ -1,0 +1,10 @@
+/Users/we/Documents/study/work/rust_dev/elastic_index_clear/target/debug/deps/libzerovec_derive-84a1d527e696e28b.dylib: /Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/zerovec-derive-0.10.2/src/lib.rs /Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/zerovec-derive-0.10.2/src/make_ule.rs /Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/zerovec-derive-0.10.2/src/make_varule.rs /Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/zerovec-derive-0.10.2/src/ule.rs /Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/zerovec-derive-0.10.2/src/utils.rs /Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/zerovec-derive-0.10.2/src/varule.rs
+
+/Users/we/Documents/study/work/rust_dev/elastic_index_clear/target/debug/deps/zerovec_derive-84a1d527e696e28b.d: /Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/zerovec-derive-0.10.2/src/lib.rs /Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/zerovec-derive-0.10.2/src/make_ule.rs /Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/zerovec-derive-0.10.2/src/make_varule.rs /Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/zerovec-derive-0.10.2/src/ule.rs /Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/zerovec-derive-0.10.2/src/utils.rs /Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/zerovec-derive-0.10.2/src/varule.rs
+
+/Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/zerovec-derive-0.10.2/src/lib.rs:
+/Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/zerovec-derive-0.10.2/src/make_ule.rs:
+/Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/zerovec-derive-0.10.2/src/make_varule.rs:
+/Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/zerovec-derive-0.10.2/src/ule.rs:
+/Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/zerovec-derive-0.10.2/src/utils.rs:
+/Users/we/.cargo/registry/src/index.crates.io-6f17d22bba15001f/zerovec-derive-0.10.2/src/varule.rs:

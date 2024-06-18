@@ -1,7 +1,5 @@
 use crate::common::*;
 
-use crate::utils_modules::time_utils::*;
-
 #[derive(Debug, Getters)]
 #[getset(get = "pub")]
 pub struct EsHelper {
@@ -13,6 +11,22 @@ pub struct EsHelper {
 pub struct EsObj {
     es_host: String,
     es_pool: Elasticsearch
+}
+
+#[derive(Debug, Getters, Clone, new)]
+#[getset(get = "pub")]
+pub struct MetricInfo {
+    pub node_host: String,
+    pub total_in_bytes: u64,
+    pub free_in_bytes: u64,
+    pub available_in_bytes: u64
+}
+
+#[derive(Debug, Getters, Clone, new)]
+#[getset(get = "pub")]
+pub struct IndexInfos {
+    pub index_name: String,
+    pub store_size: String
 }
 
 
@@ -41,15 +55,35 @@ impl EsHelper {
         Ok(EsHelper{mon_es_pool: mon_es_clients})
     }
 
-    
+
     /*
-        Functions that handle queries at the Elasticsearch Cluster LEVEL
+        Function that calls "CAT" api from Elasticsearch - Elasticsearch Cluster LEVEL
     */
-    pub async fn cluster_search_query(&self, es_query: Value, index_name: &str) -> Result<Value, anyhow::Error> {
+    pub async fn cluster_cat_query(&self, filter_option: &str, limit_cnt: i32) -> Result<VecDeque<IndexInfos>, anyhow::Error> {
+        
+        for es_obj in self.mon_es_pool.iter() {
+
+            match es_obj.node_cat_query(filter_option, limit_cnt).await {
+                Ok(resp) => return Ok(resp),
+                Err(err) => {
+                    error!("{:?}", err);      
+                    continue;
+                }
+            }   
+        }
+        
+        Err(anyhow!("All Elasticsearch connections failed"))
+    }
+
+
+    /*
+        Function that executes a query that can verify the current disk status of each node. - Elasticsearch Cluster LEVEL
+    */
+    pub async fn cluster_stats_fs(&self) -> Result<Vec<MetricInfo>, anyhow::Error> {
 
         for es_obj in self.mon_es_pool.iter() {
 
-            match es_obj.node_search_query(&es_query, index_name).await {
+            match es_obj.node_stats_fs().await {
                 Ok(resp) => return Ok(resp),
                 Err(err) => {
                     error!("{:?}", err);      
@@ -62,6 +96,25 @@ impl EsHelper {
     }
     
 
+    /*
+        Function that calls "DELETE" api from Elasticsearch - Elasticsearch Cluster LEVEL
+    */
+    pub async fn cluster_delete_query(&self, index_name: &str) -> Result<(), anyhow::Error> {
+
+        for es_obj in self.mon_es_pool.iter() {
+
+            match es_obj.node_delete_query(index_name).await {
+                Ok(resp) => return Ok(resp),
+                Err(err) => {
+                    error!("{:?}", err);      
+                    continue;
+                }
+            }   
+        }
+        
+        Err(anyhow!("All Elasticsearch connections failed"))
+    }
+
 }
 
 
@@ -69,29 +122,99 @@ impl EsObj {
 
 
     /*
-        Function that EXECUTES elasticsearch queries
+        Run a query that can confirm the disk status of each node at present.
     */
-    pub async fn node_search_query(&self, es_query: &Value, index_name: &str) -> Result<Value, anyhow::Error> {
+    async fn node_stats_fs(&self) -> Result<Vec<MetricInfo>, anyhow::Error> {
 
-        //info!("{} host executed the query.",self.es_host);
-        
         // Response Of ES-Query
         let response = self.es_pool
-            .search(SearchParts::Index(&[index_name]))
-            .body(es_query)
+            .nodes()
+            .stats(elasticsearch::nodes::NodesStatsParts::Metric(&["fs"]))
             .send()
             .await?;
         
-        info!("{:?}", response);
+        let mut metric_info_list: Vec<MetricInfo> = Vec::new();
+        let query_res: Value = response.json().await?;
+        
+        if let Some(nodes) = query_res.get("nodes").and_then(Value::as_object) {
+            for (_node_id, details) in nodes {
+                let node_host = details.get("ip").and_then(Value::as_str).unwrap_or_default().to_string();
 
-        if response.status_code().is_success() { 
-            let response_body = response.json::<Value>().await?;
-            Ok(response_body)
-        } else {
-            Err(anyhow!("response status is failed"))
+                if let Some(fs_data) = details.get("fs").and_then(|fs| fs.get("data")).and_then(Value::as_array) {
+                    for disk in fs_data {
+                        let total_bytes = disk.get("total_in_bytes").and_then(Value::as_u64).unwrap_or(0);
+                        let free_bytes = disk.get("free_in_bytes").and_then(Value::as_u64).unwrap_or(0);
+                        let available_bytes = disk.get("available_in_bytes").and_then(Value::as_u64).unwrap_or(0);
+
+                        metric_info_list.push(MetricInfo::new(node_host.clone(), total_bytes, free_bytes, available_bytes));
+                    }
+                }
+            }
         }
+        
+        Ok(metric_info_list)
     }
     
+    
+    /*
+        Function that calls "CAT" api from Elasticsearch - Elasticsearch Node LEVEL
+    */
+    async fn node_cat_query(&self, filter_option: &str, limit_cnt: i32) -> Result<VecDeque<IndexInfos>, anyhow::Error> {
+        
+        // Response Of ES-Query
+        let response = self.es_pool
+            .cat()
+            .indices(elasticsearch::cat::CatIndicesParts::None)
+            .format("json")
+            .s(&[filter_option])
+            .send()
+            .await?;
+        
+        let indices_data: Vec<Value> = response.json().await?;
+
+        let mut index_infos_queue: VecDeque<IndexInfos> = VecDeque::new();
+        let mut cnt = 0;
+
+        for index in indices_data {
+            
+            if cnt == limit_cnt { break; }
+            
+            let index_name = index.get("index").and_then(Value::as_str).unwrap_or("");
+
+            if ! index_name.starts_with('.') {
+                let store_size = index.get("store.size").and_then(Value::as_str).unwrap_or("");
+                let index_infos_obj = IndexInfos::new(index_name.to_string(), store_size.to_string());
+                index_infos_queue.push_back(index_infos_obj);
+
+                cnt += 1;
+            }
+        }
+
+        Ok(index_infos_queue)
+    }
+
+    
+    /*
+        Function that calls "DELETE" api from Elasticsearch - Elasticsearch Node LEVEL
+    */
+    async fn node_delete_query(&self, index_name: &str) -> Result<(), anyhow::Error> {
+        
+        let response = self.es_pool
+            .indices()
+            .delete(elasticsearch::indices::IndicesDeleteParts::Index(&[index_name]))
+            .send()
+            .await?;
+
+            if response.status_code().is_success() {
+                info!("Index '{}' has been deleted successfully.", index_name);
+            } else {
+                // Error response output
+                let err_body = response.text().await?;
+                error!("Failed to delete index: {}", err_body);
+            }
+            
+        Ok(())
+    }
 
     
 

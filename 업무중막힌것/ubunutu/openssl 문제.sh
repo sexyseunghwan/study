@@ -55,3 +55,11 @@ lrwxrwxrwx  1 root root       28 Jun 29  2019 libxmlsec1-openssl.so.1 -> libxmls
 -rw-r--r--  1 root root   283272 Jun 29  2019 libxmlsec1-openssl.so.1.2.28
 drwxr-xr-x  3 root root     4096 Jul 27  2022 open-vm-tools
 
+
+# 부가 설명
+/usr/lib/x86_64-linux-gnu는 시스템의 중요한 구성 요소를 포함하는 디렉토리로, 
+운영 체제의 안정성과 효율성을 유지하는 데 기여한다. 
+이러한 라이브러리들을 통해 개별 애플리케이션들은 필요한 기능을 직접 구현하지 않고도 이를 사용할 수 있어, 
+개발의 효율성을 높이고, 시스템 자원의 사용을 최적화할 수 있다.
+
+

@@ -16,12 +16,13 @@ use crate::utils_modules::parsing_utils::*;
 use crate::utils_modules::logger_utils::*;
 
 /*
-    Considering the system monitoring index creation time, monitoring is stopped while the system index is being created.
+    Considering the system monitoring index creation time. 
+    monitoring-system is stopped while the system index is being created.(".monitoring-es-7~")
 */
 pub fn monitor_thread_stop() {
     
     let m_date = get_curr_utc_time_naive();
-
+    
     if m_date.hour() == 0 && m_date.second() <= 3 {
         thread::sleep(Duration::from_secs(180));
     }
@@ -84,8 +85,8 @@ fn get_multi_thread_es_vec(host_info_list: Vec<ESMetricInfoExtend>) -> Result<Ve
 */
 async fn multi_es_monitor(host_info_list: Vec<ESMetricInfoExtend>, kafka_client: ProduceBroker) -> Result<(), anyhow::Error> {
     
-    infos("test").await;
-
+    //infos("test").await;
+    
     for es_cluster in host_info_list {
 
         // ES connection object for which MONITORING will be performed
@@ -97,6 +98,12 @@ async fn multi_es_monitor(host_info_list: Vec<ESMetricInfoExtend>, kafka_client:
             }
         };
         
+        /* 
+            Check the shard status of the Es Cluster.
+            [ shard_check ]
+            True :  Problem with Shard
+            False : No Problem with Shard
+        */
         let shard_check = get_shard_status(&es_host_client, &es_cluster.cluster_name, es_cluster.shard_limit, es_cluster.kibana_url(), &kafka_client).await?;
         
         /*
@@ -191,8 +198,7 @@ pub async fn metric_monitor(kafka_client: &ProduceBroker, mysql_client: &MySqlAs
                     let dec_pw = match decrypt(user_pw_enc, &aes_infos.aes_key, &aes_infos.aes_iv) {
                         Ok(dec_pw) => dec_pw,
                         Err(err) => {
-                            error!("{:?}", err);
-                            return Err(anyhow!("Encrypted data has failed to decrypt."));
+                            return Err(anyhow!(format!("Encrypted data has failed to decrypt. : {:?}", err)));
                         }
                     };
 
@@ -202,7 +208,7 @@ pub async fn metric_monitor(kafka_client: &ProduceBroker, mysql_client: &MySqlAs
             },
             None => String::from("")
         };
-
+        
         /* 
             Instance of NOSQL_HOST_INFO (MySQL Table)
             => {host_ip, host_port}

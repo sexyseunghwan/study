@@ -44,17 +44,6 @@ pub async fn infos(info_msg: &str) {
         producer_lock.clone()
     };
 
-    // let producer_lock = match LOGGER_PRODUCER.lock() {
-    //     Ok(producer_lock) => producer_lock,
-    //     Err(e) => {
-    //         error!("{:?}", e);
-    //         panic!("Cannot recover from locking failure");
-    //     }
-    // };
-
-    // let producer_clone = producer_lock.clone();
-    // drop(producer_lock); // Explicitly drop the lock
-
     let msg_detail = LogDetail::new(String::from("ELASTIC_MONITOR"), String::from("INFO"), info_msg.to_string());
 
     match producer_clone.send_message_to_kafka_log(&msg_detail, "nosql_mon_log").await {
@@ -74,17 +63,6 @@ pub async fn errors(err_msg: anyhow::Error) {
         let producer_lock = LOGGER_PRODUCER.lock().expect("Failed to lock producer");
         producer_lock.clone()
     };
-
-    // let producer_lock = match LOGGER_PRODUCER.lock() {
-    //     Ok(producer_lock) => producer_lock,
-    //     Err(e) => {
-    //         error!("{:?}", e);
-    //         panic!("Cannot recover from locking failure");
-    //     }
-    // };
-    
-    // let producer_clone = producer_lock.clone();
-    // drop(producer_lock); // Explicitly drop the lock
 
     let msg_detail = LogDetail::new(String::from("ELASTIC_MONITOR"), String::from("ERROR"), err_msg.to_string());
 

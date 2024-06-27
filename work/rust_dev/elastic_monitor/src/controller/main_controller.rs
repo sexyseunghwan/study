@@ -59,7 +59,7 @@ pub async fn main_controller() {
         match metric_monitor(&kafka_client, &mysql_client, &aes_infos).await {
             Ok(_) => () ,
             Err(err) => {
-                error!("{}",err)
+                errors(err).await
             }
         }
         
@@ -73,7 +73,7 @@ pub async fn main_controller() {
             match metric_monitor(&kafka_client, &mysql_client, &aes_infos).await {
                 Ok(_) => (),
                 Err(err) => {
-                    error!("{}",err)
+                    errors(err).await
                 }
             }
             

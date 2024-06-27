@@ -7,6 +7,7 @@ use crate::dto::alarm_related_dtos::*;
 use crate::dto::es_dtos::*;
 
 use crate::utils_modules::time_utils::*;
+use crate::utils_modules::logger_utils::*;
 
 
 /*
@@ -57,7 +58,7 @@ pub async fn get_shard_status(es_client: &EsHelper, cluster_name: &str, shard_li
     if let Some(node_map) = shard_res["nodes"].as_object() {
         
         for node_obj in node_map {
-
+            
             let node_info = node_obj.1;
             
             if let Some(node_role_list) = node_info.get("roles").and_then(Value::as_array) {
@@ -182,7 +183,7 @@ pub async fn get_es_disk_state(es_client: &EsHelper, kafka_client: &ProduceBroke
             let avail_disk = bucket["available_disk"]["value"].as_f64().unwrap_or(-1.0);
 
             if host_ip_port.is_empty() || total_disk < 0.0 || avail_disk < 0.0 {
-                error!("Invalid data encountered");
+                errors(anyhow!("Invalid data encountered in get_es_disk_state()")).await;
                 continue;
             }
             
@@ -290,7 +291,7 @@ pub async fn get_es_jvm_cpu_state(es_client: &EsHelper, kafka_client: &ProduceBr
             let mut use_jvm = bucket["heap_avg"]["value"].as_f64().unwrap_or(-1.0);
 
             if host_ip_port.is_empty() || use_cpu < 0.0 || use_jvm < 0.0 {
-                error!("Invalid data encountered");
+                errors(anyhow!("Invalid data encountered in get_es_jvm_cpu_state()")).await;
                 continue;
             }
             
@@ -314,7 +315,7 @@ pub async fn get_es_jvm_cpu_state(es_client: &EsHelper, kafka_client: &ProduceBr
                         
             monitor_metric_list.push(monitor_metric_from_cpu);
             monitor_metric_list.push(monitor_metric_from_jvm);
-
+            
             kafka_client.send_message_to_kafka_metric(&monitor_metric_list, "nosql_metric_log").await?;
             
             // if use_jvm >= jvm_limit {

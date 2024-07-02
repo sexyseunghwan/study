@@ -90,7 +90,7 @@ pub async fn get_shard_status(es_client: &EsHelper, cluster_name: &str, shard_li
     // ========================================================================================================================
     // ============================== 4. Monitoring information is produced in Monitoring Kafka. ==============================
     // ========================================================================================================================
-    let cur_time_utc = get_current_utc_time("%Y-%m-%dT%H:%M:%S%.3fZ");
+    let cur_time_utc = ("%Y-%m-%dT%H:%M:%S%.3fZ");
 
     // If there are enough shards that can be allocated to the ES cluster, the bool_flag value becomes TRUE.
     let exceed_flag = used_shard_per >= shard_limit;

@@ -76,4 +76,15 @@ POST /consuming_index_prod_type/_doc/JYduRZABLPyTWz752BYg/_update ## _doc 와 _u
 }
 
 
+# ==========================================================
+# ========== 인덱스 특정 문서를 특정 조건으로 정렬시키는 방법 ==========
+# ==========================================================
+GET /consuming_index_prod_new/_search
+{
+  
+  "sort": [
+    { "@timestamp": { "order": "desc" }}
+  ]
+}
+
 

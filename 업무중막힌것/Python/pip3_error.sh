@@ -2,5 +2,4 @@
 # ========== pip3 인식 오류 문제 ==========
 # ======================================
 ## pip3 install 이 안되는 경우가 있다. 그럴 경우에 아래의 명령어를 사용하면 해결할 수 있다.
-
 python3 -m pip config set global.break-system-packages true

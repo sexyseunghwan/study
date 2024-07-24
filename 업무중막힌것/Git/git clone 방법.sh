@@ -15,3 +15,14 @@ git config --global user.email "ssh9308@naver.com"
 ## git clone 명령어를 사용하여 저장소 URL 뒤에 붙여넣기.
 git clone https://github.com/sexyseunghwan/ELASTIC_INDEX_CLEAR
 git clone https://github.com/sexyseunghwan/consume_alert
+
+git clone https://github.com/sexyseunghwan/consume_alert_rust
+git clone https://github.com/sexyseunghwan/python_graph_api
+
+
+
+/home/wmp-user/consume_rust/consume_alert_rust/consume_alert_rust/data/images
+
+
+
+file_uuid = '/home/wmp-user/consume_rust/consume_alert_rust/consume_alert_rust/data/images/' + str(uuid.uuid4()) + ".png"

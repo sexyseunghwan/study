@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.erd": "json",
+        "*.vuerd": "json",
+        "vector": "cpp",
+        "__bit_reference": "cpp",
+        "deque": "cpp",
+        "ostream": "cpp",
+        "iostream": "cpp"
+    }
+}

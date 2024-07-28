@@ -8,3 +8,4 @@ g++ -std=c++17 -Wall -Wextra -o 14502_bfs 14502_bfs.cpp
 
 g++ -std=c++17 -Wall -Wextra -o 1937 1937.cpp
 g++ -std=c++17 -Wall -Wextra -o 4963 4963.cpp
+g++ -std=c++17 -Wall -Wextra -o 4963_bfs 4963_bfs.cpp

@@ -13,9 +13,5 @@ g++ -std=c++17 -Wall -Wextra -o 4963_bfs 4963_bfs.cpp
 
 g++ -std=c++17 -Wall -Wextra -o 14503 14503.cpp
 
-4 4
-2 2 0
-1 1 1 1
-1 0 0 1
-1 0 0 1
-1 1 1 1
+g++ -std=c++17 -Wall -Wextra -o 2665 2665.cpp
+

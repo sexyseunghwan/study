@@ -15,3 +15,5 @@ g++ -std=c++17 -Wall -Wextra -o 14503 14503.cpp
 
 g++ -std=c++17 -Wall -Wextra -o 2665 2665.cpp
 
+g++ -std=c++17 -Wall -Wextra -o 2665_dijkstra 2665_dijkstra.cpp
+

@@ -7,8 +7,6 @@ sudo apt install git
 git pull origin main
 
 
-
-
 ######## 무조건 마스터의 커밋정보만 동기화 하려고 한다면 ########
 # 1. 현재 변경사항을 스태시하거나 버리기
 git reset --hard

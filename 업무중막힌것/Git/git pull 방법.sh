@@ -13,3 +13,10 @@ git reset --hard
 
 # 2. main 브랜치에서 pull 하기
 git pull origin main
+
+
+
+/home/seunghwan/Documents/consume_alert_rust/consume_alert_rust/images
+
+
+/home/seunghwan/Documents/consume_alert_rust/consume_alert_rust/images

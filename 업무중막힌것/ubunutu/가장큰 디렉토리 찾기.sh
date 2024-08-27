@@ -6,3 +6,18 @@ find . -type f -exec du -h {} + | sort -rh | head -n 10
 
 # 큰 디렉토리 차례대로 찾는 명령어
 find . -type d -exec du -h {} + | sort -rh | head -n 100
+
+
+
+ssh-keygen -t rsa -b 4096 -C "ssh9308@gmail.com"
+
+
+
+ssh -i id_rsa -p 2024 seunghwan@221.149.34.65
+
+
+
+ssh -i id_rsa -p 2024 seunghwan@221.149.34.65
+
+
+ssh -i id_rsa seunghwan@192.168.0.89

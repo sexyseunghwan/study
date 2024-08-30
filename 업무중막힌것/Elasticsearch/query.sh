@@ -1,6 +1,50 @@
 # ====================================
 # ========== 검색쿼리 기본 양식 ==========
 # ====================================
+PUT /
+{
+  "settings": {
+    "index": {
+      "number_of_shards": 3,
+      "number_of_replicas": 1
+    }
+  },
+  "mappings": {
+    "properties": {
+      "name": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "price": {
+        "type": "double"
+      },
+      "description": {
+        "type": "text"
+      },
+      "manufacturer": {
+        "type": "keyword"
+      },
+      "in_stock": {
+        "type": "boolean"
+      },
+      "tags": {
+        "type": "keyword"
+      }
+    }
+  }
+}
+
+
+
+
+# ====================================
+# ========== 검색쿼리 기본 양식 ==========
+# ====================================
 GET /consuming_index_prod_nori/_search
 {
     "query": {

@@ -27,3 +27,16 @@ m1 ver : /opt/homebrew/lib/python3.11/site-packages/matplotlib/mpl-data/matplotl
 ## 설정파일 위치로 들어가서 matplotlibrc 파일을 열어서 font.family 쪽 부분 주석을 해제하고 원하는 서체의 이름을 입력하면 된다.
 ## 그다음 캐시 위치로 이동해서 fontlist-~.json 파일을 지워주고 다시 프로그램 실행하니 해결되었다.
 ## 위의 방법이 안된다면, /Library/Fonts 파일 내로 해당 폰트를 복사해주면 될것이다.
+
+
+설치 위치:  /usr/local/lib/python3.8/dist-packages/matplotlib/__init__.py
+
+설정 위치:  /root/.config/matplotlib
+
+캐시 위치:  /root/.cache/matplotlib
+
+설정파일 위치:  /usr/local/lib/python3.8/dist-packages/matplotlib/mpl-data/matplotlibrc
+
+
+
+/home/seunghwan/Documents/python_graph_api/data/font/BMDOHYEON_ttf.ttf

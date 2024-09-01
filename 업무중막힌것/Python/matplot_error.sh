@@ -40,3 +40,25 @@ m1 ver : /opt/homebrew/lib/python3.11/site-packages/matplotlib/mpl-data/matplotl
 
 
 /home/seunghwan/Documents/python_graph_api/data/font/BMDOHYEON_ttf.ttf
+
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'your_password' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '156452' WITH GRANT OPTION;
+'
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+
+
+CREATE USER 'root'@'%' IDENTIFIED BY 'your_password';
+
+
+CREATE USER 'root'@'%' IDENTIFIED BY '156452';
+
+
+alter user 'root'@'localhost' identified with mysql_native_password by '156452';
+
+bind-address를 127.0.0.1로 설정하면, MySQL 서버는 로컬 컴퓨터에서만 연결을 받아들입니다. 이것을 "localhost"에만 바인딩한다고 말할 수 있습니다. 반면에 bind-address를 0.0.0.0으로 설정하면, 모든 네트워크 인터페이스를 통해 들어오는 연결을 받아들일 것입니다, 즉 어떤 외부 주소에서도 서버에 접근할 수 있게 됩니다.

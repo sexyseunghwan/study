@@ -20,3 +20,27 @@ git pull origin main
 
 
 /home/seunghwan/Documents/consume_alert_rust/consume_alert_rust/images
+
+
+args = "[Web발신]
+\nNH카드3*3*승인 
+\n신*환 
+\n2,000원 일시불 
+\n09/04 13:06 
+\n세븐일레븐 한신점 
+\n총누적75,635원"
+
+args = "삼성5221승인 신*환
+\n3,300원 일시불
+\n09/01 10:25 (주)코리아세븐송
+\n누적2,926,302원"
+
+
+
+[Web발신]
+NH카드3*3*승인 
+신*환 
+2,000원 일시불 
+09/04 13:06 
+세븐일레븐 한신점 
+총누적75,635원

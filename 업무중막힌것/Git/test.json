@@ -1,0 +1,2820 @@
+{
+    "took" : 8,
+    "timed_out" : false,
+    "_shards" : {
+      "total" : 1,
+      "successful" : 1,
+      "skipped" : 0,
+      "failed" : 0
+    },
+    "hits" : {
+      "total" : {
+        "value" : 952,
+        "relation" : "eq"
+      },
+      "max_score" : null,
+      "hits" : [
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "BFao0JEBJXTiqW-8xyUs",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-09-08T17:03:27Z",
+            "prodt_money" : 10000,
+            "prodt_name" : "성당헌금"
+          },
+          "sort" : [
+            1725815007000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "-1ao0JEBJXTiqW-8KST_",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-09-08T10:11:00Z",
+            "prodt_money" : 2000,
+            "prodt_name" : "씨유(CU)송파파크데"
+          },
+          "sort" : [
+            1725790260000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "2VZszJEBJXTiqW-85R8W",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-09-07T21:09:00Z",
+            "prodt_money" : 330,
+            "prodt_name" : "롯데마트 월드타워점 ("
+          },
+          "sort" : [
+            1725743340000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "11ZszJEBJXTiqW-8uh9b",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-09-07T21:07:00Z",
+            "prodt_money" : 65890,
+            "prodt_name" : "롯데마트 월드타워"
+          },
+          "sort" : [
+            1725743220000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "lFbxy5EBJXTiqW-8sBoC",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-09-07T19:04:00Z",
+            "prodt_money" : 6800,
+            "prodt_name" : "(주)스타벅스커피코"
+          },
+          "sort" : [
+            1725735840000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "Albky5EBJXTiqW-8HRrA",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-09-07T18:25:00Z",
+            "prodt_money" : 15000,
+            "prodt_name" : "롯데쇼핑(주) 잠실"
+          },
+          "sort" : [
+            1725733500000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "SFZ2y5EBJXTiqW-80BUH",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-09-07T16:49:00Z",
+            "prodt_money" : 2300,
+            "prodt_name" : "세븐일레븐 논현중앙"
+          },
+          "sort" : [
+            1725727740000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "JlZzy5EBJXTiqW-8khWO",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-09-07T16:45:00Z",
+            "prodt_money" : 30000,
+            "prodt_name" : "주식회사 조상현위"
+          },
+          "sort" : [
+            1725727500000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "VlYZy5EBJXTiqW-8YxFn",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-09-07T15:05:00Z",
+            "prodt_money" : 22600,
+            "prodt_name" : "주식회사 빅바이트"
+          },
+          "sort" : [
+            1725721500000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "Glb9ypEBJXTiqW-8tRA9",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-09-07T10:52:00Z",
+            "prodt_money" : 500,
+            "prodt_name" : "(주)스타벅스커피코리"
+          },
+          "sort" : [
+            1725706320000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "F1b9ypEBJXTiqW-8ghB4",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-09-07T10:27:00Z",
+            "prodt_money" : 15000,
+            "prodt_name" : "(주)교보문고"
+          },
+          "sort" : [
+            1725704820000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "E1b9ypEBJXTiqW-8SBD_",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-09-07T10:02:00Z",
+            "prodt_money" : 11600,
+            "prodt_name" : "새희망약국"
+          },
+          "sort" : [
+            1725703320000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "EFb9ypEBJXTiqW-8ABAU",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-09-07T09:54:00Z",
+            "prodt_money" : 14200,
+            "prodt_name" : "연세늘봄정신건강의"
+          },
+          "sort" : [
+            1725702840000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "DVb8ypEBJXTiqW-8sxDh",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-09-06T19:10:00Z",
+            "prodt_money" : 1700,
+            "prodt_name" : "세븐일레븐 송파파크"
+          },
+          "sort" : [
+            1725649800000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "CFb8ypEBJXTiqW-8VRCY",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-09-05T16:43:00Z",
+            "prodt_money" : 1500,
+            "prodt_name" : "세븐일레븐 한신점"
+          },
+          "sort" : [
+            1725554580000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "01V4vJEBJXTiqW-8SIqE",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-09-04T18:58:05Z",
+            "prodt_money" : 71600,
+            "prodt_name" : "교통비"
+          },
+          "sort" : [
+            1725476285000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "0FV4vJEBJXTiqW-8BYpb",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-09-04T18:57:47Z",
+            "prodt_money" : 2000,
+            "prodt_name" : "세븐일레븐 선릉역"
+          },
+          "sort" : [
+            1725476267000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "qSHYspEB0D7adOZ-R_lc",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-09-02T22:06:00Z",
+            "prodt_money" : 31900,
+            "prodt_name" : "네이버 페이 - 비비크림"
+          },
+          "sort" : [
+            1725314760000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "fSHTspEB0D7adOZ-n_ky",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-09-02T21:53:09Z",
+            "prodt_money" : 23315,
+            "prodt_name" : "네이버 페이 - 로션"
+          },
+          "sort" : [
+            1725313989000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "gSHUspEB0D7adOZ-IPmH",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-09-02T14:53:03Z",
+            "prodt_money" : 30000,
+            "prodt_name" : "chatgpt 구독료"
+          },
+          "sort" : [
+            1725288783000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "aiHRspEB0D7adOZ-zPk7",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-09-01T10:25:09Z",
+            "prodt_money" : 3300,
+            "prodt_name" : "세븐일레븐 송파파크데일점"
+          },
+          "sort" : [
+            1725186309000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "YCHRspEB0D7adOZ-Gvla",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-31T21:59:11Z",
+            "prodt_money" : 1700,
+            "prodt_name" : "cu 송파파크데일점"
+          },
+          "sort" : [
+            1725141551000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "VSHQspEB0D7adOZ-HPny",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-31T20:57:48Z",
+            "prodt_money" : 2280,
+            "prodt_name" : "롯데 프리미엄 푸드 잠실점"
+          },
+          "sort" : [
+            1725137868000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "bV2Qp5EB5N_peopDFoz4",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-31T17:32:03Z",
+            "prodt_money" : 49200,
+            "prodt_name" : "브루클린 버거 잠실"
+          },
+          "sort" : [
+            1725125523000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "Jt47mZEBaVE4-9lKhI1d",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-28T22:45:00Z",
+            "prodt_money" : 1800,
+            "prodt_name" : "세븐일레븐 송파 마천점"
+          },
+          "sort" : [
+            1724885100000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "It47mZEBaVE4-9lKVo3c",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-28T22:44:48Z",
+            "prodt_money" : 1000,
+            "prodt_name" : "세븐일레븐 한신 인터벨리점"
+          },
+          "sort" : [
+            1724885088000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "PN4ElJEBaVE4-9lKBVR1",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-27T22:26:17Z",
+            "prodt_money" : 3000,
+            "prodt_name" : "세븐일레븐 마천"
+          },
+          "sort" : [
+            1724797577000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "ON4DlJEBaVE4-9lKzVR_",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-27T22:26:02Z",
+            "prodt_money" : 5000,
+            "prodt_name" : "메가커피 선릉"
+          },
+          "sort" : [
+            1724797562000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "M94DlJEBaVE4-9lKO1Qr",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-27T22:25:25Z",
+            "prodt_money" : 2500,
+            "prodt_name" : "유튜브 프리미엄"
+          },
+          "sort" : [
+            1724797525000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "nlcTfpEBhEsZUYl4ocn0",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-23T19:10:00Z",
+            "prodt_money" : 5250,
+            "prodt_name" : "하모니마트 마천"
+          },
+          "sort" : [
+            1724440200000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "dVcnfpEBhEsZUYl4wMp5",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-23T15:03:00Z",
+            "prodt_money" : 4170,
+            "prodt_name" : "하모니마트 마천"
+          },
+          "sort" : [
+            1724425380000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "bFcnfpEBhEsZUYl4HMom",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-17T17:29:00Z",
+            "prodt_money" : 52800,
+            "prodt_name" : "옵스 카페 부산 해운대"
+          },
+          "sort" : [
+            1723915740000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "mFcTfpEBhEsZUYl4DcmZ",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-15T09:01:00Z",
+            "prodt_money" : 10890,
+            "prodt_name" : "웹하드 구독료"
+          },
+          "sort" : [
+            1723712460000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "X1cmfpEBhEsZUYl4a8pp",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-14T14:11:00Z",
+            "prodt_money" : 19700,
+            "prodt_name" : "롯데백화점 잠실"
+          },
+          "sort" : [
+            1723644660000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "j1cSfpEBhEsZUYl4L8nO",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-12T14:49:00Z",
+            "prodt_money" : 6083,
+            "prodt_name" : "멜론 스트리밍 구독료"
+          },
+          "sort" : [
+            1723474140000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "h1cRfpEBhEsZUYl4ycmG",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-12T11:39:00Z",
+            "prodt_money" : 33990,
+            "prodt_name" : "통신비"
+          },
+          "sort" : [
+            1723462740000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "TlckfpEBhEsZUYl4zcqr",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-11T20:06:00Z",
+            "prodt_money" : 12000,
+            "prodt_name" : "요아정 건대"
+          },
+          "sort" : [
+            1723406760000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "VlclfpEBhEsZUYl4oso7",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-11T20:06:00Z",
+            "prodt_money" : 195300,
+            "prodt_name" : "네이버페이 - 서버 1/5"
+          },
+          "sort" : [
+            1723406760000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "X1cOfpEBhEsZUYl4nMkj",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-09T15:23:00Z",
+            "prodt_money" : 7500,
+            "prodt_name" : "로스터리 락온 역삼 카페"
+          },
+          "sort" : [
+            1723216980000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "flcRfpEBhEsZUYl4Kckd",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-09T15:23:00Z",
+            "prodt_money" : 41800,
+            "prodt_name" : "큐텐 모임"
+          },
+          "sort" : [
+            1723216980000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "WFcOfpEBhEsZUYl4HslP",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-08T17:22:00Z",
+            "prodt_money" : 10000,
+            "prodt_name" : "우정버스 아이스크림 할인점"
+          },
+          "sort" : [
+            1723137720000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "UlcNfpEBhEsZUYl4lsk6",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-05T16:52Z",
+            "prodt_money" : 46200,
+            "prodt_name" : "교통비"
+          },
+          "sort" : [
+            1722876720000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "dDA5HZEBLPyTWz75dxbv",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-04T20:49:51Z",
+            "prodt_money" : 9300,
+            "prodt_name" : "파리바게트 마천점"
+          },
+          "sort" : [
+            1722804591000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "zy6qHJEBLPyTWz75qFCF",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-04T18:13:52Z",
+            "prodt_money" : 10000,
+            "prodt_name" : "성당헌금"
+          },
+          "sort" : [
+            1722795232000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "hiGHGJEBLPyTWz75RSZW",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-03T22:56:43Z",
+            "prodt_money" : 4500,
+            "prodt_name" : "이마트 삼성"
+          },
+          "sort" : [
+            1722725803000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "Eh8HGJEBLPyTWz75UpDB",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-03T20:36:58Z",
+            "prodt_money" : 7900,
+            "prodt_name" : "메가박스 삼성"
+          },
+          "sort" : [
+            1722717418000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "mB8HGJEBLPyTWz75DI_7",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-03T20:36:40Z",
+            "prodt_money" : 10800,
+            "prodt_name" : "스템 카페"
+          },
+          "sort" : [
+            1722717400000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "qxvKFpEBLPyTWz75y6LZ",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-03T14:51:14Z",
+            "prodt_money" : 80000,
+            "prodt_name" : "삼성역 초밥"
+          },
+          "sort" : [
+            1722696674000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "3RpeFpEBLPyTWz75WEnV",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-03T12:52:47Z",
+            "prodt_money" : 12300,
+            "prodt_name" : "새희망 약국"
+          },
+          "sort" : [
+            1722689567000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "vRpVFpEBLPyTWz75vy7S",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-03T12:43:24Z",
+            "prodt_money" : 14200,
+            "prodt_name" : "연세밝은 정신과"
+          },
+          "sort" : [
+            1722689004000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "tRlBFpEBLPyTWz75O-11",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-03T12:20:59Z",
+            "prodt_money" : 16700,
+            "prodt_name" : "상이누나 생일선물"
+          },
+          "sort" : [
+            1722687659000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "PxkSFpEBLPyTWz754lr7",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-03T11:30:22Z",
+            "prodt_money" : 37800,
+            "prodt_name" : "두찜 찜닭"
+          },
+          "sort" : [
+            1722684622000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "MQzuEZEBLPyTWz75gCxy",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-02T16:12:08Z",
+            "prodt_money" : 30000,
+            "prodt_name" : "chatgpt 구독료"
+          },
+          "sort" : [
+            1722615128000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "OwBKDpEBLPyTWz75dpfi",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-01T23:14:06Z",
+            "prodt_money" : 2000,
+            "prodt_name" : "세븐일레븐 잠실"
+          },
+          "sort" : [
+            1722554046000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "SwBKDpEBLPyTWz75L5YV",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-08-01T23:13:48Z",
+            "prodt_money" : 47000,
+            "prodt_name" : "귀한족발 방이"
+          },
+          "sort" : [
+            1722554028000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "h_AeCZEBLPyTWz75cySw",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-31T23:07:56Z",
+            "prodt_money" : 3500,
+            "prodt_name" : "성적증명서"
+          },
+          "sort" : [
+            1722467276000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "x950A5EBLPyTWz75KB8f",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-30T15:29:00Z",
+            "prodt_money" : 11050,
+            "prodt_name" : "하모니마트 마천점"
+          },
+          "sort" : [
+            1722353340000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "yd5zA5EBLPyTWz75lR3p",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-28T19:10:00Z",
+            "prodt_money" : 10000,
+            "prodt_name" : "성당 헌금"
+          },
+          "sort" : [
+            1722193800000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "db5y-ZABLPyTWz75xE0S",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-27T22:13:00Z",
+            "prodt_money" : 5980,
+            "prodt_name" : "롯데마트 월드타워"
+          },
+          "sort" : [
+            1722118380000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "Lr5x-ZABLPyTWz75eElR",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-27T19:28:00Z",
+            "prodt_money" : 8000,
+            "prodt_name" : "송파고은 약국"
+          },
+          "sort" : [
+            1722108480000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "ML5x-ZABLPyTWz75H0iQ",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-27T18:56:00Z",
+            "prodt_money" : 33100,
+            "prodt_name" : "피슈마라홍탕 잠실"
+          },
+          "sort" : [
+            1722106560000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "xr5w-ZABLPyTWz75sUa-",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-27T14:02:00Z",
+            "prodt_money" : 6600,
+            "prodt_name" : "올리브영 잠실"
+          },
+          "sort" : [
+            1722088920000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "26h38pABLPyTWz75-hvY",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-27T13:34:27Z",
+            "prodt_money" : 25899,
+            "prodt_name" : "네이버 페이"
+          },
+          "sort" : [
+            1722087267000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "eJ6E75ABLPyTWz750Lil",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-26T10:22:00Z",
+            "prodt_money" : 2500,
+            "prodt_name" : "유튜브 프리미엄"
+          },
+          "sort" : [
+            1721989320000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "AZ6E75ABLPyTWz75P7fu",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-25T10:22:00Z",
+            "prodt_money" : 38160,
+            "prodt_name" : "SK 매직 정수기"
+          },
+          "sort" : [
+            1721902920000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "o56C75ABLPyTWz75_7Ij",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-25T09:11:00Z",
+            "prodt_money" : 150000,
+            "prodt_name" : "여행비"
+          },
+          "sort" : [
+            1721898660000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "LJ6C75ABLPyTWz751bKW",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-25T09:10:00Z",
+            "prodt_money" : 500000,
+            "prodt_name" : "결혼 자금"
+          },
+          "sort" : [
+            1721898600000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "OZ6C75ABLPyTWz75g7EO",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-25T09:00:00Z",
+            "prodt_money" : 300000,
+            "prodt_name" : "홍콩여행 비행기 값"
+          },
+          "sort" : [
+            1721898000000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "PJ6C75ABLPyTWz75MbBx",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-25T09:00:00Z",
+            "prodt_money" : 200000,
+            "prodt_name" : "생활비"
+          },
+          "sort" : [
+            1721898000000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "Mnc845ABLPyTWz75Waej",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-24T14:35:01Z",
+            "prodt_money" : 27000,
+            "prodt_name" : "역삼 육회비빔밥"
+          },
+          "sort" : [
+            1721831701000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "tnc845ABLPyTWz75H6Y7",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-24T14:34:46Z",
+            "prodt_money" : 33000,
+            "prodt_name" : "야놀자"
+          },
+          "sort" : [
+            1721831686000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "MXc745ABLPyTWz755qYn",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-24T14:34:31Z",
+            "prodt_money" : 150800,
+            "prodt_name" : "아고다 여행 숙소비"
+          },
+          "sort" : [
+            1721831671000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "L2j-1JABOVjNVc6-BlUy",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-21T20:12:15Z",
+            "prodt_money" : 12560,
+            "prodt_name" : "하모니 마트 마천점"
+          },
+          "sort" : [
+            1721592735000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "SQuB1JAB60Vd9gb24tPw",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-21T17:56:40Z",
+            "prodt_money" : 10000,
+            "prodt_name" : "성당 헌금"
+          },
+          "sort" : [
+            1721584600000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "BCsvy5ABLPyTWz757Cdp",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-19T12:00:00Z",
+            "prodt_money" : 1700,
+            "prodt_name" : "회사 매점"
+          },
+          "sort" : [
+            1721390400000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "BCswy5ABLPyTWz75jykj",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-19T12:00:00Z",
+            "prodt_money" : 13900,
+            "prodt_name" : "퐁듀치즈 등갈비 역삼"
+          },
+          "sort" : [
+            1721390400000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "KSsvy5ABLPyTWz75FCQr",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-18T19:35:00Z",
+            "prodt_money" : 2990,
+            "prodt_name" : "하모니 마트 마천점"
+          },
+          "sort" : [
+            1721331300000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "Nisuy5ABLPyTWz75qSNr",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-18T09:01:00Z",
+            "prodt_money" : 10890,
+            "prodt_name" : "웹하드 구독"
+          },
+          "sort" : [
+            1721293260000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "pwbHv5ABLPyTWz75H94x",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-17T17:20:16Z",
+            "prodt_money" : 400,
+            "prodt_name" : "회사 매점"
+          },
+          "sort" : [
+            1721236816000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "D5_Hv5ABTkOtzmRfBXfz",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-17T17:20:09Z",
+            "prodt_money" : 10800,
+            "prodt_name" : "파운드 커피 역삼"
+          },
+          "sort" : [
+            1721236809000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "RGWgtJABOVjNVc6-vi8V",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-15T13:22:31Z",
+            "prodt_money" : 19240,
+            "prodt_name" : "위메프-애플 충전기 어댑터"
+          },
+          "sort" : [
+            1721049751000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "V54hsZABTkOtzmRfbQoF",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-14T21:04:36Z",
+            "prodt_money" : 10940,
+            "prodt_name" : "위메프-홈매트"
+          },
+          "sort" : [
+            1720991076000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "TGT5sJABOVjNVc6-rNT2",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-14T20:21:11Z",
+            "prodt_money" : 22900,
+            "prodt_name" : "굽네치킨 거여"
+          },
+          "sort" : [
+            1720988471000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "lJ1_sJABTkOtzmRfaPp7",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-14T18:07:38Z",
+            "prodt_money" : 10000,
+            "prodt_name" : "성당 헌금"
+          },
+          "sort" : [
+            1720980458000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "dZ3Lq5ABTkOtzmRfKIUu",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-13T20:12:16Z",
+            "prodt_money" : 104000,
+            "prodt_name" : "하이디라오 삼성점"
+          },
+          "sort" : [
+            1720901536000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "l_v_pZABXLvMsHSxy3sx",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-12T17:12:02Z",
+            "prodt_money" : 6083,
+            "prodt_name" : "멜론 스트리밍"
+          },
+          "sort" : [
+            1720804322000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "H5z_pZABTkOtzmRfiPVY",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-12T17:11:45Z",
+            "prodt_money" : 400,
+            "prodt_name" : "회사 매점"
+          },
+          "sort" : [
+            1720804305000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "yK4dpJABLPyTWz75yt7i",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-12T08:25:34Z",
+            "prodt_money" : 12400,
+            "prodt_name" : "네이버 페이-애플워치 필름"
+          },
+          "sort" : [
+            1720772734000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "imNyoZABOVjNVc6-KlHf",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-11T19:58:52Z",
+            "prodt_money" : 6500,
+            "prodt_name" : "파운드 커피 역삼"
+          },
+          "sort" : [
+            1720727932000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "0WIKnZABOVjNVc6-QeM4",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-10T23:26:53Z",
+            "prodt_money" : -40000,
+            "prodt_name" : "야놀자"
+          },
+          "sort" : [
+            1720654013000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "EJwKnZABTkOtzmRfLRYf",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-10T23:26:48Z",
+            "prodt_money" : 1800,
+            "prodt_name" : "gs25 역삼덕원"
+          },
+          "sort" : [
+            1720654008000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "hfkJnZABXLvMsHSx-p4o",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-10T23:26:35Z",
+            "prodt_money" : 400,
+            "prodt_name" : "회사 매점"
+          },
+          "sort" : [
+            1720653995000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "AZBpmpABLPyTWz754AXG",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-10T11:12:28Z",
+            "prodt_money" : 33900,
+            "prodt_name" : "통신비"
+          },
+          "sort" : [
+            1720609948000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "uWKclpABOVjNVc6-NENk",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-09T17:28:57Z",
+            "prodt_money" : 40000,
+            "prodt_name" : "야놀자"
+          },
+          "sort" : [
+            1720546137000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "OnevkpABLPyTWz75s3Bu",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-08T23:11:44.555Z",
+            "prodt_money" : 0,
+            "prodt_name" : "test"
+          },
+          "sort" : [
+            1720480304555
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "OHNIkZABLPyTWz756gUP",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-08T16:39:53Z",
+            "prodt_money" : 4400,
+            "prodt_name" : "우정버스 아이스크림 할인점"
+          },
+          "sort" : [
+            1720456793000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "Qv1IkZAB60Vd9gb2vNks",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-08T16:39:41Z",
+            "prodt_money" : 13400,
+            "prodt_name" : "하모니 마트 마천점"
+          },
+          "sort" : [
+            1720456781000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "HWF3jZABOVjNVc6-oGCg",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-07T22:52:25Z",
+            "prodt_money" : 10800,
+            "prodt_name" : "뚜레쥬르 마천"
+          },
+          "sort" : [
+            1720392745000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "NP13jZAB60Vd9gb2Cw7i",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-07T22:51:47Z",
+            "prodt_money" : 10000,
+            "prodt_name" : "성당 헌금"
+          },
+          "sort" : [
+            1720392707000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "aGAjiJABOVjNVc6-ituZ",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-06T22:02:29Z",
+            "prodt_money" : 2500,
+            "prodt_name" : "cu 마천"
+          },
+          "sort" : [
+            1720303349000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "SGAjiJABOVjNVc6-Jtsx",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-06T22:02:03Z",
+            "prodt_money" : 1500,
+            "prodt_name" : "하모니마트 마천"
+          },
+          "sort" : [
+            1720303323000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "TGBKh5ABOVjNVc6-ucYe",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-06T18:05:39Z",
+            "prodt_money" : 30000,
+            "prodt_name" : "위캔두잇"
+          },
+          "sort" : [
+            1720289139000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "PmBKh5ABOVjNVc6-iMas",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-06T18:05:27Z",
+            "prodt_money" : 33350,
+            "prodt_name" : "고딩친구 모임"
+          },
+          "sort" : [
+            1720289127000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "XfRsg5ABXLvMsHSxxkl0",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-06T00:04:22Z",
+            "prodt_money" : 29500,
+            "prodt_name" : "정우형 생일선물"
+          },
+          "sort" : [
+            1720224262000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "T_Rsg5ABXLvMsHSxUEnr",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-06T00:03:52Z",
+            "prodt_money" : 4850,
+            "prodt_name" : "cu 역삼포스틸점"
+          },
+          "sort" : [
+            1720224232000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "YTMLfZABLPyTWz75UmVT",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-04T18:20:12Z",
+            "prodt_money" : 24000,
+            "prodt_name" : "홍수계 찜닭 역삼점"
+          },
+          "sort" : [
+            1720117212000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "uy0fe5ABLPyTWz75E19R",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-04T09:22:32Z",
+            "prodt_money" : 29500,
+            "prodt_name" : "시아책임님 생일선물"
+          },
+          "sort" : [
+            1720084952000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "NizYepABLPyTWz750oJS",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-04T08:05:48Z",
+            "prodt_money" : 4600,
+            "prodt_name" : "cu 마천점"
+          },
+          "sort" : [
+            1720080348000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "mZhbeJABTkOtzmRfmoQq",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-03T20:29:47Z",
+            "prodt_money" : 61100,
+            "prodt_name" : "교통비"
+          },
+          "sort" : [
+            1720038587000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "SiRbeJABLPyTWz75erpj",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-03T20:29:39Z",
+            "prodt_money" : 1300,
+            "prodt_name" : "회사 매점"
+          },
+          "sort" : [
+            1720038579000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "6PhbeJAB60Vd9gb2XqnO",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-03T20:29:32Z",
+            "prodt_money" : 23140,
+            "prodt_name" : "네이버-바디미스트"
+          },
+          "sort" : [
+            1720038572000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "dyRaeJABLPyTWz75nLcM",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-03T20:28:42Z",
+            "prodt_money" : -32840,
+            "prodt_name" : "위메프 바디미스트"
+          },
+          "sort" : [
+            1720038522000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "ASRFeJABLPyTWz75wnZB",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-03T20:05:55.900Z",
+            "prodt_money" : 0,
+            "prodt_name" : "test"
+          },
+          "sort" : [
+            1720037155900
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "kF6_c5ABOVjNVc6-Kt_Y",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-02T23:00:26Z",
+            "prodt_money" : 32840,
+            "prodt_name" : "위메프 바디미스트"
+          },
+          "sort" : [
+            1719961226000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "oRACcpABLPyTWz75N92g",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-07-02T14:54:26Z",
+            "prodt_money" : 30000,
+            "prodt_name" : "chatgpt 구독료"
+          },
+          "sort" : [
+            1719932066000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "fpZpaJABTkOtzmRfPfeD",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-30T18:10:45Z",
+            "prodt_money" : 10000,
+            "prodt_name" : "성당 헌금"
+          },
+          "sort" : [
+            1719771045000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "mJa3Y5ABTkOtzmRffIKA",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-29T20:18:07Z",
+            "prodt_money" : 2200,
+            "prodt_name" : "이마트24 스타필드 삼성"
+          },
+          "sort" : [
+            1719692287000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "D-N9Y5ABLPyTWz75TZCd",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-29T19:14:34Z",
+            "prodt_money" : 69570,
+            "prodt_name" : "아웃백 삼성"
+          },
+          "sort" : [
+            1719688474000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "O5YiYpABTkOtzmRftVsG",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-29T12:56:00Z",
+            "prodt_money" : 19000,
+            "prodt_name" : "쿠팡-써멀구리스"
+          },
+          "sort" : [
+            1719665760000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "iPQSYpAB60Vd9gb2PAdL",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-29T12:38:00Z",
+            "prodt_money" : 12200,
+            "prodt_name" : "새희망 약국"
+          },
+          "sort" : [
+            1719664680000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "OZYNYpABTkOtzmRfwVky",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-29T12:33:06Z",
+            "prodt_money" : 14200,
+            "prodt_name" : "연세늘봄 정신과"
+          },
+          "sort" : [
+            1719664386000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "y_NSX5AB60Vd9gb2E3TR",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-28T23:48:52Z",
+            "prodt_money" : 50000,
+            "prodt_name" : "쌍용 모임"
+          },
+          "sort" : [
+            1719618532000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "gc1UXJABLPyTWz75-1iS",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-28T09:53:11Z",
+            "prodt_money" : 100000,
+            "prodt_name" : "아버지 생일 용돈"
+          },
+          "sort" : [
+            1719568391000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "Bs1UXJABLPyTWz7521gK",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-28T09:53:03Z",
+            "prodt_money" : 26000,
+            "prodt_name" : "bbq 치킨 마천"
+          },
+          "sort" : [
+            1719568383000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "2ev2VpABXLvMsHSxBQgv",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-27T08:51:22Z",
+            "prodt_money" : 24000,
+            "prodt_name" : "구글 드라이브 구독료"
+          },
+          "sort" : [
+            1719478282000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "V_HbU5AB60Vd9gb2dhMF",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-26T18:23:29Z",
+            "prodt_money" : 5300,
+            "prodt_name" : "유튜브 프리미엄"
+          },
+          "sort" : [
+            1719426209000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "ZpTZU5ABTkOtzmRfDveG",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-26T18:20:52Z",
+            "prodt_money" : 4300,
+            "prodt_name" : "gs25 역삼덕원"
+          },
+          "sort" : [
+            1719426052000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "qZQyT5ABTkOtzmRf9YOi",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-25T20:40:58Z",
+            "prodt_money" : 3500,
+            "prodt_name" : "gs25 역삼 덕원"
+          },
+          "sort" : [
+            1719348058000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "m5QyT5ABTkOtzmRfoINW",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-25T20:40:36Z",
+            "prodt_money" : 12800,
+            "prodt_name" : "파운드 커피 역삼"
+          },
+          "sort" : [
+            1719348036000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "q-__TJAB60Vd9gb23KVD",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-25T10:25:54Z",
+            "prodt_money" : 500000,
+            "prodt_name" : "결혼준비 자금"
+          },
+          "sort" : [
+            1719311154000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "Vej_TJABXLvMsHSxwvUd",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-25T10:25:48Z",
+            "prodt_money" : 150000,
+            "prodt_name" : "여행비"
+          },
+          "sort" : [
+            1719311148000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "1JT_TJABTkOtzmRfm0z8",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-25T10:25:38Z",
+            "prodt_money" : 200000,
+            "prodt_name" : "생활비"
+          },
+          "sort" : [
+            1719311138000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "l1v_TJABOVjNVc6-fhqR",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-25T10:25:30Z",
+            "prodt_money" : 38160,
+            "prodt_name" : "SK 매직"
+          },
+          "sort" : [
+            1719311130000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "mu6ARZAB60Vd9gb2ARbK",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-23T23:28:55Z",
+            "prodt_money" : 11700,
+            "prodt_name" : "cu 마천점"
+          },
+          "sort" : [
+            1719185335000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "1Fp_RZABOVjNVc6-iV_T",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-23T23:28:24Z",
+            "prodt_money" : 2250,
+            "prodt_name" : "스타벅스 영동점"
+          },
+          "sort" : [
+            1719185304000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "5pNTRJABTkOtzmRfX3TP",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-23T18:00:33Z",
+            "prodt_money" : 10000,
+            "prodt_name" : "성당 헌금"
+          },
+          "sort" : [
+            1719165633000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "gn6OQpABLPyTWz75OFk4",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-23T09:45:35Z",
+            "prodt_money" : 55000,
+            "prodt_name" : "군대 친구들 모임"
+          },
+          "sort" : [
+            1719135935000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "IXKXPpABLPyTWz75KEFb",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-22T15:16:52Z",
+            "prodt_money" : 6300,
+            "prodt_name" : "잠실 포모르"
+          },
+          "sort" : [
+            1719069412000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "9F9xOJABLPyTWz75l6X7",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-21T10:38:06Z",
+            "prodt_money" : 120000,
+            "prodt_name" : "스시타네 방이"
+          },
+          "sort" : [
+            1718966286000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "quoiM5AB60Vd9gb2I0WE",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-20T09:53:13Z",
+            "prodt_money" : 26960,
+            "prodt_name" : "회사 회식"
+          },
+          "sort" : [
+            1718877193000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "I-O2MJABXLvMsHSxlhE7",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-19T22:36:30Z",
+            "prodt_money" : 1900,
+            "prodt_name" : "회사 매점"
+          },
+          "sort" : [
+            1718836590000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "dEi2MJABLPyTWz75XTxq",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-19T22:36:16Z",
+            "prodt_money" : 400,
+            "prodt_name" : "회사 매점"
+          },
+          "sort" : [
+            1718836576000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "_FdcK5ABOVjNVc6-89RU",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-18T21:40:30Z",
+            "prodt_money" : 3500,
+            "prodt_name" : "교보문고 핫트랙스 잠실"
+          },
+          "sort" : [
+            1718746830000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "YpEWK5ABTkOtzmRfRgD-",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-18T20:23:18Z",
+            "prodt_money" : 2300,
+            "prodt_name" : "회사 매점"
+          },
+          "sort" : [
+            1718742198000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "d-imKJAB60Vd9gb2MRaL",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-18T09:01:38Z",
+            "prodt_money" : 10890,
+            "prodt_name" : "웹하드"
+          },
+          "sort" : [
+            1718701298000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "u-anIJAB60Vd9gb2Am32",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-16T19:45:34Z",
+            "prodt_money" : 6500,
+            "prodt_name" : "파리바게트 마천"
+          },
+          "sort" : [
+            1718567134000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "N986IJABXLvMsHSxbaMt",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-16T17:46:58Z",
+            "prodt_money" : 10000,
+            "prodt_name" : "성당 헌금"
+          },
+          "sort" : [
+            1718560018000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "I-bBHpAB60Vd9gb2wglY",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-16T10:55:33Z",
+            "prodt_money" : 5120,
+            "prodt_name" : "위메프 페이-먼지 제거 스프레이"
+          },
+          "sort" : [
+            1718535333000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "0t6_G5ABXLvMsHSx0bQR",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-15T20:54:34Z",
+            "prodt_money" : 57000,
+            "prodt_name" : "개나리 아구찜"
+          },
+          "sort" : [
+            1718484874000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "7AMRGpABLPyTWz75Qq8V",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-15T13:04:17Z",
+            "prodt_money" : 45000,
+            "prodt_name" : "스트로베리32 성수"
+          },
+          "sort" : [
+            1718456657000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "Ft2iFZABXLvMsHSx2m-a",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-14T16:25:12Z",
+            "prodt_money" : 175200,
+            "prodt_name" : "ssf 몰 - 아이패드 케이스"
+          },
+          "sort" : [
+            1718382312000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "uVWmEZABOVjNVc6-ilRG",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-13T21:50:45Z",
+            "prodt_money" : 2400,
+            "prodt_name" : "아이스크림 할인점 파크데일"
+          },
+          "sort" : [
+            1718315445000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "F-PeEJAB60Vd9gb2MyQM",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-13T18:11:55Z",
+            "prodt_money" : 2200,
+            "prodt_name" : "회사 매점"
+          },
+          "sort" : [
+            1718302315000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "KI6FDJABTkOtzmRfAgc-",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-12T21:56:01Z",
+            "prodt_money" : 1800,
+            "prodt_name" : "cu 마천"
+          },
+          "sort" : [
+            1718229361000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "qtlCDJABLPyTWz75HuE5",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-12T20:42:58Z",
+            "prodt_money" : 6083,
+            "prodt_name" : "멜론 스트리밍"
+          },
+          "sort" : [
+            1718224978000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "YuE4B5AB60Vd9gb2mS3g",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-11T21:14:28Z",
+            "prodt_money" : 10800,
+            "prodt_name" : "역삼 마라탕"
+          },
+          "sort" : [
+            1718140468000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "IeBRBZAB60Vd9gb2ecyj",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-11T12:22:24Z",
+            "prodt_money" : 33990,
+            "prodt_name" : "통신비"
+          },
+          "sort" : [
+            1718108544000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "g1M2_I8BOVjNVc6-yD6C",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-09T17:56:39Z",
+            "prodt_money" : 10000,
+            "prodt_name" : "성당 헌금"
+          },
+          "sort" : [
+            1717955799000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "gJys948BLPyTWz75-s1F",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-08T20:47:39Z",
+            "prodt_money" : 2400,
+            "prodt_name" : "세븐일레븐 파크데일"
+          },
+          "sort" : [
+            1717879659000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "Q9es948BXLvMsHSxpFww",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-08T20:47:17Z",
+            "prodt_money" : 15000,
+            "prodt_name" : "이성당 잠실"
+          },
+          "sort" : [
+            1717879637000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "YVKs948BOVjNVc6-AcnP",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-08T20:46:36Z",
+            "prodt_money" : 1000,
+            "prodt_name" : "롯데시네마 잠실 팝콘"
+          },
+          "sort" : [
+            1717879596000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "Kd6r948B60Vd9gb2rQ6S",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-08T20:46:14Z",
+            "prodt_money" : 26000,
+            "prodt_name" : "롯데시네마 잠실"
+          },
+          "sort" : [
+            1717879574000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "jr2K7I8BruTyanN00V-P",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-06T16:54:31Z",
+            "prodt_money" : 8200,
+            "prodt_name" : "cu 마천점"
+          },
+          "sort" : [
+            1717692871000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "DNpz548B60Vd9gb2aMWS",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-05T17:10:51Z",
+            "prodt_money" : 11000,
+            "prodt_name" : "파운드 커피 역삼점"
+          },
+          "sort" : [
+            1717607451000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "zdr_5Y8B60Vd9gb2eHpi",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-05T10:24:36Z",
+            "prodt_money" : 500000,
+            "prodt_name" : "결혼 준비 자금"
+          },
+          "sort" : [
+            1717583076000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "adnd4Y8B60Vd9gb2WqhM",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-04T15:08:51Z",
+            "prodt_money" : 2200,
+            "prodt_name" : "gs25 역삼 덕원점"
+          },
+          "sort" : [
+            1717513731000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "QV244Y8BLPyTWz75irNe",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-04T14:28:38Z",
+            "prodt_money" : 2500,
+            "prodt_name" : "파운드 커피 역삼"
+          },
+          "sort" : [
+            1717511318000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "-Yjn2I8BTkOtzmRfafAV",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-02T21:23:15Z",
+            "prodt_money" : 48000,
+            "prodt_name" : "책상 스탠드"
+          },
+          "sort" : [
+            1717363395000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "1E912I8BOVjNVc6-rbEA",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-02T19:19:01Z",
+            "prodt_money" : 5900,
+            "prodt_name" : "CU 마천점"
+          },
+          "sort" : [
+            1717355941000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "00912I8BOVjNVc6-XrH3",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-02T19:18:41Z",
+            "prodt_money" : 30000,
+            "prodt_name" : "chatgpt 구독료"
+          },
+          "sort" : [
+            1717355921000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "T0-e048BOVjNVc6-Pzk-",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-01T20:45:14Z",
+            "prodt_money" : 7000,
+            "prodt_name" : "코레일 빵집"
+          },
+          "sort" : [
+            1717274714000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "Wdae048B60Vd9gb2AtCL",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-01T20:44:59Z",
+            "prodt_money" : 65000,
+            "prodt_name" : "까폼 압구정"
+          },
+          "sort" : [
+            1717274699000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "L0-d048BOVjNVc6-cDlD",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-01T20:44:21Z",
+            "prodt_money" : 13000,
+            "prodt_name" : "스타벅스 잠실"
+          },
+          "sort" : [
+            1717274661000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "grcxz48BruTyanN0m4Rs",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-06-01T00:08:05Z",
+            "prodt_money" : 55000,
+            "prodt_name" : "옥된장 거여"
+          },
+          "sort" : [
+            1717200485000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "Nk3xwY8BOVjNVc6-9YFD",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-29T10:23:30Z",
+            "prodt_money" : 29610,
+            "prodt_name" : "위메프 페이 - 가그린"
+          },
+          "sort" : [
+            1716978210000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "2IZ5vY8BTkOtzmRf20UF",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-28T13:33:50Z",
+            "prodt_money" : 11000,
+            "prodt_name" : "그릴 아지사이 역삼"
+          },
+          "sort" : [
+            1716903230000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "CrMqvY8BruTyanN0Fux7",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-28T12:06:43Z",
+            "prodt_money" : 600,
+            "prodt_name" : "회사 매점"
+          },
+          "sort" : [
+            1716898003000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "ptGeuI8B60Vd9gb2_HhO",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-27T14:56:18Z",
+            "prodt_money" : 4500,
+            "prodt_name" : "하모니마트 마천점"
+          },
+          "sort" : [
+            1716821778000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "1oXFt48BTkOtzmRfzrem",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-27T10:59:05Z",
+            "prodt_money" : 38160,
+            "prodt_name" : "SK 매직 정수기"
+          },
+          "sort" : [
+            1716807545000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "sExHtY8BOVjNVc6-gEXy",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-26T23:21:53Z",
+            "prodt_money" : 13250,
+            "prodt_name" : "위메프 페이-멀티탭"
+          },
+          "sort" : [
+            1716765713000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "m4UxtY8BTkOtzmRfbXcO",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-26T22:57:46Z",
+            "prodt_money" : 5300,
+            "prodt_name" : "유튜브 프리미엄"
+          },
+          "sort" : [
+            1716764266000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "0oVHtI8BTkOtzmRf2mCN",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-26T18:42:38Z",
+            "prodt_money" : -110000,
+            "prodt_name" : " steam 게임 환불"
+          },
+          "sort" : [
+            1716748958000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "0YVHtI8BTkOtzmRfk2Bv",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-26T18:42:20Z",
+            "prodt_money" : 55000,
+            "prodt_name" : "steam 게임 환불"
+          },
+          "sort" : [
+            1716748940000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "j90VtI8BLPyTWz75bHNF",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-26T17:47:33Z",
+            "prodt_money" : 55000,
+            "prodt_name" : "steam game"
+          },
+          "sort" : [
+            1716745653000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "hUz8s48BOVjNVc6-DCUH",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-26T17:19:50Z",
+            "prodt_money" : -10000,
+            "prodt_name" : "steam 게임 환불"
+          },
+          "sort" : [
+            1716743990000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "O0zkso8BOVjNVc6-GwrF",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-26T12:14:04Z",
+            "prodt_money" : 10000,
+            "prodt_name" : "steam 게임"
+          },
+          "sort" : [
+            1716725644000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "h7Fzr48BruTyanN0-U1O",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-25T20:12:44Z",
+            "prodt_money" : 165900,
+            "prodt_name" : "마노디 셰프 잠실"
+          },
+          "sort" : [
+            1716667964000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "gbFzr48BruTyanN0kU06",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-25T20:12:17Z",
+            "prodt_money" : 4500,
+            "prodt_name" : "롯데물산 아이스크림 모찌"
+          },
+          "sort" : [
+            1716667937000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "XrDWrY8BruTyanN0G_4P",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-25T12:40:40Z",
+            "prodt_money" : 11800,
+            "prodt_name" : "새희망 약국"
+          },
+          "sort" : [
+            1716640840000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "9czNrY8BLPyTWz75AXhN",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-25T12:30:44Z",
+            "prodt_money" : 14200,
+            "prodt_name" : "연세 늘봄 정신과"
+          },
+          "sort" : [
+            1716640244000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "ZcryrI8BLPyTWz75SSb_",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-25T08:31:50Z",
+            "prodt_money" : 150000,
+            "prodt_name" : "여행경비"
+          },
+          "sort" : [
+            1716625910000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "ArDyrI8BruTyanN0IdNM",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-25T08:31:40Z",
+            "prodt_money" : 34000,
+            "prodt_name" : "청년다방 마천점"
+          },
+          "sort" : [
+            1716625900000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "x8_xrI8B60Vd9gb28zwy",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-25T08:31:28Z",
+            "prodt_money" : 200000,
+            "prodt_name" : "생활비"
+          },
+          "sort" : [
+            1716625888000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "Aq8kpI8BruTyanN04iXG",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-23T15:30:31Z",
+            "prodt_money" : 400,
+            "prodt_name" : "회사 매점"
+          },
+          "sort" : [
+            1716478231000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "_K8kpI8BruTyanN0tSQy",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-23T15:30:20Z",
+            "prodt_money" : 14700,
+            "prodt_name" : "스타벅스 국기원 사거리점"
+          },
+          "sort" : [
+            1716478220000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "aEkJmo8BOVjNVc6-YZ6e",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-21T16:24:17Z",
+            "prodt_money" : 6800,
+            "prodt_name" : "파운드 커피 역삼"
+          },
+          "sort" : [
+            1716308657000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "VcrslY8B60Vd9gb2H9QR",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-20T21:13:50Z",
+            "prodt_money" : 22300,
+            "prodt_name" : "올리브 영 - 쉐이빙 폼"
+          },
+          "sort" : [
+            1716239630000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "36v1kI8BruTyanN01nhM",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-19T22:06:21Z",
+            "prodt_money" : 6100,
+            "prodt_name" : "cu 마천점"
+          },
+          "sort" : [
+            1716156381000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "Nn1wkI8BLPyTWz75EdWO",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-19T19:40:14Z",
+            "prodt_money" : 5300,
+            "prodt_name" : "스타벅스 마천점"
+          },
+          "sort" : [
+            1716147614000
+          ]
+        },
+        {
+          "_index" : "consuming_index_prod_new",
+          "_type" : "_doc",
+          "_id" : "DoETkI8BTkOtzmRfOtoZ",
+          "_score" : null,
+          "_source" : {
+            "@timestamp" : "2024-05-19T17:58:50Z",
+            "prodt_money" : 10000,
+            "prodt_name" : "성당 헌금"
+          },
+          "sort" : [
+            1716141530000
+          ]
+        }
+      ]
+    }
+  }
+  

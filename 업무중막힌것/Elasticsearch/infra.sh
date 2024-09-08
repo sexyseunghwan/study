@@ -170,3 +170,4 @@ GET /consuming_index_prod_nori/_analyze
   "text": "스타벅스 강남",
   "analyzer": "my_analyzer"
 }
+

@@ -1,7 +1,7 @@
 use crate::common::*;
 
 /*
-    Function responsible for logging
+    Function responsible for logging...
 */
 pub fn set_global_logger() {
     let log_directory = "logs"; // Directory to store log files

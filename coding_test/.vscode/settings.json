@@ -8,6 +8,7 @@
         "ostream": "cpp",
         "iostream": "cpp",
         "ios": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "climits": "cpp"
     }
 }
